@@ -1348,28 +1348,31 @@ function showPricing(type) {
         </div>
       </div>
     </div>
-    <div class="form-card">
+    <form class="form-card" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+      <input type="hidden" name="access_key" value="1a3d3f19-20f4-4326-bd8a-6734bc105f35"/>
+      <input type="hidden" name="subject" value="New Quote Request - Panel Polish LLC"/>
+      <input type="hidden" name="redirect" value="false"/>
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" placeholder="John"/>
+          <input type="text" name="first_name" placeholder="John" required/>
         </div>
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" placeholder="Smith"/>
+          <input type="text" name="last_name" placeholder="Smith" required/>
         </div>
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input type="email" placeholder="john@email.com"/>
+        <input type="email" name="email" placeholder="john@email.com" required/>
       </div>
       <div class="form-group">
         <label>Phone</label>
-        <input type="tel" placeholder="(555) 000-0000"/>
+        <input type="tel" name="phone" placeholder="(555) 000-0000"/>
       </div>
       <div class="form-group">
         <label>Service Needed</label>
-        <select>
+        <select name="service">
           <option>Residential Cleaning</option>
           <option>Panel Inspection</option>
           <option>Maintenance Plan</option>
@@ -1378,10 +1381,25 @@ function showPricing(type) {
       </div>
       <div class="form-group">
         <label>Message</label>
-        <textarea placeholder="How many panels? Any questions?"></textarea>
+        <textarea name="message" placeholder="How many panels? Any questions?"></textarea>
       </div>
-      <button class="btn-submit">Send My Free Quote Request ☀</button>
-    </div>
+      <button class="btn-submit" type="submit">Send My Free Quote Request ☀</button>
+      <p id="form-success" style="display:none; text-align:center; color:#22c55e; font-weight:600; margin-top:1rem;">✅ Message sent! We'll get back to you within 24 hours.</p>
+    </form>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(this)
+        }).then(res => res.json()).then(data => {
+          if(data.success) {
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('contact-form').reset();
+          }
+        });
+      });
+    </script>
   </div>
 </section>
  
@@ -1398,3 +1416,4 @@ function showPricing(type) {
  
 </body>
 </html>
+ 
