@@ -23,7 +23,7 @@
   "name": "Panel Polish LLC",
   "description": "Professional solar panel cleaning service in Orlando, FL.",
   "url": "https://www.panelpolishfl.com",
-  "telephone": "+14074594257",
+  "telephone": "+14076258811",
   "email": "info@panelpolishfl.com",
   "priceRange": "$$",
   "areaServed": ["Orlando","Kissimmee","Sanford","Winter Park","Oviedo","Lake Mary","Clermont","Central Florida"],
@@ -1112,7 +1112,17 @@
     <h2 class="section-title">Simple <span>Plans</span></h2>
     <p class="section-sub">No hidden fees. No surprises. Just clean panels and more energy savings.</p>
   </div>
-  <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1100px;">
+
+  <!-- Toggle Buttons -->
+  <div style="display:flex; justify-content:center; margin-bottom:3rem;">
+    <div style="background:var(--border); border-radius:8px; padding:4px; display:inline-flex; gap:4px;">
+      <button id="btn-onetime" onclick="showPricing('onetime')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:var(--navy); color:white; transition:all 0.2s;">One-Time</button>
+      <button id="btn-recurring" onclick="showPricing('recurring')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Recurring Plans</button>
+    </div>
+  </div>
+
+  <!-- One-Time Pricing -->
+  <div id="pricing-onetime" class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1100px;">
     <div class="pricing-card">
       <div class="plan-label">Starter</div>
       <div class="plan-name">Up to 20</div>
@@ -1181,7 +1191,93 @@
       <a href="#contact" class="btn-plan">Contact Us</a>
     </div>
   </div>
+
+  <!-- Recurring Pricing -->
+  <div id="pricing-recurring" style="display:none; max-width:1100px; margin:0 auto;">
+
+    <!-- Savings banner -->
+    <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">☀ Florida panels need cleaning every 3–6 months — save up to 10% with a recurring plan!</span>
+    </div>
+
+    <!-- Recurring plan cards -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:2.5rem;">
+
+      <!-- Bi-Annual -->
+      <div class="pricing-card">
+        <div class="plan-label">Bi-Annual</div>
+        <div class="plan-name">2x Per Year</div>
+        <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.3); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;">
+          <span style="color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 7%</span>
+        </div>
+        <ul class="plan-features">
+          <li>Up to 20 panels: <strong>$139/visit</strong></li>
+          <li>20–29 panels: <strong>$185/visit</strong></li>
+          <li>30–39 panels: <strong>$232/visit</strong></li>
+          <li>40–49 panels: <strong>$279/visit</strong></li>
+          <li>Priority scheduling</li>
+          <li>Service report each visit</li>
+          <li>Before & after photos</li>
+        </ul>
+        <a href="#contact" class="btn-plan">Get Started</a>
+      </div>
+
+      <!-- Quarterly — Featured -->
+      <div class="pricing-card featured">
+        <div class="plan-label">Best Value ⭐</div>
+        <div class="plan-name">Quarterly</div>
+        <div style="background:rgba(245,166,35,0.2); border:1px solid rgba(245,166,35,0.5); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;">
+          <span style="color:var(--gold-light); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 10% — 4x Per Year</span>
+        </div>
+        <ul class="plan-features">
+          <li>Up to 20 panels: <strong>$134/visit</strong></li>
+          <li>20–29 panels: <strong>$179/visit</strong></li>
+          <li>30–39 panels: <strong>$224/visit</strong></li>
+          <li>40–49 panels: <strong>$270/visit</strong></li>
+          <li>Priority scheduling</li>
+          <li>Service report each visit</li>
+          <li>Before & after photos</li>
+          <li>Free panel inspection annually</li>
+        </ul>
+        <a href="#contact" class="btn-plan">Get Started</a>
+      </div>
+
+      <!-- Annual -->
+      <div class="pricing-card">
+        <div class="plan-label">Annual</div>
+        <div class="plan-name">1x Per Year</div>
+        <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.3); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;">
+          <span style="color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 5%</span>
+        </div>
+        <ul class="plan-features">
+          <li>Up to 20 panels: <strong>$142/visit</strong></li>
+          <li>20–29 panels: <strong>$189/visit</strong></li>
+          <li>30–39 panels: <strong>$237/visit</strong></li>
+          <li>40–49 panels: <strong>$285/visit</strong></li>
+          <li>Priority scheduling</li>
+          <li>Service report</li>
+          <li>Before & after photos</li>
+        </ul>
+        <a href="#contact" class="btn-plan">Get Started</a>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <p style="text-align:center; color:var(--muted); font-size:0.9rem;">50+ panels? <a href="#contact" style="color:var(--blue);">Contact us</a> for a custom recurring quote. All plans are flexible — no long-term contracts required.</p>
+  </div>
 </section>
+
+<script>
+function showPricing(type) {
+  document.getElementById('pricing-onetime').style.display = type === 'onetime' ? 'grid' : 'none';
+  document.getElementById('pricing-recurring').style.display = type === 'recurring' ? 'block' : 'none';
+  document.getElementById('btn-onetime').style.background = type === 'onetime' ? 'var(--navy)' : 'transparent';
+  document.getElementById('btn-onetime').style.color = type === 'onetime' ? 'white' : 'var(--muted)';
+  document.getElementById('btn-recurring').style.background = type === 'recurring' ? 'var(--navy)' : 'transparent';
+  document.getElementById('btn-recurring').style.color = type === 'recurring' ? 'white' : 'var(--muted)';
+}
+</script>
 
 <!-- FAQ -->
 <section style="background:var(--white); padding: 90px 5%;" id="faq">
