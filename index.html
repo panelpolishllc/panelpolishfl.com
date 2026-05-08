@@ -825,33 +825,66 @@
     /* Nav */
     nav { padding: 0 4%; height: 60px; }
     .nav-logo { font-size: 1.3rem; }
-    .nav-links { gap: 1rem; }
-    .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
-    .nav-links a { font-size: 0.8rem; }
+    .nav-links { gap: 0.5rem; }
+    .nav-links li { display: none; }
+    .nav-links li:last-child { display: block; }
+    .nav-cta { padding: 0.4rem 1rem; font-size: 0.85rem; }
  
     /* Hero */
-    .hero { padding: 80px 5% 120px; min-height: auto; }
-    .hero-visual { display: none; }
-    .hero h1 { font-size: 3rem; }
-    .hero p { font-size: 1rem; }
+    .hero { padding: 80px 5% 180px; min-height: auto; flex-direction: column; justify-content: flex-start; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1rem; max-width: 100%; }
     .hero-buttons { flex-direction: column; }
-    .hero-buttons a { text-align: center; }
+    .hero-buttons a { text-align: center; width: 100%; }
     .hero-stats { position: static; margin-top: 2.5rem; gap: 1.5rem; flex-wrap: wrap; }
     .stat-num { font-size: 1.8rem; }
  
+    /* Hide floating stat boxes on mobile */
+    .hero > div[style*="position:absolute"] { 
+      position: static !important;
+      transform: none !important;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      gap: 0.8rem !important;
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+    .hero > div[style*="position:absolute"] > div { flex-direction: row !important; }
+    .hero > div[style*="position:absolute"] > div > div {
+      flex: 1 !important;
+      min-width: 100px !important;
+      padding: 1rem !important;
+    }
+    .hero > div[style*="position:absolute"] > div > div > div:first-child {
+      font-size: 2.2rem !important;
+    }
+ 
     /* Strip */
-    .strip { gap: 1rem; padding: 1rem 4%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
-    .strip-item { white-space: nowrap; font-size: 0.85rem; }
+    .strip { gap: 0.8rem; padding: 1rem 4%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+    .strip-item { white-space: nowrap; font-size: 0.8rem; }
  
     /* Sections */
-    section { padding: 60px 5%; }
+    section { padding: 50px 5%; }
  
     /* Services */
     .services-grid { grid-template-columns: 1fr; }
  
+    /* About */
+    .how-inner,
+    div[style*="grid-template-columns:1fr 1fr"] { 
+      grid-template-columns: 1fr !important; 
+      gap: 2.5rem !important; 
+    }
+ 
+    /* Stats grid in about */
+    div[style*="grid-template-columns:1fr 1fr"][style*="gap:1rem"] {
+      grid-template-columns: 1fr 1fr !important;
+    }
+ 
     /* How it works */
     .how-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .panel-box { min-height: 280px; padding: 2rem; }
+    .panel-box { min-height: 220px; padding: 1.5rem; }
  
     /* Testimonials */
     .testi-grid { grid-template-columns: 1fr; }
@@ -861,8 +894,19 @@
     .pricing-card.featured { transform: scale(1); }
     .price { font-size: 2.8rem; }
  
+    /* Recurring pricing grid */
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(280px"] {
+      grid-template-columns: 1fr !important;
+    }
+ 
+    /* Add-on banner */
+    div[style*="display:flex; align-items:center; justify-content:space-between"] {
+      flex-direction: column !important;
+      text-align: center !important;
+    }
+ 
     /* FAQ */
-    details { padding: 1rem 1.2rem; }
+    details { padding: 1rem 1.2rem !important; }
  
     /* Contact */
     .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -872,15 +916,20 @@
     /* Footer */
     footer { flex-direction: column; text-align: center; gap: 0.8rem; }
     .footer-links { justify-content: center; }
+ 
+    /* Section titles */
+    .section-title { font-size: 2rem; }
   }
  
   @media (max-width: 480px) {
-    .hero h1 { font-size: 2.4rem; }
-    .nav-links { gap: 0.6rem; }
-    .section-title { font-size: 2rem; }
-    .hero-stats { gap: 1.2rem; }
-    .stat-num { font-size: 1.6rem; }
-    .strip { gap: 0.8rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .nav-links { gap: 0.4rem; }
+    .section-title { font-size: 1.8rem; }
+    .hero-stats { gap: 1rem; }
+    .stat-num { font-size: 1.5rem; }
+    .strip { gap: 0.6rem; }
+    .btn-primary, .btn-outline { padding: 0.9rem 1.5rem; font-size: 0.95rem; }
+    .step-num { font-size: 2.2rem; }
   }
 </style>
 </head>
@@ -915,7 +964,7 @@
   </div>
  
   <!-- Eye-catching stat visual -->
-  <div style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; text-align:center; animation: fadeUp 0.9s 0.35s ease both;">
+  <div class="hero-stat-boxes" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; text-align:center; animation: fadeUp 0.9s 0.35s ease both;">
     <div style="display:flex; flex-direction:column; gap:1.5rem;">
       <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.25); border-radius:16px; padding:2rem 2.5rem; backdrop-filter:blur(10px);">
         <div style="font-family:'Barlow Condensed',sans-serif; font-size:5rem; font-weight:900; color:var(--gold); line-height:1;">5+</div>
