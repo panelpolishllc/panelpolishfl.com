@@ -588,7 +588,6 @@
   .pricing-card.featured {
     border-color: var(--gold);
     background: var(--navy);
-    transform: scale(1.04);
   }
  
   .pricing-card:hover { box-shadow: 0 16px 40px rgba(13,35,71,0.12); }
@@ -821,14 +820,67 @@
   }
   .footer-links a:hover { color: var(--gold); }
  
-  /* Responsive */
+  /* ── MOBILE ── */
   @media (max-width: 768px) {
-    .how-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    /* Nav */
+    nav { padding: 0 4%; height: 60px; }
+    .nav-logo { font-size: 1.3rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+    .nav-links a { font-size: 0.8rem; }
+ 
+    /* Hero */
+    .hero { padding: 80px 5% 120px; min-height: auto; }
     .hero-visual { display: none; }
-    .hero-stats { position: static; margin-top: 3rem; }
-    .hero { padding-bottom: 60px; }
-    .form-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 3rem; }
+    .hero p { font-size: 1rem; }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons a { text-align: center; }
+    .hero-stats { position: static; margin-top: 2.5rem; gap: 1.5rem; flex-wrap: wrap; }
+    .stat-num { font-size: 1.8rem; }
+ 
+    /* Strip */
+    .strip { gap: 1rem; padding: 1rem 4%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+    .strip-item { white-space: nowrap; font-size: 0.85rem; }
+ 
+    /* Sections */
+    section { padding: 60px 5%; }
+ 
+    /* Services */
+    .services-grid { grid-template-columns: 1fr; }
+ 
+    /* How it works */
+    .how-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .panel-box { min-height: 280px; padding: 2rem; }
+ 
+    /* Testimonials */
+    .testi-grid { grid-template-columns: 1fr; }
+ 
+    /* Pricing */
+    .pricing-grid { grid-template-columns: 1fr !important; }
     .pricing-card.featured { transform: scale(1); }
+    .price { font-size: 2.8rem; }
+ 
+    /* FAQ */
+    details { padding: 1rem 1.2rem; }
+ 
+    /* Contact */
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-card { padding: 1.5rem; }
+ 
+    /* Footer */
+    footer { flex-direction: column; text-align: center; gap: 0.8rem; }
+    .footer-links { justify-content: center; }
+  }
+ 
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.4rem; }
+    .nav-links { gap: 0.6rem; }
+    .section-title { font-size: 2rem; }
+    .hero-stats { gap: 1.2rem; }
+    .stat-num { font-size: 1.6rem; }
+    .strip { gap: 0.8rem; }
   }
 </style>
 </head>
@@ -1124,7 +1176,7 @@
  
   <!-- One-Time Pricing -->
   <div id="pricing-onetime" class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1100px;">
-    <div class="pricing-card">
+    <div class="pricing-card featured">
       <div class="plan-label">Starter</div>
       <div class="plan-name">Up to 20</div>
       <div class="price">$149</div>
@@ -1138,7 +1190,7 @@
       </ul>
       <a href="https://book.squareup.com/appointments/3mm2d3uzhrqf8g/location/L342CZ43GBCD4/services" target="_blank" class="btn-plan">Book Now</a>
     </div>
-    <div class="pricing-card">
+    <div class="pricing-card featured">
       <div class="plan-label">Standard</div>
       <div class="plan-name">20–29</div>
       <div class="price">$199</div>
@@ -1153,7 +1205,7 @@
       <a href="https://book.squareup.com/appointments/3mm2d3uzhrqf8g/location/L342CZ43GBCD4/services" target="_blank" class="btn-plan">Book Now</a>
     </div>
     <div class="pricing-card featured">
-      <div class="plan-label">Most Popular</div>
+      <div class="plan-label">Standard</div>
       <div class="plan-name">30–39</div>
       <div class="price">$249</div>
       <div class="price-note">30–39 panels</div>
@@ -1166,7 +1218,7 @@
       </ul>
       <a href="https://book.squareup.com/appointments/3mm2d3uzhrqf8g/location/L342CZ43GBCD4/services" target="_blank" class="btn-plan">Book Now</a>
     </div>
-    <div class="pricing-card">
+    <div class="pricing-card featured">
       <div class="plan-label">Large</div>
       <div class="plan-name">40–49</div>
       <div class="price">$300</div>
@@ -1180,7 +1232,7 @@
       </ul>
       <a href="https://book.squareup.com/appointments/3mm2d3uzhrqf8g/location/L342CZ43GBCD4/services" target="_blank" class="btn-plan">Book Now</a>
     </div>
-    <div class="pricing-card">
+    <div class="pricing-card featured">
       <div class="plan-label">Large Home</div>
       <div class="plan-name">50+</div>
       <div class="price" style="font-size:2.2rem">Custom</div>
@@ -1422,3 +1474,4 @@ function showPricing(type) {
  
 </body>
 </html>
+ 
