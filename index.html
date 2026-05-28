@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -836,7 +835,7 @@
     .hero p { font-size: 1rem; max-width: 100%; }
     .hero-buttons { flex-direction: column; }
     .hero-buttons a { text-align: center; width: 100%; }
-    .hero-stats { display: none; }
+    .hero-stats { position: static; margin-top: 2.5rem; gap: 1.5rem; flex-wrap: wrap; }
     .stat-num { font-size: 1.8rem; }
  
     /* Widget handled by its own internal media query */
@@ -945,273 +944,52 @@
     </div>
   </div>
  
-  <!-- Interactive Efficiency Widget -->
-  <div id="eff-widget" style="position:absolute; right:4%; top:50%; transform:translateY(-50%); z-index:2; animation: fadeUp 0.9s 0.35s ease both; user-select:none; -webkit-user-select:none; width:clamp(300px,32vw,380px);">
-    <div style="position:relative; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:18px; padding:1.4rem; backdrop-filter:blur(8px);">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+  <!-- Stat cards (right side) -->
+  <div id="hero-cards" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; animation: fadeUp 0.9s 0.35s ease both;">
+    <div style="display:flex; flex-direction:column; gap:1.2rem; width:260px;">
+ 
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:1.8rem; flex-shrink:0;">☀️</div>
         <div>
-          <div style="font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:2px;">Live Panel Output</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.85);">Your Solar Array</div>
-        </div>
-        <div id="status-pill" style="background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.4); border-radius:20px; padding:0.3rem 0.8rem; font-size:0.72rem; font-weight:700; letter-spacing:1px; color:#f87171; text-transform:uppercase; transition:all 0.6s;">Needs Cleaning</div>
-      </div>
-      <div style="position:relative; border-radius:10px; overflow:hidden; background:#080e1e;">
-        <svg id="panel-svg" viewBox="0 0 360 200" width="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="pg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2a6fd4"/>
-              <stop offset="100%" stop-color="#0d3080"/>
-            </linearGradient>
-            <linearGradient id="ps" x1="0%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
-              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-            </linearGradient>
-          </defs>
-          <!-- 4x5 panel grid -->
-          <rect x="8" y="8" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="29" y1="8" x2="29" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="50" y1="8" x2="50" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="8" y1="27" x2="70" y2="27" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="8" y="8" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.6"/>
-          <rect x="77" y="8" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="98" y1="8" x2="98" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="119" y1="8" x2="119" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="77" y1="27" x2="139" y2="27" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="77" y="8" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="146" y="8" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="167" y1="8" x2="167" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="188" y1="8" x2="188" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="146" y1="27" x2="208" y2="27" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="146" y="8" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.55"/>
-          <rect x="215" y="8" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="236" y1="8" x2="236" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="257" y1="8" x2="257" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="215" y1="27" x2="277" y2="27" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="215" y="8" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="284" y="8" width="68" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="307" y1="8" x2="307" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="330" y1="8" x2="330" y2="46" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="284" y1="27" x2="352" y2="27" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="284" y="8" width="68" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="8" y="53" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="29" y1="53" x2="29" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="50" y1="53" x2="50" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="8" y1="72" x2="70" y2="72" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="8" y="53" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="77" y="53" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="98" y1="53" x2="98" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="119" y1="53" x2="119" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="77" y1="72" x2="139" y2="72" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="77" y="53" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.6"/>
-          <rect x="146" y="53" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="167" y1="53" x2="167" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="188" y1="53" x2="188" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="146" y1="72" x2="208" y2="72" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="146" y="53" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="215" y="53" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="236" y1="53" x2="236" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="257" y1="53" x2="257" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="215" y1="72" x2="277" y2="72" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="215" y="53" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.55"/>
-          <rect x="284" y="53" width="68" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="307" y1="53" x2="307" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="330" y1="53" x2="330" y2="91" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="284" y1="72" x2="352" y2="72" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="284" y="53" width="68" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="8" y="98" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="29" y1="98" x2="29" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="50" y1="98" x2="50" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="8" y1="117" x2="70" y2="117" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="8" y="98" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.55"/>
-          <rect x="77" y="98" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="98" y1="98" x2="98" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="119" y1="98" x2="119" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="77" y1="117" x2="139" y2="117" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="77" y="98" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="146" y="98" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="167" y1="98" x2="167" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="188" y1="98" x2="188" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="146" y1="117" x2="208" y2="117" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="146" y="98" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.6"/>
-          <rect x="215" y="98" width="62" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="236" y1="98" x2="236" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="257" y1="98" x2="257" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="215" y1="117" x2="277" y2="117" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="215" y="98" width="62" height="38" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="284" y="98" width="68" height="38" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="307" y1="98" x2="307" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="330" y1="98" x2="330" y2="136" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="284" y1="117" x2="352" y2="117" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="284" y="98" width="68" height="38" rx="4" fill="url(#ps)" opacity="0.55"/>
-          <rect x="8" y="143" width="62" height="49" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="29" y1="143" x2="29" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="50" y1="143" x2="50" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="8" y1="167" x2="70" y2="167" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="8" y="143" width="62" height="49" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="77" y="143" width="62" height="49" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="98" y1="143" x2="98" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="119" y1="143" x2="119" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="77" y1="167" x2="139" y2="167" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="77" y="143" width="62" height="49" rx="4" fill="url(#ps)" opacity="0.6"/>
-          <rect x="146" y="143" width="62" height="49" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="167" y1="143" x2="167" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="188" y1="143" x2="188" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="146" y1="167" x2="208" y2="167" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="146" y="143" width="62" height="49" rx="4" fill="url(#ps)" opacity="0.55"/>
-          <rect x="215" y="143" width="62" height="49" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="236" y1="143" x2="236" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="257" y1="143" x2="257" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="215" y1="167" x2="277" y2="167" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="215" y="143" width="62" height="49" rx="4" fill="url(#ps)" opacity="0.5"/>
-          <rect x="284" y="143" width="68" height="49" rx="4" fill="url(#pg)" stroke="#3a70c0" stroke-width="1"/>
-          <line x1="307" y1="143" x2="307" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="330" y1="143" x2="330" y2="192" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <line x1="284" y1="167" x2="352" y2="167" stroke="#1a4a9e" stroke-width="0.7" opacity="0.5"/>
-          <rect x="284" y="143" width="68" height="49" rx="4" fill="url(#ps)" opacity="0.55"/>
-          <!-- Grime layer -->
-          <rect id="grime-layer" width="360" height="200" fill="rgba(75,60,5,0)" style="transition:fill 0.8s;"/>
-          <ellipse id="g1" cx="95" cy="35" rx="32" ry="16" fill="rgba(110,88,18,0)" style="filter:blur(5px);"/>
-          <ellipse id="g2" cx="230" cy="80" rx="28" ry="13" fill="rgba(95,75,12,0)" style="filter:blur(4px);"/>
-          <ellipse id="g3" cx="310" cy="150" rx="35" ry="15" fill="rgba(100,80,14,0)" style="filter:blur(5px);"/>
-          <ellipse id="g4" cx="50" cy="160" rx="26" ry="11" fill="rgba(90,72,10,0)" style="filter:blur(4px);"/>
-          <ellipse id="g5" cx="170" cy="170" rx="30" ry="13" fill="rgba(95,78,12,0)" style="filter:blur(4px);"/>
-          <ellipse id="bd1" cx="148" cy="60" rx="7" ry="3.5" fill="rgba(210,205,180,0)" transform="rotate(-12,148,60)"/>
-          <ellipse id="bd2" cx="270" cy="115" rx="6" ry="3" fill="rgba(210,205,180,0)" transform="rotate(8,270,115)"/>
-          <!-- Clean sweep animation -->
-          <rect id="clean-sweep" x="0" y="0" width="0" height="200" fill="rgba(40,100,220,0.2)" style="transition:width 0.9s ease-out;"/>
-        </svg>
-      </div>
-      <!-- Stats row -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-top:1rem;">
-        <div style="background:rgba(0,0,0,0.2); border-radius:10px; padding:0.9rem 1rem;">
-          <div style="font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:4px;">Efficiency</div>
-          <div style="display:flex; align-items:baseline; gap:4px;">
-            <span id="eff-num" style="font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:900; color:#f87171; line-height:1; transition:color 0.5s;">72</span>
-            <span style="font-family:'Barlow Condensed',sans-serif; font-size:1.2rem; font-weight:700; color:rgba(255,255,255,0.4);">%</span>
-          </div>
-          <div style="margin-top:6px; height:4px; background:rgba(255,255,255,0.1); border-radius:2px; overflow:hidden;">
-            <div id="eff-bar" style="height:100%; width:72%; background:#f87171; border-radius:2px; transition:width 0.5s, background 0.5s;"></div>
-          </div>
-        </div>
-        <div style="background:rgba(0,0,0,0.2); border-radius:10px; padding:0.9rem 1rem;">
-          <div style="font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:4px;">Monthly Loss</div>
-          <div style="display:flex; align-items:baseline; gap:2px;">
-            <span style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.4);">$</span>
-            <span id="loss-num" style="font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:900; color:#fbbf24; line-height:1;">24</span>
-          </div>
-          <div style="font-size:0.72rem; color:rgba(255,255,255,0.3); margin-top:4px;">est. wasted output</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; color:#F5A623; line-height:1;">5+ years</div>
+          <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">in the solar industry</div>
         </div>
       </div>
-      <!-- Panel slider -->
-      <div style="margin-top:1rem; display:flex; align-items:center; gap:0.8rem;">
-        <div style="font-size:0.78rem; color:rgba(255,255,255,0.45); white-space:nowrap;">Your panels:</div>
-        <input id="panel-count" type="range" min="10" max="50" value="20" style="flex:1; accent-color:#F5A623; height:4px; cursor:pointer;"/>
-        <div id="panel-count-label" style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:#F5A623; min-width:32px; text-align:right;">20</div>
+ 
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:1.8rem; flex-shrink:0;">💧</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; color:white; line-height:1;">Zero chemicals</div>
+          <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">pure water only, every time</div>
+        </div>
       </div>
-      <!-- CTA -->
-      <button id="clean-btn" onclick="triggerClean()" style="width:100%; margin-top:1rem; padding:0.85rem; background:#F5A623; color:#0d2347; border:none; border-radius:8px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.05rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:all 0.2s; box-shadow:0 4px 20px rgba(245,166,35,0.3);">
-        ✦ Clean My Panels
-      </button>
+ 
+      <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.35); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:1.8rem; flex-shrink:0;">📍</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; color:#F5A623; line-height:1;">Starting at $149</div>
+          <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">transparent, flat-rate pricing</div>
+        </div>
+      </div>
+ 
     </div>
   </div>
-  <style>
-    #clean-btn:hover { background:#FFD040 !important; transform:translateY(-2px); box-shadow:0 8px 28px rgba(245,166,35,0.45) !important; }
-    #eff-widget input[type=range] { -webkit-appearance:none; appearance:none; background:rgba(255,255,255,0.12); border-radius:2px; outline:none; }
-    #eff-widget input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:#F5A623; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.3); }
-    @media (max-width:768px) {
-      #eff-widget { position:static !important; transform:none !important; margin:1.5rem auto 0 !important; width:min(360px,92vw) !important; max-width:100% !important; }
-    }
-  </style>
-  <script>
-  (function() {
-    var eff = 100;
-    var panels = 20;
-    var tickTimer = null;
-    var dirtTimer = null;
  
-    function calcLoss(e, n) {
-      return Math.round(n * 0.4 * 8 * (1 - e / 100));
-    }
- 
-    function setGrime(alpha) {
-      var gl = document.getElementById('grime-layer');
-      if (gl) gl.setAttribute('fill', 'rgba(75,60,5,' + (alpha * 0.22) + ')');
-      var blobs = [
-        {id:'g1',r:0.42}, {id:'g2',r:0.35}, {id:'g3',r:0.38}, {id:'g4',r:0.32}, {id:'g5',r:0.36},
-        {id:'bd1',r:0.65}, {id:'bd2',r:0.58}
-      ];
-      blobs.forEach(function(b) {
-        var el = document.getElementById(b.id);
-        if (!el) return;
-        var f = el.getAttribute('fill');
-        var m = f.match(/rgba\((\d+),(\d+),(\d+)/);
-        if (m) el.setAttribute('fill', 'rgba(' + m[1] + ',' + m[2] + ',' + m[3] + ',' + (b.r * alpha) + ')');
-      });
-    }
- 
-    function updateDisplay(newEff) {
-      eff = Math.max(0, Math.min(100, newEff));
-      var numEl = document.getElementById('eff-num');
-      var barEl = document.getElementById('eff-bar');
-      var lossEl = document.getElementById('loss-num');
-      var pillEl = document.getElementById('status-pill');
-      if (!numEl) return;
-      numEl.textContent = Math.round(eff);
-      if (barEl) barEl.style.width = eff + '%';
-      if (lossEl) lossEl.textContent = calcLoss(eff, panels);
-      var color = eff >= 90 ? '#4ade80' : eff >= 75 ? '#fbbf24' : '#f87171';
-      numEl.style.color = color;
-      if (barEl) barEl.style.background = color;
-      if (pillEl) {
-        if (eff >= 95) { pillEl.textContent='Running Clean'; pillEl.style.background='rgba(74,222,128,0.15)'; pillEl.style.borderColor='rgba(74,222,128,0.4)'; pillEl.style.color='#4ade80'; }
-        else if (eff >= 80) { pillEl.textContent='Getting Dirty'; pillEl.style.background='rgba(251,191,36,0.15)'; pillEl.style.borderColor='rgba(251,191,36,0.4)'; pillEl.style.color='#fbbf24'; }
-        else { pillEl.textContent='Needs Cleaning'; pillEl.style.background='rgba(239,68,68,0.15)'; pillEl.style.borderColor='rgba(239,68,68,0.4)'; pillEl.style.color='#f87171'; }
-      }
-      setGrime(Math.max(0, (100 - eff) / 70));
-    }
- 
-    function startDirtying() {
-      clearInterval(tickTimer);
-      tickTimer = setInterval(function() {
-        if (eff > 68) { updateDisplay(eff - 0.15); }
-        else { clearInterval(tickTimer); }
-      }, 120);
-    }
- 
-    window.triggerClean = function() {
-      clearInterval(tickTimer); clearTimeout(dirtTimer);
-      var btn = document.getElementById('clean-btn');
-      if (btn) { btn.textContent = '✦ Cleaning...'; btn.disabled = true; btn.style.opacity = '0.7'; }
-      var sweep = document.getElementById('clean-sweep');
-      if (sweep) { sweep.style.transition = 'width 0.9s ease-out'; sweep.style.width = '360px'; }
-      setGrime(0);
-      var start = eff, target = 100, steps = 40, i = 0;
-      var t = setInterval(function() {
-        i++;
-        updateDisplay(start + (target - start) * (i / steps));
-        if (i >= steps) {
-          clearInterval(t);
-          if (sweep) { setTimeout(function(){ sweep.style.transition='width 0.4s ease-in'; sweep.style.width='0'; }, 200); }
-          if (btn) { setTimeout(function(){ btn.textContent='✦ Clean My Panels'; btn.disabled=false; btn.style.opacity='1'; }, 600); }
-          dirtTimer = setTimeout(startDirtying, 3500);
-        }
-      }, 30);
-    };
- 
-    var slider = document.getElementById('panel-count');
-    var label = document.getElementById('panel-count-label');
-    if (slider) {
-      slider.addEventListener('input', function() {
-        panels = parseInt(this.value);
-        if (label) label.textContent = panels;
-        updateDisplay(eff);
-      });
-    }
- 
-    updateDisplay(100);
-    dirtTimer = setTimeout(startDirtying, 1200);
-  })();
-  </script>
+  <!-- Bottom stats -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">30%</div>
+      <div class="stat-label">Efficiency Restored</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Panels Cleaned</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+  </div>
  
 </section>
  
@@ -1508,56 +1286,6 @@
   </div>
 </section>
  
-<!-- EQUIPMENT SECTION -->
-<section style="background:var(--navy); padding:90px 5%;" id="equipment">
-  <div style="max-width:1100px; margin:0 auto;">
-    <div style="text-align:center; margin-bottom:3.5rem;">
-      <div style="font-size:0.75rem; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Professional Grade Equipment</div>
-      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.2rem,4vw,3.2rem); text-transform:uppercase; color:var(--white); line-height:1; margin-bottom:1rem;">We Use the Best.<br><span style="color:var(--gold);">So Your Panels Get the Best.</span></h2>
-      <p style="color:rgba(255,255,255,0.55); font-size:1.05rem; line-height:1.7; max-width:580px; margin:0 auto;">The equipment we show up with is a direct reflection of the service we deliver. We invested in professional-grade Tucker® systems so every homeowner we serve gets the best possible result.</p>
-    </div>
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.3); border-radius:16px; padding:2.5rem; margin-bottom:2rem; display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap;">
-      <div style="flex-shrink:0; background:var(--gold); border-radius:12px; padding:1.2rem 2rem; text-align:center;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:2.2rem; color:var(--navy); letter-spacing:2px; line-height:1;">TUCKER®</div>
-        <div style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--navy); text-transform:uppercase; margin-top:2px;">Est. 1957 · Made in USA</div>
-      </div>
-      <div style="flex:1; min-width:280px;">
-        <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.6rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">The Oldest & Most Trusted Name in Water-Fed Technology</h3>
-        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.7;">Tucker® invented water-fed pole technology in 1957 and has been the industry leader ever since. Their systems are used by professional cleaning companies worldwide and are assembled right here in the USA. We chose Tucker® because when it comes to your solar investment, we refuse to cut corners on equipment.</p>
-      </div>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.2rem; margin-bottom:2rem;">
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
-        <div style="font-size:2rem; margin-bottom:0.8rem;">💧</div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">Rival V2 RO/DI Pure Water System</h4>
-        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">4-stage filtration system producing 0 PPM ultra-pure water. Zero dissolved solids means zero mineral residue left on your panels. This is the manufacturer recommended standard.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
-        <div style="font-size:2rem; margin-bottom:0.8rem;">🪣</div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">XL Alpha Badger Solar Brush</h4>
-        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">Designed specifically for solar panels with GLIDE bristles that clean effectively without scratching anti-reflective coatings. Built for the job from the ground up.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
-        <div style="font-size:2rem; margin-bottom:0.8rem;">🏗️</div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">Solar Boost Carbon Fiber Pole</h4>
-        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">High-quality carbon fiber water-fed pole reaching up to 40 feet. Purpose-built for solar panel cleaning with 100 feet of pole tubing. Reaches any residential rooftop safely from the ground.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
-        <div style="font-size:2rem; margin-bottom:0.8rem;">📊</div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">TDS Water Quality Meter</h4>
-        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">We test water purity before every single job. If it's not 0 PPM, we don't touch your panels. This ensures zero mineral deposits and a spotless, streak-free result every time.</p>
-      </div>
-    </div>
-    <div style="background:linear-gradient(135deg, rgba(245,166,35,0.12), rgba(245,166,35,0.05)); border:1px solid rgba(245,166,35,0.25); border-radius:12px; padding:1.5rem 2rem; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-      <div style="font-size:2.5rem; flex-shrink:0;">☀️</div>
-      <div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem;">Why Equipment Matters to Us</h4>
-        <p style="color:rgba(255,255,255,0.6); font-size:0.92rem; line-height:1.6; margin:0;">We believe the equipment we use is a direct reflection of the quality of service we deliver. Investing in professional-grade Tucker® systems means every homeowner we serve gets the cleanest possible result using tools engineered specifically for the job. That's the standard we hold ourselves to on every single visit.</p>
-      </div>
-    </div>
-  </div>
-</section>
- 
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="pricing-header">
@@ -1747,6 +1475,56 @@ function showPricing(type) {
   document.getElementById('btn-recurring').style.color = type === 'recurring' ? 'white' : 'var(--muted)';
 }
 </script>
+ 
+<!-- EQUIPMENT SECTION -->
+<section style="background:var(--navy); padding:90px 5%;" id="equipment">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:3.5rem;">
+      <div style="font-size:0.75rem; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Professional Grade Equipment</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.2rem,4vw,3.2rem); text-transform:uppercase; color:var(--white); line-height:1; margin-bottom:1rem;">We Use the Best.<br><span style="color:var(--gold);">So Your Panels Get the Best.</span></h2>
+      <p style="color:rgba(255,255,255,0.55); font-size:1.05rem; line-height:1.7; max-width:580px; margin:0 auto;">The equipment we show up with is a direct reflection of the service we deliver. We invested in professional-grade Tucker® systems so every homeowner we serve gets the best possible result.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.3); border-radius:16px; padding:2.5rem; margin-bottom:2rem; display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap;">
+      <div style="flex-shrink:0; background:var(--gold); border-radius:12px; padding:1.2rem 2rem; text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:2.2rem; color:var(--navy); letter-spacing:2px; line-height:1;">TUCKER®</div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--navy); text-transform:uppercase; margin-top:2px;">Est. 1957 · Made in USA</div>
+      </div>
+      <div style="flex:1; min-width:280px;">
+        <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.6rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">The Oldest & Most Trusted Name in Water-Fed Technology</h3>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.7;">Tucker® invented water-fed pole technology in 1957 and has been the industry leader ever since. Their systems are used by professional cleaning companies worldwide and are assembled right here in the USA. We chose Tucker® because when it comes to your solar investment, we refuse to cut corners on equipment.</p>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.2rem; margin-bottom:2rem;">
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-size:2rem; margin-bottom:0.8rem;">💧</div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">Rival V2 RO/DI Pure Water System</h4>
+        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">4-stage filtration system producing 0 PPM ultra-pure water. Zero dissolved solids means zero mineral residue left on your panels. This is the manufacturer recommended standard.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-size:2rem; margin-bottom:0.8rem;">🪣</div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">XL Alpha Badger Solar Brush</h4>
+        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">Designed specifically for solar panels with GLIDE bristles that clean effectively without scratching anti-reflective coatings. Built for the job from the ground up.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-size:2rem; margin-bottom:0.8rem;">🏗️</div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">Solar Boost Carbon Fiber Pole</h4>
+        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">High-quality carbon fiber water-fed pole reaching up to 40 feet. Purpose-built for solar panel cleaning with 100 feet of pole tubing. Reaches any residential rooftop safely from the ground.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.8rem; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-size:2rem; margin-bottom:0.8rem;">📊</div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--white); margin-bottom:0.5rem;">TDS Water Quality Meter</h4>
+        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; line-height:1.6;">We test water purity before every single job. If it's not 0 PPM, we don't touch your panels. This ensures zero mineral deposits and a spotless, streak-free result every time.</p>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg, rgba(245,166,35,0.12), rgba(245,166,35,0.05)); border:1px solid rgba(245,166,35,0.25); border-radius:12px; padding:1.5rem 2rem; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+      <div style="font-size:2.5rem; flex-shrink:0;">☀️</div>
+      <div>
+        <h4 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem;">Why Equipment Matters to Us</h4>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.92rem; line-height:1.6; margin:0;">We believe the equipment we use is a direct reflection of the quality of service we deliver. Investing in professional-grade Tucker® systems means every homeowner we serve gets the cleanest possible result using tools engineered specifically for the job. That's the standard we hold ourselves to on every single visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
  
 <!-- FAQ -->
 <section style="background:var(--white); padding: 90px 5%;" id="faq">
