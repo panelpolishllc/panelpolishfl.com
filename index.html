@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +61,7 @@
     --gold: #F5A623;
     --gold-light: #FFD040;
     --white: #ffffff;
-    --off-white: #f5f8fc;
+    --off-white: #fdfaf7;
     --text: #1a1a2e;
     --muted: #5a6a80;
     --border: #dce6f0;
@@ -342,9 +343,8 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: clamp(2.2rem, 4vw, 3.2rem);
-    text-transform: uppercase;
     color: var(--navy);
-    line-height: 1;
+    line-height: 1.05;
     margin-bottom: 1rem;
   }
  
@@ -952,32 +952,41 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-badge">☀ Professional Solar Cleaning</div>
+    <div class="hero-badge">☀ Locally Owned · Orlando, FL</div>
     <h1>
-      Keep Your Panels
-      <span class="accent">Shining Clean</span>
+      Your Panels Work Hard.
+      <span class="accent">We Keep Them Clean.</span>
     </h1>
-    <p>Dirty solar panels lose up to 30% of their energy output. Panel Polish LLC restores peak performance with safe, professional cleaning for homeowners across Orlando and Central Florida.</p>
+    <p>Solar panels in Florida don't stay clean for long. Between the pollen, the humidity, and the afternoon storms, most panels quietly lose 20–30% of their output. We fix that — fast, safely, and without any harsh chemicals.</p>
     <div class="hero-buttons">
       <a href="https://book.squareup.com/appointments/3mm2d3uzhrqf8g/location/L342CZ43GBCD4/services" target="_blank" class="btn-primary">Book Now</a>
       <a href="#contact" class="btn-outline">Get a Free Quote</a>
     </div>
   </div>
  
-  <!-- Eye-catching stat visual -->
-  <div class="hero-stat-boxes" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; text-align:center; animation: fadeUp 0.9s 0.35s ease both;">
-    <div style="display:flex; flex-direction:column; gap:1.5rem;">
-      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.25); border-radius:16px; padding:2rem 2.5rem; backdrop-filter:blur(10px);">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:5rem; font-weight:900; color:var(--gold); line-height:1;">5+</div>
-        <div style="color:rgba(255,255,255,0.6); font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-top:0.3rem;">Years Solar Experience</div>
+  <!-- Hero visual cards -->
+  <div class="hero-stat-boxes" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; animation: fadeUp 0.9s 0.35s ease both;">
+    <div style="display:flex; flex-direction:column; gap:1.2rem; max-width:280px;">
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.5rem 1.8rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:2rem; flex-shrink:0;">☀️</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:900; color:var(--gold); line-height:1;">5+ years</div>
+          <div style="color:rgba(255,255,255,0.55); font-size:0.78rem; margin-top:2px;">in the solar industry</div>
+        </div>
       </div>
-      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.25); border-radius:16px; padding:2rem 2.5rem; backdrop-filter:blur(10px);">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:5rem; font-weight:900; color:white; line-height:1;">100%</div>
-        <div style="color:rgba(255,255,255,0.6); font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-top:0.3rem;">Chemical Free Process</div>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.5rem 1.8rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:2rem; flex-shrink:0;">💧</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:900; color:white; line-height:1;">Zero chemicals</div>
+          <div style="color:rgba(255,255,255,0.55); font-size:0.78rem; margin-top:2px;">pure water only, every time</div>
+        </div>
       </div>
-      <div style="background:rgba(245,166,35,0.12); border:1px solid rgba(245,166,35,0.4); border-radius:16px; padding:2rem 2.5rem;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:5rem; font-weight:900; color:var(--gold); line-height:1;">$149</div>
-        <div style="color:rgba(255,255,255,0.6); font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-top:0.3rem;">Starting Price</div>
+      <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.35); border-radius:14px; padding:1.5rem 1.8rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:2rem; flex-shrink:0;">📍</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:900; color:var(--gold); line-height:1;">Starting at $149</div>
+          <div style="color:rgba(255,255,255,0.55); font-size:0.78rem; margin-top:2px;">transparent, flat-rate pricing</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1012,7 +1021,7 @@
   <div class="services-header">
     <div class="section-label">What We Offer</div>
     <h2 class="section-title">Our <span>Services</span></h2>
-    <p class="section-sub">Everything your home solar system needs to perform at its absolute best — from a one-time clean to ongoing maintenance.</p>
+    <p class="section-sub">Whether you need a one-time clean or want someone to take care of your panels on a regular basis, we’ve got you covered.</p>
   </div>
   <div class="services-grid">
     <div class="service-card">
@@ -1120,35 +1129,35 @@
   <div class="how-inner">
     <div>
       <div class="section-label">The Process</div>
-      <h2 class="section-title">Simple &<br><span>Stress-Free</span></h2>
-      <p class="section-sub">We make the whole process easy from booking to your clean, gleaming panels.</p>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">The whole thing is pretty painless. Here’s what to expect from start to finish.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
           <div class="step-body">
-            <h4>Request a Free Quote</h4>
-            <p>Fill out our form or call us. We'll give you a fast, no-obligation price based on your system size.</p>
+            <h4>Tell us about your system</h4>
+            <p>Give us a call or fill out the quick form below. We’ll ask about your panel count and location and get you a price — usually within a few minutes. No pressure.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <div class="step-body">
-            <h4>We Come to You</h4>
-            <p>Our trained technician arrives at your scheduled time with professional gear and pure-water equipment.</p>
+            <h4>We show up when we say</h4>
+            <p>No vague arrival windows. We’ll be there at the time we agreed, equipment ready. You won’t need to chase us down.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <div class="step-body">
-            <h4>Clean & Inspect</h4>
-            <p>We clean every panel and do a visual inspection for any damage or issues, then share a full report.</p>
+            <h4>Clean panels, honest report</h4>
+            <p>We clean every panel and flag anything worth knowing about — cracks, hot spots, bird damage. You get photos and a simple write-up when we’re done.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <div class="step-body">
-            <h4>Enjoy More Energy</h4>
-            <p>Watch your energy output climb. Most customers see measurable improvement within days.</p>
+            <h4>Check your solar app</h4>
+            <p>Most customers see a bump in output within the first few days. Your monitoring app will tell the story — it’s usually pretty satisfying to watch.</p>
           </div>
         </div>
       </div>
@@ -1227,10 +1236,11 @@
     <!-- Right: Story -->
     <div>
       <div class="section-label">About Us</div>
-      <h2 class="section-title">We Don't Just Clean Panels.<br><span>We Know Them.</span></h2>
-      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1.2rem;">Panel Polish LLC was founded by two solar industry professionals with over <strong>5 years of hands-on experience</strong> and more than <strong>250 residential solar systems installed</strong> across Central Florida.</p>
-      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1rem;">That background means we bring a deeper understanding to every job. We know how solar panels work, how they're built, and what it takes to care for them properly. We know where grime tends to build up, how Florida's humidity and pollen affect output, and how to restore panels safely and effectively.</p>
-      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1rem;">When you book with Panel Polish LLC you're working with <strong>solar professionals</strong> who know your system inside and out and are committed to keeping it running at its absolute best.</p>
+      <h2 class="section-title">We know solar.
+<span>That’s why we started this.</span></h2>
+      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1.2rem;">Hey — we’re <strong>Daniel and Kyle</strong>, two guys who spent years installing residential solar systems across Central Florida before starting Panel Polish. Over 250 systems installed between us.</p>
+      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1rem;">We kept seeing the same thing: homeowners who had spent $20–30k on solar and had nobody helping them maintain it. The installers were long gone. Panels were getting dirty. Output was quietly dropping and nobody was saying anything about it.</p>
+      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1rem;">So we started Panel Polish. We know what causes output to drop, how to clean without voiding warranties, and what actual panel damage looks like. When we show up at your house, you’re getting people who genuinely care whether your system is running right.</p>
  
       <!-- Trust badges -->
       <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:2rem;">
@@ -1251,7 +1261,7 @@
   <div class="testi-header">
     <div class="section-label">What Customers Say</div>
     <h2 class="section-title">Real <span style="color:var(--gold)">Results</span></h2>
-    <p class="section-sub">Don't just take our word for it.</p>
+    <p class="section-sub">Here’s what a few of our customers have said.</p>
   </div>
   <div class="testi-grid">
     <div class="testi-card">
@@ -1543,35 +1553,35 @@ function showPricing(type) {
           How often should I clean my solar panels in Florida?
           <span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span>
         </summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Florida's humidity, pollen, afternoon storms, and bird activity mean panels get dirty fast. We recommend cleaning every <strong>3–6 months</strong> to keep output at its peak year-round.</p>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">More often than most people expect. Florida’s humidity causes pollen to bond to panel glass instead of washing off, and bird activity is year-round here. We typically recommend every <strong>3–6 months</strong> — quarterly if you want to stay ahead of it.</p>
       </details>
       <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
         <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
           Will cleaning actually improve my energy output?
           <span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span>
         </summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Yes — dirty solar panels can lose <strong>up to 30% of their efficiency</strong>. Most customers notice a measurable improvement on their energy bill within the first billing cycle after a professional clean.</p>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">In almost every case, yes. Soiled panels can lose <strong>up to 30% of their output</strong>, and it happens gradually — so most people don’t notice until it’s significant. Most of our customers see a jump in their solar app within a few days.</p>
       </details>
       <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
         <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
           Do you use any chemicals on my panels?
           <span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span>
         </summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">No harsh chemicals — ever. We use a <strong>pure water system</strong> and soft brushes that safely remove dirt, pollen, and grime without voiding your panel warranty or leaving any residue.</p>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Never. We use only <strong>ultra-pure water</strong> (0 dissolved solids) and soft brushes made for solar panel glass. No soap, no detergents, nothing that could leave residue or void your manufacturer warranty.</p>
       </details>
       <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
         <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
           What areas do you serve?
           <span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span>
         </summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">We serve <strong>Orlando and the greater Central Florida area</strong>, including Kissimmee, Sanford, Winter Park, Oviedo, Lake Mary, Clermont, Altamonte Springs, and surrounding communities.</p>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">We’re based in Orlando and cover <strong>greater Central Florida</strong> — Kissimmee, Sanford, Winter Park, Oviedo, Lake Mary, Clermont, Altamonte Springs, and surrounding areas. Not sure if you’re in range? Just ask us.</p>
       </details>
       <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
         <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
           How long does a cleaning take?
           <span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span>
         </summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Most residential jobs take <strong>45 minutes to 2 hours</strong> depending on panel count and roof accessibility. We work efficiently and cleanly so you can get back to your day.</p>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Most homes take <strong>45 minutes to about 2 hours</strong> depending on panel count and roof access. We’re in and out — you don’t need to be home or rearrange your schedule for us.</p>
       </details>
     </div>
   </div>
@@ -1583,7 +1593,7 @@ function showPricing(type) {
     <div>
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title" style="color:white">Get Your<br><span style="color:var(--gold)">Free Quote</span></h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;margin-top:1rem;max-width:380px;">Ready to see the difference a clean panel makes? Reach out and we'll get back to you within 24 hours.</p>
+      <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;margin-top:1rem;max-width:380px;">No pressure, no sales pitch — just a straight answer about what your panels need. We usually get back to you the same day.</p>
       <div class="contact-info">
         <div class="contact-item">
           <div class="contact-item-icon">📞</div>
@@ -1669,7 +1679,7 @@ function showPricing(type) {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Panel<span>Polish</span> LLC</div>
-  <p>© 2025 Panel Polish LLC — Orlando, FL. All rights reserved.</p>
+  <p>© 2026 Panel Polish LLC — Orlando, FL. All rights reserved.</p>
   <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
     <div class="footer-links">
       <a href="#">Privacy</a>
