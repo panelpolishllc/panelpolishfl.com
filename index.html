@@ -8,6 +8,7 @@
 <meta name="description" content="Panel Polish LLC offers professional residential solar panel cleaning in Orlando, FL. Restore up to 30% lost efficiency. Fast service &amp; free quotes. Call (407) 625-8811."/>
 <meta name="keywords" content="solar panel cleaning Orlando, solar panel cleaning Florida, solar panel maintenance Orlando, dirty solar panels Orlando, solar cleaning service Central Florida, Panel Polish LLC"/>
 <meta name="author" content="Panel Polish LLC"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230d2347'/><text x='50' y='56' font-family='Arial Black,sans-serif' font-weight='900' font-size='42' fill='%23F5A623' text-anchor='middle' dominant-baseline='middle'>PP</text></svg>"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://www.panelpolishfl.com/"/>
 <meta property="og:type" content="website"/>
@@ -831,15 +832,15 @@
     .nav-cta { padding: 0.4rem 1rem; font-size: 0.85rem; }
  
     /* Hero */
-    .hero { padding: 80px 5% 50px; min-height: auto; flex-direction: column; justify-content: flex-start; align-items: center; overflow: visible; }
-    .hero h1 { font-size: 2.8rem; }
+    .hero { padding: 80px 5% 50px; min-height: auto; flex-direction: column; justify-content: flex-start; align-items: flex-start; overflow: visible; }
+    .hero h1 { font-size: 2.6rem; }
     .hero p { font-size: 1rem; max-width: 100%; }
-    .hero-buttons { flex-direction: column; }
+    .hero-content { max-width: 100%; }
+    .hero-buttons { flex-direction: column; width: 100%; }
     .hero-buttons a { text-align: center; width: 100%; }
-    .hero-stats { position: static; margin-top: 2.5rem; gap: 1.5rem; flex-wrap: wrap; }
+    #hero-cards { display: none !important; }
+    .hero-stats { position: static; margin-top: 2rem; gap: 1.2rem; flex-wrap: wrap; justify-content: flex-start; }
     .stat-num { font-size: 1.8rem; }
- 
-    /* Widget handled by its own internal media query */
  
     /* Strip */
     .strip { gap: 0.8rem; padding: 1rem 4%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
@@ -851,21 +852,18 @@
     /* Services */
     .services-grid { grid-template-columns: 1fr; }
  
-    /* About */
-    .how-inner,
-    div[style*="grid-template-columns:1fr 1fr"] { 
-      grid-template-columns: 1fr !important; 
-      gap: 2.5rem !important; 
-    }
- 
-    /* Stats grid in about */
-    div[style*="grid-template-columns:1fr 1fr"][style*="gap:1rem"] {
-      grid-template-columns: 1fr 1fr !important;
-    }
+    /* Consequences */
+    #climate-grid { grid-template-columns: 1fr !important; gap: 0.8rem !important; }
  
     /* How it works */
-    .how-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .panel-box { min-height: 220px; padding: 1.5rem; }
+    .how-inner { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .panel-box { min-height: 200px; padding: 1.5rem; }
+ 
+    /* About */
+    #about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    #about-stats { grid-template-columns: 1fr 1fr !important; gap: 0.8rem !important; }
+    #about-stats > div { padding: 1.2rem !important; }
+    #about-stats > div > div:first-child { font-size: 2.5rem !important; }
  
     /* Testimonials */
     .testi-grid { grid-template-columns: 1fr; }
@@ -874,11 +872,7 @@
     .pricing-grid { grid-template-columns: 1fr !important; }
     .pricing-card.featured { transform: scale(1); }
     .price { font-size: 2.8rem; }
- 
-    /* Recurring pricing grid */
-    div[style*="grid-template-columns:repeat(auto-fit,minmax(280px"] {
-      grid-template-columns: 1fr !important;
-    }
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(280px"] { grid-template-columns: 1fr !important; }
  
     /* Add-on banner */
     div[style*="display:flex; align-items:center; justify-content:space-between"] {
@@ -886,13 +880,19 @@
       text-align: center !important;
     }
  
+    /* Equipment */
+    #tucker-box { flex-direction: column !important; text-align: center !important; gap: 1.5rem !important; padding: 1.5rem !important; }
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(240px"] { grid-template-columns: 1fr !important; }
+ 
     /* FAQ */
     details { padding: 1rem 1.2rem !important; }
  
     /* Contact */
-    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
     .form-row { grid-template-columns: 1fr; }
     .form-card { padding: 1.5rem; }
+    #contact-socials { flex-direction: column !important; }
+    #contact-socials a { justify-content: center; }
  
     /* Footer */
     footer { flex-direction: column; text-align: center; gap: 0.8rem; }
@@ -900,17 +900,28 @@
  
     /* Section titles */
     .section-title { font-size: 2rem; }
+ 
+    /* Consequences section callout box flex */
+    div[style*="display:flex; align-items:flex-start; gap:2rem"] { flex-direction: column !important; gap: 1.5rem !important; }
+    div[style*="flex-shrink:0; text-align:center"] { flex-shrink: unset !important; }
   }
  
   @media (max-width: 480px) {
-    .hero h1 { font-size: 2.2rem; }
-    .nav-links { gap: 0.4rem; }
-    .section-title { font-size: 1.8rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 0.95rem; }
+    .section-title { font-size: 1.75rem; }
     .hero-stats { gap: 1rem; }
     .stat-num { font-size: 1.5rem; }
+    .stat-label { font-size: 0.7rem; }
     .strip { gap: 0.6rem; }
     .btn-primary, .btn-outline { padding: 0.9rem 1.5rem; font-size: 0.95rem; }
-    .step-num { font-size: 2.2rem; }
+    .step-num { font-size: 2rem; }
+    .testi-card { padding: 1.4rem; }
+    .pricing-card { padding: 1.8rem 1.4rem; }
+    .price { font-size: 2.4rem; }
+    #about-stats > div > div:first-child { font-size: 2rem !important; }
+    .form-card { padding: 1.2rem; }
+    details summary { font-size: 0.95rem !important; }
   }
 </style>
 </head>
@@ -1089,7 +1100,7 @@
         <div style="flex:1; min-width:260px;">
           <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1.3rem; text-transform:uppercase; color:var(--white); margin-bottom:0.8rem;">Central Florida's Climate Demands More</h3>
           <p style="color:rgba(255,255,255,0.55); font-size:0.93rem; line-height:1.8; margin-bottom:0.8rem;">The national recommendation of once per year is not enough for Central Florida. For homes in Orange, Lake, Seminole, and Polk counties, experts recommend 2–4 cleanings per year based on local conditions:</p>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem;">
+          <div id="climate-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem;">
             <div style="display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.6); font-size:0.85rem;"><span style="color:var(--gold); font-weight:700;">☀</span> Spring pollen season coats panels in polymerizing oak pollen</div>
             <div style="display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.6); font-size:0.85rem;"><span style="color:var(--gold); font-weight:700;">⛈</span> Summer storms deposit mineral-rich debris that dries hard</div>
             <div style="display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.6); font-size:0.85rem;"><span style="color:var(--gold); font-weight:700;">💧</span> High humidity causes pollen and dust to cake rather than blow off</div>
@@ -1195,12 +1206,12 @@
  
 <!-- ABOUT US -->
 <section style="background:var(--off-white); padding:90px 5%;" id="about">
-  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
+  <div id="about-grid" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
  
     <!-- Left: Stats & Visual -->
     <div>
       <!-- Big stat cards -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem;">
+      <div id="about-stats" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem;">
         <div style="background:var(--navy); border-radius:12px; padding:1.8rem; text-align:center; border:1px solid rgba(245,166,35,0.2);">
           <div style="font-family:'Barlow Condensed',sans-serif; font-size:3.5rem; font-weight:900; color:var(--gold); line-height:1;">5+</div>
           <div style="color:rgba(255,255,255,0.7); font-size:0.85rem; letter-spacing:2px; text-transform:uppercase; margin-top:0.3rem;">Years in Solar</div>
@@ -1519,7 +1530,7 @@ function showPricing(type) {
       <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.2rem,4vw,3.2rem); text-transform:uppercase; color:var(--white); line-height:1; margin-bottom:1rem;">We Use the Best.<br><span style="color:var(--gold);">So Your Panels Get the Best.</span></h2>
       <p style="color:rgba(255,255,255,0.55); font-size:1.05rem; line-height:1.7; max-width:580px; margin:0 auto;">The equipment we show up with is a direct reflection of the service we deliver. We invested in professional-grade Tucker® systems so every homeowner we serve gets the best possible result.</p>
     </div>
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.3); border-radius:16px; padding:2.5rem; margin-bottom:2rem; display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap;">
+    <div id="tucker-box" style="background:rgba(255,255,255,0.04); border:1px solid rgba(245,166,35,0.3); border-radius:16px; padding:2.5rem; margin-bottom:2rem; display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap;">
       <div style="flex-shrink:0; background:var(--gold); border-radius:12px; padding:1.2rem 2rem; text-align:center;">
         <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:2.2rem; color:var(--navy); letter-spacing:2px; line-height:1;">TUCKER®</div>
         <div style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--navy); text-transform:uppercase; margin-top:2px;">Est. 1957 · Made in USA</div>
@@ -1628,7 +1639,7 @@ function showPricing(type) {
           <div class="contact-item-icon">📍</div>
           <span>Serving Orlando, FL & Surrounding Areas</span>
         </div>
-        <div style="display:flex; gap:1rem; margin-top:0.5rem;">
+        <div id="contact-socials" style="display:flex; gap:1rem; margin-top:0.5rem; flex-wrap:wrap;">
           <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank" style="display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); padding:0.5rem 1rem; border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.5)'; this.style.color='#F5A623'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.color='rgba(255,255,255,0.7)'">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
