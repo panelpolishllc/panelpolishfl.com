@@ -62,7 +62,7 @@
     --gold: #F5A623;
     --gold-light: #FFD040;
     --white: #ffffff;
-    --off-white: #fdfaf7;
+    --off-white: #f5f8fc;
     --text: #1a1a2e;
     --muted: #5a6a80;
     --border: #dce6f0;
@@ -78,6 +78,7 @@
     background: var(--white);
     overflow-x: hidden;
   }
+ 
  
   /* ── NAV ── */
   nav {
@@ -221,7 +222,7 @@
     animation: fadeUp 0.9s 0.2s ease both;
   }
  
-  .hero h1 .accent { color: var(--gold); display: block; }
+  .hero h1 .accent { color: var(--gold); display: block; font-family: "Barlow Condensed", sans-serif; }
  
   .hero p {
     color: rgba(255,255,255,0.7);
@@ -929,7 +930,7 @@
  
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Panel<span>Polish</span> LLC</div>
+  <div class="nav-logo"><img src="horizontal.logo.png" alt="Panel Polish LLC" style="height:44px; width:auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><span style="display:none;">Panel<span style="color:var(--gold)">Polish</span> LLC</span></div>
     <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#consequences">Why It Matters</a></li>
@@ -944,7 +945,7 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-badge">☀ Locally Owned · Orlando, FL</div>
+    <div class="hero-badge">☀️ Locally Owned · Orlando, FL</div>
     <h1>
       Your Panels Work Hard.
       <span class="accent">We Keep Them Clean.</span>
@@ -986,6 +987,8 @@
  
     </div>
   </div>
+ 
+ 
  
   <!-- Bottom stats -->
   <div class="hero-stats">
@@ -1053,7 +1056,7 @@
     <!-- Header -->
     <div style="text-align:center; margin-bottom:3.5rem;">
       <div style="font-size:0.75rem; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">The Hidden Risk</div>
-      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.2rem,4vw,3.2rem); text-transform:uppercase; color:var(--white); line-height:1.05; margin-bottom:1rem;">What Happens When Florida<br><span style="color:var(--gold);">Panels Go Uncleaned</span></h2>
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.2rem,4vw,3.2rem); text-transform:uppercase; color:var(--white); line-height:1; margin-bottom:1rem;">What Happens When Florida<br><span style="color:var(--gold);">Panels Go Uncleaned</span></h2>
       <p style="color:rgba(255,255,255,0.5); font-size:1.05rem; line-height:1.7; max-width:600px; margin:0 auto;">Most homeowners don't realize how much Florida's climate affects their panels. The good news is it's an easy fix. Here's what to know.</p>
     </div>
  
@@ -1710,7 +1713,7 @@ function showPricing(type) {
  
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Panel<span>Polish</span> LLC</div>
+  <div class="footer-logo"><img src="horizontal.logo.png" alt="Panel Polish LLC" style="height:36px; width:auto; filter:brightness(1.1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><span style="display:none;">Panel<span style="color:var(--gold)">Polish</span> LLC</span></div>
   <p>© 2026 Panel Polish LLC, Orlando, FL. All rights reserved.</p>
   <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
     <div class="footer-links">
