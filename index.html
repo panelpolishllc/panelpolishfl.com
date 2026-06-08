@@ -1599,7 +1599,7 @@ function showWindow(type) {
           <div style="color:rgba(255,255,255,0.4); font-size:0.85rem; margin-bottom:0.3rem;">per month</div>
           <div id="result-savings" style="display:inline-block; background:rgba(255,179,0,0.15); border:1px solid rgba(255,179,0,0.3); border-radius:50px; padding:0.3rem 1rem; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.85rem; color:var(--gold); margin-bottom:1.5rem;"></div>
           <div id="result-annual" style="color:rgba(255,255,255,0.35); font-size:0.82rem; margin-bottom:1.5rem;"></div>
-          <a href="#contact" style="display:block; background:linear-gradient(135deg,var(--gold),var(--gold2,#FF8C00)); color:var(--navy); padding:1rem; border-radius:50px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none;">Get Started</a>
+          <a id="stripe-get-started" href="#" target="_blank" style="display:block; background:linear-gradient(135deg,var(--gold),var(--gold2,#FF8C00)); color:var(--navy); padding:1rem; border-radius:50px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none;">Subscribe Now</a>
         </div>
       </div>
  
@@ -1611,6 +1611,8 @@ function showWindow(type) {
 </section>
  
 <script>
+var stripeLinks = [["https://buy.stripe.com/5kQ6oHe8G6VPbZd9z718c00", "https://buy.stripe.com/14A28rggO4NHd3h5iR18c01", "https://buy.stripe.com/9B6cN5d4C3JDe7l12B18c02"], ["https://buy.stripe.com/8x29ATe8G1Bv2oD8v318c03", "https://buy.stripe.com/eVq28r9Sq2Fzd3h7qZ18c04", "https://buy.stripe.com/7sY4gz1lU93X4wL26F18c05"], ["https://buy.stripe.com/3cI00jfcKfslfbp4eN18c06", "https://buy.stripe.com/00w6oHd4C5RL2oDcLj18c07", "https://buy.stripe.com/14AfZhc0y5RL5AP3aJ18c08"], ["https://buy.stripe.com/00w3cv0hQ6VPaV926F18c09", "https://buy.stripe.com/8x2fZhc0y2Fz5APeTr18c0a", "https://buy.stripe.com/cNi8wP8Omeoh8N13aJ18c0b"], ["https://buy.stripe.com/bJe28raWu1Bv3sH7qZ18c0c", "https://buy.stripe.com/cNi5kD0hQbc5gftdPn18c0d", "https://buy.stripe.com/4gM3cvfcK5RL8N1dPn18c0e"], ["https://buy.stripe.com/5kQ8wPggO7ZTd3h7qZ18c0f", "https://buy.stripe.com/aFa28r0hQ93Xe7l3aJ18c0g", "https://buy.stripe.com/cNifZh3u2eoh0gv4eN18c0h"]];
+var freqIndex = {'1x':0,'2x':1,'4x':2};
 var monthlyPrices = {
   '1x': [13.99, 16.99, 19.99, 23.99, 29.99, 33.99],
   '2x': [26.99, 33.99, 39.99, 46.99, 59.99, 66.99],
@@ -1673,6 +1675,8 @@ function updateMonthly() {
   document.getElementById('result-annual').textContent = '$' + annual + ' billed monthly over 12 months';
   result.style.display = 'block';
   placeholder.style.display = 'none';
+  var link = document.getElementById('stripe-get-started');
+  if (link) link.href = stripeLinks[idx][freqIndex[currentFreq]];
 }
 </script>
 <!-- FAQ -->
