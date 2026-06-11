@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +103,7 @@
   ]
 }
 </script>
- 
+
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -119,19 +118,19 @@
     --muted: #5a6a80;
     --border: #dce6f0;
   }
- 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body {
     font-family: 'Barlow', sans-serif;
     color: var(--text);
     background: var(--white);
     overflow-x: hidden;
   }
- 
- 
+
+
   /* ── NAV ── */
   nav {
     position: fixed;
@@ -146,7 +145,7 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(245,166,35,0.2);
   }
- 
+
   .nav-logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -155,7 +154,7 @@
     color: var(--white);
   }
   .nav-logo span { color: var(--gold); }
- 
+
   .nav-links {
     display: flex;
     gap: 2.5rem;
@@ -171,7 +170,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold); }
- 
+
   .nav-cta {
     background: var(--gold);
     color: var(--navy) !important;
@@ -181,7 +180,7 @@
     transition: background 0.2s, transform 0.2s !important;
   }
   .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
- 
+
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
@@ -192,7 +191,7 @@
     position: relative;
     overflow: hidden;
   }
- 
+
   /* Animated sun rays background */
   .hero::before {
     content: '';
@@ -220,7 +219,7 @@
     border-radius: 50%;
     animation: spin 30s linear infinite;
   }
- 
+
   .hero::after {
     content: '';
     position: absolute;
@@ -232,21 +231,21 @@
     border-radius: 50%;
     pointer-events: none;
   }
- 
+
   @keyframes spin { to { transform: rotate(360deg); } }
- 
+
   .hero-content {
     position: relative;
     z-index: 2;
     max-width: 620px;
     animation: fadeUp 0.9s ease both;
   }
- 
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
   }
- 
+
   .hero-badge {
     display: inline-block;
     background: rgba(245,166,35,0.15);
@@ -261,7 +260,7 @@
     margin-bottom: 1.5rem;
     animation: fadeUp 0.9s 0.1s ease both;
   }
- 
+
   .hero h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -273,9 +272,9 @@
     margin-bottom: 1.2rem;
     animation: fadeUp 0.9s 0.2s ease both;
   }
- 
+
   .hero h1 .accent { color: var(--gold); display: block; font-family: "Barlow Condensed", sans-serif; }
- 
+
   .hero p {
     color: rgba(255,255,255,0.7);
     font-size: 1.15rem;
@@ -284,14 +283,14 @@
     max-width: 480px;
     animation: fadeUp 0.9s 0.3s ease both;
   }
- 
+
   .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     animation: fadeUp 0.9s 0.4s ease both;
   }
- 
+
   .btn-primary {
     background: var(--gold);
     color: var(--navy);
@@ -305,7 +304,7 @@
     display: inline-block;
   }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.35); }
- 
+
   .btn-outline {
     border: 2px solid rgba(255,255,255,0.3);
     color: var(--white);
@@ -318,7 +317,7 @@
     display: inline-block;
   }
   .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
- 
+
   .hero-stats {
     position: absolute;
     bottom: 50px;
@@ -328,7 +327,7 @@
     animation: fadeUp 0.9s 0.6s ease both;
     z-index: 2;
   }
- 
+
   .stat-item { color: var(--white); }
   .stat-num {
     font-family: 'Barlow Condensed', sans-serif;
@@ -344,7 +343,7 @@
     text-transform: uppercase;
     margin-top: 2px;
   }
- 
+
   /* Solar panel SVG illustration positioned in hero */
   .hero-visual {
     position: absolute;
@@ -355,7 +354,7 @@
     animation: fadeUp 0.9s 0.35s ease both;
     z-index: 2;
   }
- 
+
   /* ── WHY US STRIP ── */
   .strip {
     background: var(--gold);
@@ -366,7 +365,7 @@
     gap: 3rem;
     flex-wrap: wrap;
   }
- 
+
   .strip-item {
     display: flex;
     align-items: center;
@@ -378,12 +377,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
- 
+
   .strip-icon { font-size: 1.3rem; }
- 
+
   /* ── SECTION BASE ── */
   section { padding: 90px 5%; }
- 
+
   .section-label {
     font-size: 0.75rem;
     font-weight: 700;
@@ -392,7 +391,7 @@
     color: var(--sky);
     margin-bottom: 0.8rem;
   }
- 
+
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -401,22 +400,22 @@
     line-height: 1.05;
     margin-bottom: 1rem;
   }
- 
+
   .section-title span { color: var(--gold); }
- 
+
   .section-sub {
     color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.7;
     max-width: 520px;
   }
- 
+
   /* ── SERVICES ── */
   .services { background: var(--off-white); }
- 
+
   .services-header { text-align: center; margin-bottom: 3.5rem; }
   .services-header .section-sub { margin: 0 auto; }
- 
+
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -424,7 +423,7 @@
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
   .service-card {
     background: var(--white);
     border-radius: 12px;
@@ -434,7 +433,7 @@
     position: relative;
     overflow: hidden;
   }
- 
+
   .service-card::before {
     content: '';
     position: absolute;
@@ -445,10 +444,10 @@
     transform-origin: left;
     transition: transform 0.3s;
   }
- 
+
   .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(13,35,71,0.1); }
   .service-card:hover::before { transform: scaleX(1); }
- 
+
   .service-icon {
     width: 52px;
     height: 52px;
@@ -460,7 +459,7 @@
     font-size: 1.6rem;
     margin-bottom: 1.2rem;
   }
- 
+
   .service-card h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
@@ -470,12 +469,12 @@
     color: var(--navy);
     margin-bottom: 0.7rem;
   }
- 
+
   .service-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
- 
+
   /* ── HOW IT WORKS ── */
   .how { background: var(--white); }
- 
+
   .how-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -484,15 +483,15 @@
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
   .steps { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.8rem; }
- 
+
   .step {
     display: flex;
     gap: 1.2rem;
     align-items: flex-start;
   }
- 
+
   .step-num {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -502,9 +501,9 @@
     min-width: 48px;
     transition: color 0.3s;
   }
- 
+
   .step:hover .step-num { color: var(--gold); }
- 
+
   .step-body h4 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
@@ -514,9 +513,9 @@
     margin-bottom: 0.3rem;
     letter-spacing: 0.5px;
   }
- 
+
   .step-body p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
- 
+
   /* Panel illustration box */
   .panel-box {
     background: linear-gradient(135deg, #0d2347 0%, #1a3a6e 100%);
@@ -529,7 +528,7 @@
     overflow: hidden;
     min-height: 380px;
   }
- 
+
   .panel-box::after {
     content: '';
     position: absolute;
@@ -540,7 +539,7 @@
     background: radial-gradient(circle, rgba(245,166,35,0.2) 0%, transparent 70%);
     border-radius: 50%;
   }
- 
+
   .efficiency-badge {
     position: absolute;
     bottom: 24px;
@@ -555,17 +554,17 @@
     text-align: center;
     line-height: 1.2;
   }
- 
+
   /* ── TESTIMONIALS ── */
   .testimonials { background: var(--navy); }
- 
+
   .testimonials .section-label { color: var(--gold); }
   .testimonials .section-title { color: var(--white); }
   .testimonials .section-sub { color: rgba(255,255,255,0.55); }
- 
+
   .testi-header { text-align: center; margin-bottom: 3.5rem; }
   .testi-header .section-sub { margin: 0 auto; }
- 
+
   .testi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -573,7 +572,7 @@
     max-width: 1000px;
     margin: 0 auto;
   }
- 
+
   .testi-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -581,11 +580,11 @@
     padding: 2rem;
     transition: all 0.3s;
   }
- 
+
   .testi-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
- 
+
   .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
- 
+
   .testi-card p {
     color: rgba(255,255,255,0.8);
     font-size: 0.98rem;
@@ -593,13 +592,13 @@
     font-style: italic;
     margin-bottom: 1.5rem;
   }
- 
+
   .testi-author {
     display: flex;
     align-items: center;
     gap: 0.8rem;
   }
- 
+
   .avatar {
     width: 42px;
     height: 42px;
@@ -613,15 +612,15 @@
     color: white;
     font-size: 1rem;
   }
- 
+
   .author-info strong { display: block; color: white; font-size: 0.9rem; }
   .author-info span { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
- 
+
   /* ── PRICING ── */
   .pricing { background: var(--off-white); }
   .pricing-header { text-align: center; margin-bottom: 3.5rem; }
   .pricing-header .section-sub { margin: 0 auto; }
- 
+
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -629,7 +628,7 @@
     max-width: 900px;
     margin: 0 auto;
   }
- 
+
   .pricing-card {
     background: var(--white);
     border-radius: 14px;
@@ -638,14 +637,14 @@
     text-align: center;
     transition: all 0.3s;
   }
- 
+
   .pricing-card.featured {
     border-color: var(--gold);
     background: var(--navy);
   }
- 
+
   .pricing-card:hover { box-shadow: 0 16px 40px rgba(13,35,71,0.12); }
- 
+
   .plan-label {
     font-size: 0.75rem;
     font-weight: 700;
@@ -654,9 +653,9 @@
     color: var(--sky);
     margin-bottom: 0.5rem;
   }
- 
+
   .pricing-card.featured .plan-label { color: var(--gold); }
- 
+
   .plan-name {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -665,9 +664,9 @@
     color: var(--navy);
     margin-bottom: 1.2rem;
   }
- 
+
   .pricing-card.featured .plan-name { color: var(--white); }
- 
+
   .price {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 3.5rem;
@@ -676,12 +675,12 @@
     line-height: 1;
     margin-bottom: 0.3rem;
   }
- 
+
   .pricing-card.featured .price { color: var(--gold); }
- 
+
   .price-note { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
   .pricing-card.featured .price-note { color: rgba(255,255,255,0.5); }
- 
+
   .plan-features { list-style: none; margin-bottom: 2rem; text-align: left; }
   .plan-features li {
     padding: 0.5rem 0;
@@ -692,10 +691,10 @@
     align-items: center;
     gap: 0.5rem;
   }
- 
+
   .pricing-card.featured .plan-features li { border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
   .plan-features li::before { content: '✓'; color: var(--gold); font-weight: 700; }
- 
+
   .btn-plan {
     display: block;
     width: 100%;
@@ -712,23 +711,23 @@
     background: transparent;
     cursor: pointer;
   }
- 
+
   .pricing-card.featured .btn-plan {
     background: var(--gold);
     border-color: var(--gold);
     color: var(--navy);
   }
- 
+
   .btn-plan:hover { background: var(--navy); color: white; }
   .pricing-card.featured .btn-plan:hover { background: var(--gold-light); border-color: var(--gold-light); }
- 
+
   /* ── CONTACT ── */
   .contact {
     background: linear-gradient(135deg, #061525, #0d2347);
     position: relative;
     overflow: hidden;
   }
- 
+
   .contact::before {
     content: '';
     position: absolute;
@@ -739,7 +738,7 @@
     background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
     border-radius: 50%;
   }
- 
+
   .contact-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -750,12 +749,12 @@
     position: relative;
     z-index: 2;
   }
- 
+
   .contact .section-label { color: var(--gold); }
   .contact .section-title { color: var(--white); }
- 
+
   .contact-info { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
- 
+
   .contact-item {
     display: flex;
     align-items: center;
@@ -763,7 +762,7 @@
     color: rgba(255,255,255,0.75);
     font-size: 0.95rem;
   }
- 
+
   .contact-item-icon {
     width: 40px;
     height: 40px;
@@ -776,18 +775,18 @@
     font-size: 1.1rem;
     flex-shrink: 0;
   }
- 
+
   .form-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 14px;
     padding: 2.5rem;
   }
- 
+
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
- 
+
   .form-group { margin-bottom: 1.2rem; }
- 
+
   .form-group label {
     display: block;
     color: rgba(255,255,255,0.6);
@@ -797,7 +796,7 @@
     text-transform: uppercase;
     margin-bottom: 0.4rem;
   }
- 
+
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -812,18 +811,18 @@
     transition: border-color 0.2s;
     outline: none;
   }
- 
+
   .form-group input::placeholder,
   .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
- 
+
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus { border-color: var(--gold); }
- 
+
   .form-group select option { background: var(--navy); }
- 
+
   .form-group textarea { resize: vertical; min-height: 90px; }
- 
+
   .btn-submit {
     width: 100%;
     background: var(--gold);
@@ -840,9 +839,9 @@
     transition: all 0.2s;
     margin-top: 0.5rem;
   }
- 
+
   .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
- 
+
   /* ── FOOTER ── */
   footer {
     background: #040e1e;
@@ -854,7 +853,7 @@
     gap: 1rem;
     border-top: 1px solid rgba(255,255,255,0.06);
   }
- 
+
   .footer-logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -862,9 +861,9 @@
     color: white;
   }
   .footer-logo span { color: var(--gold); }
- 
+
   footer p { color: rgba(255,255,255,0.3); font-size: 0.85rem; }
- 
+
   .footer-links { display: flex; gap: 1.5rem; }
   .footer-links a {
     color: rgba(255,255,255,0.4);
@@ -873,7 +872,7 @@
     transition: color 0.2s;
   }
   .footer-links a:hover { color: var(--gold); }
- 
+
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     /* Nav */
@@ -883,7 +882,7 @@
     .nav-links li { display: none; }
     .nav-links li:last-child { display: block; }
     .nav-cta { padding: 0.4rem 1rem; font-size: 0.85rem; }
- 
+
     /* Hero */
     .hero { padding: 80px 5% 50px; min-height: auto; flex-direction: column; justify-content: flex-start; align-items: flex-start; overflow: visible; }
     .hero h1 { font-size: 2.6rem; }
@@ -894,71 +893,71 @@
     #hero-cards { display: none !important; }
     .hero-stats { position: static; margin-top: 2rem; gap: 1.2rem; flex-wrap: wrap; justify-content: flex-start; }
     .stat-num { font-size: 1.8rem; }
- 
+
     /* Strip */
     .strip { gap: 0.8rem; padding: 1rem 4%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
     .strip-item { white-space: nowrap; font-size: 0.8rem; }
- 
+
     /* Sections */
     section { padding: 50px 5%; }
- 
+
     /* Services */
     .services-grid { grid-template-columns: 1fr; }
- 
+
     /* Consequences */
     #climate-grid { grid-template-columns: 1fr !important; gap: 0.8rem !important; }
- 
+
     /* How it works */
     .how-inner { grid-template-columns: 1fr !important; gap: 2rem !important; }
     .panel-box { min-height: 200px; padding: 1.5rem; }
- 
+
     /* About */
     #about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
     #about-stats { grid-template-columns: 1fr 1fr !important; gap: 0.8rem !important; }
     #about-stats > div { padding: 1.2rem !important; }
     #about-stats > div > div:first-child { font-size: 2.5rem !important; }
- 
+
     /* Testimonials */
     .testi-grid { grid-template-columns: 1fr; }
- 
+
     /* Pricing */
     .pricing-grid { grid-template-columns: 1fr !important; }
     .pricing-card.featured { transform: scale(1); }
     .price { font-size: 2.8rem; }
     div[style*="grid-template-columns:repeat(auto-fit,minmax(280px"] { grid-template-columns: 1fr !important; }
- 
+
     /* Add-on banner */
     div[style*="display:flex; align-items:center; justify-content:space-between"] {
       flex-direction: column !important;
       text-align: center !important;
     }
- 
+
     /* Equipment */
     #tucker-box { flex-direction: column !important; text-align: center !important; gap: 1.5rem !important; padding: 1.5rem !important; }
     div[style*="grid-template-columns:repeat(auto-fit,minmax(240px"] { grid-template-columns: 1fr !important; }
- 
+
     /* FAQ */
     details { padding: 1rem 1.2rem !important; }
- 
+
     /* Contact */
     .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
     .form-row { grid-template-columns: 1fr; }
     .form-card { padding: 1.5rem; }
     #contact-socials { flex-direction: column !important; }
     #contact-socials a { justify-content: center; }
- 
+
     /* Footer */
     footer { flex-direction: column; text-align: center; gap: 0.8rem; }
     .footer-links { justify-content: center; }
- 
+
     /* Section titles */
     .section-title { font-size: 2rem; }
- 
+
     /* Consequences section callout box flex */
     div[style*="display:flex; align-items:flex-start; gap:2rem"] { flex-direction: column !important; gap: 1.5rem !important; }
     div[style*="flex-shrink:0; text-align:center"] { flex-shrink: unset !important; }
   }
- 
+
   @media (max-width: 480px) {
     .hero h1 { font-size: 2rem; }
     .hero p { font-size: 0.95rem; }
@@ -979,7 +978,7 @@
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo"><img src="horizontal.logo.png" alt="Panel Polish LLC - Solar Panel and Window Cleaning Orlando FL" style="height:68px; width:auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><span style="display:none;">Panel<span style="color:var(--gold)">Polish</span> LLC</span></div>
@@ -993,7 +992,7 @@
     <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="nav-cta">Book Now</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
@@ -1003,17 +1002,26 @@
       <span class="accent">Orlando, FL</span>
     </h1>
     <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:1rem;text-transform:uppercase;">Your Panels Work Hard. We Keep Them Clean.</p>
-    <p>Solar panels in Florida don't stay clean for long. Between the pollen, the humidity, and the afternoon storms, most panels quietly lose 20–30% of their output. We fix that. Fast, safe, and no harsh chemicals.</p>
+    <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.2rem; animation:fadeUp 0.9s 0.28s ease both;">
+      <div style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:50px; padding:0.35rem 0.9rem; font-size:0.8rem; color:rgba(255,255,255,0.75); white-space:nowrap;">
+        <span>⚡</span> Founded by Solar Industry Professionals
+      </div>
+      <div style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(255,179,0,0.1); border:1px solid rgba(255,179,0,0.3); border-radius:50px; padding:0.35rem 0.9rem; font-size:0.8rem; color:var(--gold); white-space:nowrap;">
+        <span>🛡</span> Warranty-Safe Cleaning
+      </div>
+    </div>
+    <p>Solar panels are a long-term investment. Florida's pollen, humidity, and storms can shorten that lifespan fast. Dirt and grime cause hot spots, accelerate wear, and risk voiding your warranty. We keep your system protected. Pure water only, no harsh chemicals, no damage.</p>
+
     <div class="hero-buttons">
       <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-primary">Book Now</a>
       <a href="#contact" class="btn-outline">Get a Free Quote</a>
     </div>
   </div>
- 
+
   <!-- Stat cards (right side) -->
   <div id="hero-cards" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; animation: fadeUp 0.9s 0.35s ease both;">
     <div style="display:flex; flex-direction:column; gap:1.2rem; width:260px;">
- 
+
       <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
         <div style="font-size:1.8rem; flex-shrink:0;">☀️</div>
         <div>
@@ -1021,7 +1029,7 @@
           <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">in the solar industry</div>
         </div>
       </div>
- 
+
       <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
         <div style="font-size:1.8rem; flex-shrink:0;">💧</div>
         <div>
@@ -1029,7 +1037,7 @@
           <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">pure water, no harsh chemicals</div>
         </div>
       </div>
- 
+
       <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.35); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
         <div style="font-size:1.8rem; flex-shrink:0;">📍</div>
         <div>
@@ -1037,12 +1045,12 @@
           <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">transparent, flat-rate pricing</div>
         </div>
       </div>
- 
+
     </div>
   </div>
- 
- 
- 
+
+
+
   <!-- Bottom stats -->
   <div class="hero-stats">
     <div class="stat-item">
@@ -1058,9 +1066,9 @@
       <div class="stat-label">Satisfaction Rate</div>
     </div>
   </div>
- 
+
 </section>
- 
+
 <!-- STRIP -->
 <div class="strip">
   <div class="strip-item"><span class="strip-icon">🛡</span> Insured & Licensed</div>
@@ -1069,7 +1077,7 @@
   <div class="strip-item"><span class="strip-icon">✅</span> No Harsh Chemicals</div>
   <div class="strip-item"><span class="strip-icon">📋</span> Free Inspection</div>
 </div>
- 
+
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header">
@@ -1088,7 +1096,7 @@
       <h3>Deep Clean & Restoration</h3>
       <p>Heavy-duty treatment for panels with stubborn mold, bird droppings, and hardened grime. Removes buildup that causes hot spots and permanent cell damage if left untreated.</p>
     </div>
- 
+
     <div class="service-card">
       <div class="service-icon">🔍</div>
       <h3>Panel Inspection</h3>
@@ -1106,11 +1114,11 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ABOUT US -->
 <section style="background:var(--off-white); padding:90px 5%;" id="about">
   <div id="about-grid" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
- 
+
     <!-- Left: Stats & Visual -->
     <div>
       <!-- Big stat cards -->
@@ -1133,7 +1141,7 @@
         </div>
       </div>
     </div>
- 
+
     <!-- Right: Story -->
     <div>
       <div style="margin-bottom:1.4rem;">
@@ -1144,7 +1152,7 @@
 <span>That’s why we started this.</span></h2>
       <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1.2rem;">Panel Polish was founded by solar industry professionals who understand what it takes to keep a system running at its best — and what happens when it goes unmaintained.</p>
       <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1rem;">We know what causes permanent cell damage, how to clean without voiding warranties, and what early signs of wear look like. When we show up, you're getting professionals who treat your system like the investment it is.</p>
- 
+
       <!-- Trust badges -->
       <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:2rem;">
         <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Solar Industry Veterans</div>
@@ -1152,13 +1160,13 @@
         <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Insured & Licensed</div>
         <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Pure Water System</div>
       </div>
- 
+
       <a href="#contact" class="btn-primary" style="display:inline-block; margin-top:2rem;">Get a Free Quote</a>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="reviews">
   <div class="testi-header">
@@ -1202,7 +1210,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="pricing-header">
@@ -1210,7 +1218,7 @@
     <h2 class="section-title">Simple <span>Plans</span></h2>
     <p class="section-sub">No hidden fees. No surprises. Just clean panels and more energy savings.</p>
   </div>
- 
+
   <!-- Toggle Buttons -->
   <div style="display:flex; justify-content:center; margin-bottom:3rem;">
     <div style="background:var(--border); border-radius:8px; padding:4px; display:inline-flex; gap:4px;">
@@ -1218,7 +1226,7 @@
       <button id="btn-recurring" onclick="showPricing('recurring')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Recurring Plans</button>
     </div>
   </div>
- 
+
   <!-- One-Time Pricing -->
   <div id="pricing-onetime" class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1100px;">
     <div class="pricing-card featured">
@@ -1320,18 +1328,18 @@
       <a href="#contact" class="btn-plan">Contact Us</a>
     </div>
   </div>
- 
+
   <!-- Recurring Pricing -->
   <div id="pricing-recurring" style="display:none; max-width:1100px; margin:0 auto;">
- 
+
     <!-- Savings banner -->
     <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
       <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">☀ Regular cleaning protects your panels, preserves your warranty, and extends system life. Save up to 12% with a recurring plan.</span>
     </div>
- 
+
     <!-- Recurring plan cards -->
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:2.5rem;">
- 
+
       <!-- Annual -->
       <div class="pricing-card">
         <div class="plan-label">Annual</div>
@@ -1352,7 +1360,7 @@
         </ul>
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
- 
+
       <!-- Bi-Annual — Featured (middle) -->
       <div class="pricing-card featured">
         <div class="plan-label">Most Popular ⭐</div>
@@ -1374,11 +1382,11 @@
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
     </div>
- 
+
     <!-- Note -->
     <p style="text-align:center; color:var(--muted); font-size:0.9rem; margin-top:1.5rem;">70+ panels? <a href="#contact" style="color:var(--blue);">Contact us</a> for a custom recurring quote. All plans are flexible, no long-term contracts required.</p>
   </div>
- 
+
   <!-- Add-on banner -->
   <div style="max-width:1100px; margin: 2rem auto 0; background:linear-gradient(135deg, var(--navy), var(--blue)); border-radius:12px; padding:2rem 2.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; border:1px solid rgba(245,166,35,0.3);">
     <div>
@@ -1392,13 +1400,13 @@
       <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" style="background:var(--gold); color:var(--navy); padding:0.7rem 1.8rem; border-radius:6px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; display:inline-block;">Book Now</a>
     </div>
   </div>
- 
+
   <!-- Two-story surcharge note -->
   <p style="text-align:center; color:var(--muted); font-size:0.9rem; max-width:700px; margin:1.5rem auto 0;">
     <strong style="color:var(--text);">Two-story homes:</strong> A $50 surcharge applies due to additional equipment and safety requirements.
   </p>
 </section>
- 
+
 <script>
 function showPricing(type) {
   document.getElementById('pricing-onetime').style.display = type === 'onetime' ? 'grid' : 'none';
@@ -1409,7 +1417,7 @@ function showPricing(type) {
   document.getElementById('btn-recurring').style.color = type === 'recurring' ? 'white' : 'var(--muted)';
 }
 </script>
- 
+
 <!-- WINDOW CLEANING PRICING -->
 <section style="background:var(--white); padding:90px 5%;" id="window-pricing">
   <div style="text-align:center; margin-bottom:3rem;">
@@ -1417,7 +1425,7 @@ function showPricing(type) {
     <h2 class="section-title">Window Cleaning <span>Pricing</span></h2>
     <p class="section-sub" style="margin:0 auto;">Streak-free exterior window cleaning using our pure water system. No harsh chemicals, no residue, no ladders scratching your frames.</p>
   </div>
- 
+
   <!-- Toggle -->
   <div style="display:flex; justify-content:center; margin-bottom:2.5rem;">
     <div style="background:var(--border); border-radius:8px; padding:4px; display:inline-flex; gap:4px;">
@@ -1425,7 +1433,7 @@ function showPricing(type) {
       <button id="wbtn-recurring" onclick="showWindow('recurring')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Recurring Plans</button>
     </div>
   </div>
- 
+
   <!-- One-Time -->
   <div id="window-onetime" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; max-width:900px; margin:0 auto;">
     <div class="pricing-card featured">
@@ -1453,14 +1461,14 @@ function showPricing(type) {
       <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a>
     </div>
   </div>
- 
+
   <!-- Recurring -->
   <div id="window-recurring" style="display:none; max-width:900px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
       <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">☀ Save up to 18% with a recurring window cleaning plan</span>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin-bottom:1.5rem;">
- 
+
       <!-- Annual -->
       <div class="pricing-card">
         <div class="plan-label">Annual</div>
@@ -1477,7 +1485,7 @@ function showPricing(type) {
         </ul>
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
- 
+
       <!-- Bi-Annual -->
       <div class="pricing-card featured">
         <div class="plan-label">Most Popular ⭐</div>
@@ -1497,12 +1505,12 @@ function showPricing(type) {
     </div>
     <p style="text-align:center; color:var(--muted); font-size:0.9rem;">All plans are flexible, no long-term contracts required.</p>
   </div>
- 
+
   <p style="text-align:center; color:var(--muted); font-size:0.9rem; max-width:700px; margin:1.5rem auto 0;">
     <strong style="color:var(--text);">Two-story homes:</strong> A $50 surcharge applies. 35+ windows? <a href="#contact" style="color:var(--blue);">Contact us</a> for a custom quote.
   </p>
 </section>
- 
+
 <script>
 function showWindow(type) {
   document.getElementById('window-onetime').style.display = type === 'onetime' ? 'grid' : 'none';
@@ -1513,14 +1521,14 @@ function showWindow(type) {
   document.getElementById('wbtn-recurring').style.color = type === 'recurring' ? 'white' : 'var(--muted)';
 }
 </script>
- 
+
 <!-- MONTHLY PLANS -->
 <section style="background:var(--navy); padding:90px 5%;" id="monthly-plans">
   <div style="max-width:700px; margin:0 auto; text-align:center;">
     <div style="font-size:0.72rem; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Best Value</div>
     <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.2rem,4vw,3.2rem); text-transform:uppercase; color:var(--white); line-height:1; margin-bottom:1rem;">Monthly <span style="color:var(--gold);">Payment Plans</span></h2>
     <p style="color:rgba(255,255,255,0.55); font-size:1.05rem; line-height:1.7; max-width:520px; margin:0 auto 2.5rem;">Pay monthly, we handle the scheduling. The most affordable way to keep your panels clean year-round.</p>
- 
+
     <!-- Panel count dropdown -->
     <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:2.5rem; max-width:560px; margin:0 auto;">
       <div style="margin-bottom:1.5rem; position:relative;">
@@ -1541,7 +1549,7 @@ function showWindow(type) {
           </div>
         </div>
       </div>
- 
+
       <!-- Price display — hidden until selection -->
       <div id="monthly-result" style="display:none;">
         <!-- Toggle -->
@@ -1550,7 +1558,7 @@ function showWindow(type) {
           <button onclick="setFreq('2x')" id="freq-2x" style="flex:1; padding:0.55rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.95rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:rgba(255,255,255,0.45); transition:all 0.2s;">2x / Year</button>
   
         </div>
- 
+
         <!-- Price card -->
         <div style="background:rgba(255,179,0,0.08); border:2px solid rgba(255,179,0,0.35); border-radius:14px; padding:2rem; text-align:center;">
           <div id="result-label" style="font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:0.5rem;"></div>
@@ -1561,14 +1569,14 @@ function showWindow(type) {
           <a id="stripe-get-started" href="#" target="_blank" style="display:block; background:linear-gradient(135deg,var(--gold),var(--gold2,#FF8C00)); color:var(--navy); padding:1rem; border-radius:50px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none;">Subscribe Now</a>
         </div>
       </div>
- 
+
       <p id="monthly-placeholder" style="color:rgba(255,255,255,0.2); font-size:0.9rem; margin-top:1rem; text-align:center;">Select your panel count to see your monthly rate</p>
     </div>
- 
+
     
   </div>
 </section>
- 
+
 <script>
 var stripeLinks = [["https://buy.stripe.com/5kQ6oHe8G6VPbZd9z718c00", "https://buy.stripe.com/14A28rggO4NHd3h5iR18c01"], ["https://buy.stripe.com/8x29ATe8G1Bv2oD8v318c03", "https://buy.stripe.com/eVq28r9Sq2Fzd3h7qZ18c04"], ["https://buy.stripe.com/3cI00jfcKfslfbp4eN18c06", "https://buy.stripe.com/00w6oHd4C5RL2oDcLj18c07"], ["https://buy.stripe.com/00w3cv0hQ6VPaV926F18c09", "https://buy.stripe.com/8x2fZhc0y2Fz5APeTr18c0a"], ["https://buy.stripe.com/bJe28raWu1Bv3sH7qZ18c0c", "https://buy.stripe.com/cNi5kD0hQbc5gftdPn18c0d"], ["https://buy.stripe.com/5kQ8wPggO7ZTd3h7qZ18c0f", "https://buy.stripe.com/aFa28r0hQ93Xe7l3aJ18c0g"]];
 var freqIndex = {'1x':0,'2x':1};
@@ -1578,7 +1586,7 @@ var monthlyPrices = {
 };
 var freqLabels = {'1x':'1x Per Year — 20% off','2x':'2x Per Year — 20% off'};
 var currentFreq = '1x';
- 
+
 function setFreq(f) {
   currentFreq = f;
   ['1x','2x'].forEach(function(t) {
@@ -1588,7 +1596,7 @@ function setFreq(f) {
   });
   updateMonthly();
 }
- 
+
 function toggleDropdown() {
   var list = document.getElementById('dropdown-list');
   var arrow = document.getElementById('dropdown-arrow');
@@ -1596,7 +1604,7 @@ function toggleDropdown() {
   list.style.display = isOpen ? 'none' : 'block';
   arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
 }
- 
+
 function selectOption(el, val) {
   document.getElementById('dropdown-label').textContent = el.textContent;
   document.getElementById('dropdown-label').style.color = 'white';
@@ -1608,16 +1616,16 @@ function selectOption(el, val) {
   currentPanelIdx = val;
   updateMonthly();
 }
- 
+
 document.addEventListener('click', function(e) {
   if (!document.getElementById('custom-dropdown').contains(e.target)) {
     document.getElementById('dropdown-list').style.display = 'none';
     document.getElementById('dropdown-arrow').style.transform = '';
   }
 });
- 
+
 var currentPanelIdx = '';
- 
+
 function updateMonthly() {
   var idx = currentPanelIdx;
   var result = document.getElementById('monthly-result');
@@ -1672,7 +1680,7 @@ function updateMonthly() {
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
@@ -1739,7 +1747,7 @@ function updateMonthly() {
     </script>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
@@ -1763,7 +1771,6 @@ function updateMonthly() {
     </div>
   </div>
 </footer>
- 
+
 </body>
 </html>
- 
