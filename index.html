@@ -52,17 +52,9 @@
   "email": "info@panelpolishfl.com",
   "priceRange": "$$",
   "description": "Professional solar panel and window cleaning in Orlando, FL and Central Florida. Pure water system, no chemicals, flat-rate pricing.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Orlando",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
+  "address": { "@type": "PostalAddress", "addressLocality": "Orlando", "addressRegion": "FL", "addressCountry": "US" },
   "areaServed": ["Orlando","Kissimmee","Winter Park","Oviedo","Lake Mary","Clermont","Altamonte Springs","Sanford","Central Florida"],
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61589395439971",
-    "https://g.page/r/CbQuO1cp9aIVEAI/review"
-  ]
+  "sameAs": ["https://www.facebook.com/profile.php?id=61589395439971","https://g.page/r/CbQuO1cp9aIVEAI/review"]
 }
 </script>
 <script type="application/ld+json">
@@ -70,7 +62,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "How often should I clean my solar panels in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Every 3-6 months. Florida humidity causes pollen to bond to panel glass and bird activity is year-round, so quarterly cleaning is recommended to stay ahead of buildup."}},
+    {"@type": "Question", "name": "How often should I clean my solar panels in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Every 6-12 months at minimum. Florida humidity causes pollen to bond to panel glass and harden over time."}},
     {"@type": "Question", "name": "Will cleaning actually improve my energy output?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Soiled panels can lose up to 30% of their output. Most customers see a measurable improvement within a few days of a professional clean."}},
     {"@type": "Question", "name": "Do you use any chemicals on my panels?", "acceptedAnswer": {"@type": "Answer", "text": "Never. We use only ultra-pure water (0 dissolved solids) and soft brushes made for solar panel glass. No soap, no detergents, nothing that could leave residue or void your manufacturer warranty."}},
     {"@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": {"@type": "Answer", "text": "We serve Orlando and greater Central Florida including Kissimmee, Sanford, Winter Park, Oviedo, Lake Mary, Clermont, Altamonte Springs, and surrounding areas."}}
@@ -99,10 +91,31 @@
     background: var(--white);
     overflow-x: hidden;
   }
+  /* TOPBAR */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 101;
+    height: 36px;
+    background: #061525;
+    border-bottom: 1px solid rgba(245,166,35,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .topbar-hours { display: flex; align-items: center; gap: 0.4rem; }
+  .topbar-socials { display: flex; align-items: center; gap: 1rem; }
+  .topbar-socials a { color: rgba(255,255,255,0.55); text-decoration: none; display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; transition: color 0.2s; }
+  .topbar-socials a:hover { color: var(--gold); }
+  @media (max-width: 600px) { .topbar { padding: 0 4%; font-size: 0.72rem; } .topbar .tb-label { display: none; } }
   /* NAV */
   nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 36px; left: 0; right: 0;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -129,9 +142,10 @@
   .nav-links a {
     color: rgba(255,255,255,0.8);
     text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
     font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: color 0.2s;
   }
@@ -142,7 +156,7 @@
     padding: 0.5rem 1.4rem;
     border-radius: 4px;
     font-weight: 700 !important;
-    transition: background 0.2s, transform 0.2s !important;
+    transition: background 0.2s !important;
   }
   .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
   /* HERO */
@@ -151,7 +165,7 @@
     background: linear-gradient(135deg, #061525 0%, #0d2347 45%, #1a3a6e 100%);
     display: flex;
     align-items: center;
-    padding: 100px 5% 60px;
+    padding: 136px 5% 60px;
     position: relative;
     overflow: hidden;
   }
@@ -161,168 +175,176 @@
     top: -100px; right: -100px;
     width: 700px; height: 700px;
     background: conic-gradient(from 0deg, transparent 0deg, rgba(245,166,35,0.07) 10deg, transparent 20deg, rgba(245,166,35,0.07) 30deg, transparent 40deg, rgba(245,166,35,0.07) 50deg, transparent 60deg, rgba(245,166,35,0.07) 70deg, transparent 80deg, rgba(245,166,35,0.07) 90deg, transparent 100deg, rgba(245,166,35,0.07) 110deg, transparent 120deg);
-    border-radius: 50%;
     animation: spin 30s linear infinite;
+    border-radius: 50%;
   }
   .hero::after {
     content: '';
     position: absolute;
-    top: 50px; right: 50px;
-    width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(245,166,35,0.18) 0%, transparent 70%);
+    bottom: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(30,74,158,0.3) 0%, transparent 70%);
     border-radius: 50%;
-    pointer-events: none;
   }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 620px;
-    animation: fadeUp 0.9s ease both;
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
   .hero-badge {
     display: inline-block;
     background: rgba(245,166,35,0.15);
     border: 1px solid rgba(245,166,35,0.4);
-    color: var(--gold);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 0.4rem 1rem;
     border-radius: 20px;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.9s 0.1s ease both;
+    padding: 0.35rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
   }
-  .hero h1 {
+  h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: clamp(3.2rem, 6vw, 5.5rem);
-    line-height: 0.95;
-    color: var(--white);
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
     text-transform: uppercase;
-    letter-spacing: -1px;
-    margin-bottom: 1.2rem;
-    animation: fadeUp 0.9s 0.2s ease both;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 1rem;
   }
-  .hero h1 .accent { color: var(--gold); display: block; font-family: "Barlow Condensed", sans-serif; }
-  .hero p {
-    color: rgba(255,255,255,0.7);
-    font-size: 1.15rem;
+  h1 .accent { color: var(--gold); display: block; }
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.1rem;
     line-height: 1.7;
-    margin-bottom: 2.5rem;
-    max-width: 480px;
-    animation: fadeUp 0.9s 0.3s ease both;
+    max-width: 540px;
+    margin-bottom: 0.6rem;
   }
-  .hero-buttons {
+  .hero-proof {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
-    animation: fadeUp 0.9s 0.4s ease both;
   }
+  .hero-proof-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.5px;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
     background: var(--gold);
     color: var(--navy);
-    padding: 1rem 2.2rem;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 1rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.5px;
     transition: all 0.2s;
     display: inline-block;
   }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.35); }
-  .btn-outline {
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245,166,35,0.3); }
+  .btn-secondary {
+    background: transparent;
+    color: white;
     border: 2px solid rgba(255,255,255,0.3);
-    color: var(--white);
-    padding: 1rem 2.2rem;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 1rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     text-decoration: none;
     transition: all 0.2s;
     display: inline-block;
   }
-  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  /* HERO STATS */
   .hero-stats {
-    position: absolute;
-    bottom: 50px; left: 5%;
     display: flex;
-    gap: 3rem;
-    animation: fadeUp 0.9s 0.6s ease both;
-    z-index: 2;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
   }
-  .stat-item { color: var(--white); }
-  .stat-num {
+  .hero-stat-num {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     color: var(--gold);
     line-height: 1;
   }
-  .stat-label {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.55);
+  .hero-stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-top: 2px;
+    margin-top: 0.2rem;
   }
   /* STRIP */
   .strip {
     background: var(--gold);
-    padding: 1.2rem 5%;
+    padding: 0.9rem 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .strip-item {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    color: var(--navy);
-    text-transform: uppercase;
+    font-size: 0.9rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
-  .strip-icon { font-size: 1.3rem; }
-  /* SECTION BASE */
-  section { padding: 90px 5%; }
+  .strip-icon { font-size: 1rem; }
+  /* SERVICES */
+  .services {
+    background: var(--off-white);
+    padding: 90px 5%;
+  }
+  .services-header { text-align: center; margin-bottom: 3.5rem; }
   .section-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--sky);
+    color: var(--gold);
     margin-bottom: 0.8rem;
   }
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-transform: uppercase;
     color: var(--navy);
-    line-height: 1.05;
-    margin-bottom: 1rem;
+    line-height: 1;
+    margin-bottom: 0.8rem;
   }
   .section-title span { color: var(--gold); }
   .section-sub {
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.7;
-    max-width: 520px;
+    max-width: 560px;
+    margin: 0 auto;
   }
-  /* SERVICES */
-  .services { background: var(--off-white); }
-  .services-header { text-align: center; margin-bottom: 3.5rem; }
-  .services-header .section-sub { margin: 0 auto; }
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -333,9 +355,9 @@
   .service-card {
     background: var(--white);
     border-radius: 12px;
-    padding: 2.2rem 1.8rem;
+    padding: 2.2rem 2rem;
     border: 1px solid var(--border);
-    transition: all 0.3s;
+    transition: all 0.25s;
     position: relative;
     overflow: hidden;
   }
@@ -344,244 +366,213 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--gold));
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
     transform: scaleX(0);
-    transform-origin: left;
     transition: transform 0.3s;
   }
-  .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(13,35,71,0.1); }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(13,35,71,0.1); border-color: rgba(245,166,35,0.3); }
   .service-card:hover::before { transform: scaleX(1); }
-  .service-icon {
-    width: 52px; height: 52px;
-    background: linear-gradient(135deg, var(--blue), var(--sky));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
-  }
+  .service-icon { font-size: 2.2rem; margin-bottom: 1rem; }
   .service-card h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--navy);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.6rem;
   }
   .service-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
-  /* TESTIMONIALS */
-  .testimonials { background: var(--navy); }
-  .testimonials .section-label { color: var(--gold); }
-  .testimonials .section-title { color: var(--white); }
-  .testimonials .section-sub { color: rgba(255,255,255,0.55); }
-  .testi-header { text-align: center; margin-bottom: 3.5rem; }
-  .testi-header .section-sub { margin: 0 auto; }
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .testi-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s;
-  }
-  .testi-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
-  .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
-  .testi-card p {
-    color: rgba(255,255,255,0.8);
-    font-size: 0.98rem;
-    line-height: 1.7;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
-  .avatar {
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), var(--sky));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    color: white;
-    font-size: 1rem;
-  }
-  .author-info strong { display: block; color: white; font-size: 0.9rem; }
-  .author-info span { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
   /* PRICING */
-  .pricing { background: var(--off-white); }
-  .pricing-header { text-align: center; margin-bottom: 3.5rem; }
-  .pricing-header .section-sub { margin: 0 auto; }
+  .pricing {
+    background: var(--navy);
+    padding: 90px 5%;
+  }
+  .pricing-header { text-align: center; margin-bottom: 3rem; }
+  .pricing-header .section-title { color: var(--white); }
+  .pricing-header .section-sub { color: rgba(255,255,255,0.55); }
   .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
   }
   .pricing-card {
-    background: var(--white);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 14px;
-    padding: 2.5rem 2rem;
-    border: 2px solid var(--border);
+    padding: 2rem 1.6rem;
     text-align: center;
-    transition: all 0.3s;
+    transition: all 0.25s;
+    position: relative;
   }
-  .pricing-card.featured { border-color: var(--gold); background: var(--navy); }
-  .pricing-card:hover { box-shadow: 0 16px 40px rgba(13,35,71,0.12); }
+  .pricing-card.featured {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(245,166,35,0.3);
+  }
+  .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); border-color: rgba(245,166,35,0.5); }
   .plan-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--sky);
+    color: var(--gold);
     margin-bottom: 0.5rem;
   }
-  .pricing-card.featured .plan-label { color: var(--gold); }
   .plan-name {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 1.8rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--white);
+    margin-bottom: 1rem;
     text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 1.2rem;
   }
-  .pricing-card.featured .plan-name { color: var(--white); }
   .price {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900;
-    color: var(--navy);
+    color: var(--gold);
     line-height: 1;
     margin-bottom: 0.3rem;
   }
-  .pricing-card.featured .price { color: var(--gold); }
-  .price-note { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
-  .pricing-card.featured .price-note { color: rgba(255,255,255,0.5); }
-  .plan-features { list-style: none; margin-bottom: 2rem; text-align: left; }
-  .plan-features li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .price-note { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-bottom: 1.2rem; }
+  .plan-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1.5rem;
   }
-  .pricing-card.featured .plan-features li { border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
-  .plan-features li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+  .plan-features li {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.88rem;
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
   .btn-plan {
     display: block;
-    width: 100%;
-    padding: 0.9rem;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.2s;
-    border: 2px solid var(--navy);
+    background: var(--gold);
     color: var(--navy);
-    background: transparent;
-    cursor: pointer;
-  }
-  .pricing-card.featured .btn-plan { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-  .btn-plan:hover { background: var(--navy); color: white; }
-  .pricing-card.featured .btn-plan:hover { background: var(--gold-light); border-color: var(--gold-light); }
-  /* GALLERY */
-  .gallery-card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(13,35,71,0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .gallery-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(13,35,71,0.14); }
-  .gallery-card img { width: 100%; display: block; border-radius: 16px; }
-  /* CONTACT */
-  .contact {
-    background: linear-gradient(135deg, #061525, #0d2347);
-    position: relative;
-    overflow: hidden;
-  }
-  .contact::before {
-    content: '';
-    position: absolute;
-    bottom: -150px; right: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-  .contact .section-label { color: var(--gold); }
-  .contact .section-title { color: var(--white); }
-  .contact-info { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
-  .contact-item { display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,0.75); font-size: 0.95rem; }
-  .contact-item-icon {
-    width: 40px; height: 40px;
-    background: rgba(245,166,35,0.15);
-    border: 1px solid rgba(245,166,35,0.3);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-  .form-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    padding: 2.5rem;
-  }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .form-group { margin-bottom: 1.2rem; }
-  .form-group label {
-    display: block;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.8rem;
-    font-weight: 600;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 0.4rem;
+    text-decoration: none;
+    transition: all 0.2s;
   }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
+  .btn-plan:hover { background: var(--gold-light); transform: translateY(-1px); }
+  /* TESTIMONIALS */
+  .testimonials { background: var(--off-white); padding: 90px 5%; }
+  .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all 0.25s;
+  }
+  .review-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(13,35,71,0.08); }
+  .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
+  .review-text { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
+  .review-author { display: flex; align-items: center; gap: 0.8rem; }
+  .review-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; color: var(--gold); font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .review-name { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
+  .review-source { font-size: 0.78rem; color: var(--muted); }
+  /* FAQ */
+  .faq-section { background: var(--white); padding: 90px 5%; }
+  .faq-header { text-align: center; margin-bottom: 3rem; }
+  .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.6rem; }
+  details {
+    background: var(--off-white);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  details[open] { border-color: rgba(245,166,35,0.4); }
+  details summary {
+    padding: 1.1rem 1.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem !important;
+    color: var(--navy);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.3px;
+  }
+  details summary::after { content: '+'; font-size: 1.4rem; color: var(--gold); font-weight: 300; transition: transform 0.2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details summary::-webkit-details-marker { display: none; }
+  .faq-body { padding: 0 1.4rem 1.2rem; color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
+  /* CONTACT */
+  .contact-section { background: var(--navy); padding: 90px 5%; }
+  .contact-header { text-align: center; margin-bottom: 3.5rem; }
+  .contact-header .section-title { color: var(--white); }
+  .contact-header .section-sub { color: rgba(255,255,255,0.55); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; max-width: 1000px; margin: 0 auto; }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-info-item { display: flex; gap: 0.8rem; align-items: flex-start; }
+  .contact-info-icon { font-size: 1.3rem; margin-top: 2px; }
+  .contact-info-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+  .contact-info-value { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+  .contact-info-value a { color: rgba(255,255,255,0.8); text-decoration: none; }
+  .contact-info-value a:hover { color: var(--gold); }
+  .contact-social-links { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+  .contact-social-link {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .contact-social-link:hover { background: rgba(245,166,35,0.15); border-color: rgba(245,166,35,0.4); color: var(--gold); }
+  .form-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-group label { font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .form-group input, .form-group select, .form-group textarea {
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 6px;
+    border-radius: 7px;
     padding: 0.8rem 1rem;
-    color: white;
+    color: var(--white);
     font-family: 'Barlow', sans-serif;
     font-size: 0.95rem;
     transition: border-color 0.2s;
     outline: none;
+    width: 100%;
   }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
   .form-group select option { background: var(--navy); }
   .form-group textarea { resize: vertical; min-height: 90px; }
   .btn-submit {
@@ -590,7 +581,7 @@
     color: var(--navy);
     border: none;
     padding: 1rem;
-    border-radius: 6px;
+    border-radius: 7px;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: 1.1rem;
@@ -600,75 +591,80 @@
     transition: all 0.2s;
     margin-top: 0.5rem;
   }
-  .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .form-divider { text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; margin: 1rem 0; }
+  .btn-book-alt {
+    display: block;
+    text-align: center;
+    background: transparent;
+    border: 2px solid rgba(245,166,35,0.5);
+    color: var(--gold);
+    padding: 0.85rem;
+    border-radius: 7px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-book-alt:hover { background: rgba(245,166,35,0.1); border-color: var(--gold); }
+  .form-success { display: none; text-align: center; padding: 1rem; background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); border-radius: 8px; color: var(--gold); font-weight: 600; margin-top: 1rem; }
+  /* GALLERY */
+  .gallery-section { background: var(--off-white); padding: 90px 5%; }
+  .gallery-header { text-align: center; margin-bottom: 3rem; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 1/1; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; display: block; }
+  .gallery-item:hover img { transform: scale(1.04); }
   /* FOOTER */
   footer {
-    background: #040e1e;
-    padding: 2rem 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    background: #061525;
+    padding: 2.5rem 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.07);
   }
-  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.3rem; color: white; }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+  }
   .footer-logo span { color: var(--gold); }
-  footer p { color: rgba(255,255,255,0.3); font-size: 0.85rem; }
-  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
   .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
-  /* MOBILE */
-  @media (max-width: 768px) {
+  .footer-copy { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+  /* ABOUT */
+  #about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  /* MONTHLY PLANS */
+  #monthly-plans { background: var(--navy); padding: 90px 5%; }
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links { gap: 1rem; }
+    .nav-links li:nth-child(1), .nav-links li:nth-child(2), .nav-links li:nth-child(5), .nav-links li:nth-child(6) { display: none; }
+    #about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
     nav { padding: 0 4%; height: 70px; }
     .nav-logo { font-size: 1.3rem; }
     .nav-links { gap: 0.5rem; }
     .nav-links li { display: none; }
     .nav-links li:last-child { display: block; }
-    .nav-cta { padding: 0.4rem 1rem; font-size: 0.85rem; }
-    .hero { padding: 80px 5% 50px; min-height: auto; flex-direction: column; justify-content: flex-start; align-items: flex-start; overflow: visible; }
-    .hero h1 { font-size: 2.6rem; }
-    .hero p { font-size: 1rem; max-width: 100%; }
-    .hero-content { max-width: 100%; }
-    .hero-buttons { flex-direction: column; width: 100%; }
-    .hero-buttons a { text-align: center; width: 100%; }
-    #hero-cards { display: none !important; }
-    .hero-stats { position: static; margin-top: 2rem; gap: 1.2rem; flex-wrap: wrap; justify-content: flex-start; }
-    .stat-num { font-size: 1.8rem; }
-    .strip { gap: 0.8rem; padding: 1rem 4%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
-    .strip-item { white-space: nowrap; font-size: 0.8rem; }
-    section { padding: 50px 5%; }
+    .hero { padding: 130px 5% 50px; }
     .services-grid { grid-template-columns: 1fr; }
-    #about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-    #about-stats { grid-template-columns: 1fr 1fr !important; gap: 0.8rem !important; }
-    #about-stats > div { padding: 1.2rem !important; }
-    #about-stats > div > div:first-child { font-size: 2.5rem !important; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr !important; }
-    .pricing-card.featured { transform: scale(1); }
-    .price { font-size: 2.8rem; }
-    #gallery-grid { grid-template-columns: 1fr !important; }
-    .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .form-row { grid-template-columns: 1fr; }
-    .form-card { padding: 1.5rem; }
-    footer { flex-direction: column; text-align: center; gap: 0.8rem; }
-    .footer-links { justify-content: center; }
-    .section-title { font-size: 2rem; }
-    div[style*="display:flex; align-items:center; justify-content:space-between"] { flex-direction: column !important; text-align: center !important; }
-    details { padding: 1rem 1.2rem !important; }
-    #contact-socials { flex-direction: column !important; }
-    #contact-socials a { justify-content: center; }
-  }
-  @media (max-width: 480px) {
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 0.95rem; }
-    .section-title { font-size: 1.75rem; }
-    .hero-stats { gap: 1rem; }
-    .stat-num { font-size: 1.5rem; }
-    .stat-label { font-size: 0.7rem; }
-    .strip { gap: 0.6rem; }
-    .btn-primary, .btn-outline { padding: 0.9rem 1.5rem; font-size: 0.95rem; }
-    .testi-card { padding: 1.4rem; }
+    .pricing-grid { grid-template-columns: 1fr 1fr; }
     .pricing-card { padding: 1.8rem 1.4rem; }
     .price { font-size: 2.4rem; }
     .form-card { padding: 1.2rem; }
@@ -677,6 +673,25 @@
 </style>
 </head>
 <body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-hours">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span class="tb-label">Mon – Fri&nbsp;&nbsp;</span><span>8:00 AM – 6:00 PM</span>
+  </div>
+  <div class="topbar-socials">
+    <a href="https://www.instagram.com/panelpolishllc" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </a>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo"><img src="horizontal.logo.png" alt="Panel Polish LLC - Solar Panel and Window Cleaning Orlando FL" style="height:68px; width:auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><span style="display:none;">Panel<span style="color:var(--gold)">Polish</span> LLC</span></div>
@@ -691,68 +706,49 @@
     <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="nav-cta">Book Now</a></li>
   </ul>
 </nav>
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-badge">☀️ Locally Owned · Orlando, FL</div>
+    <div class="hero-badge">&#9728;&#65039; Locally Owned &middot; Orlando, FL</div>
     <h1>
       Solar Panel &amp; Window Cleaning
       <span class="accent">Orlando, FL</span>
     </h1>
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:1rem;text-transform:uppercase;">Your Panels Work Hard. We Keep Them Clean.</p>
-    <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.2rem; animation:fadeUp 0.9s 0.28s ease both;">
-      <div style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:50px; padding:0.35rem 0.9rem; font-size:0.8rem; color:rgba(255,255,255,0.75); white-space:nowrap;">
-        <span>⚡</span> Founded by Solar Industry Professionals
-      </div>
-      <div style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(255,179,0,0.1); border:1px solid rgba(255,179,0,0.3); border-radius:50px; padding:0.35rem 0.9rem; font-size:0.8rem; color:var(--gold); white-space:nowrap;">
-        <span>🛡</span> Warranty-Safe Cleaning
-      </div>
+    <p class="hero-sub">Your Panels Work Hard. We Keep Them Clean.</p>
+    <div class="hero-proof">
+      <div class="hero-proof-badge">&#9889; Founded by Solar Industry Professionals</div>
+      <div class="hero-proof-badge">&#128737; Warranty-Safe Cleaning</div>
     </div>
-    <p>Solar panels are a long-term investment. Florida's pollen, humidity, and storms can shorten that lifespan fast. Dirt and grime cause hot spots, accelerate wear, and risk voiding your warranty. We keep your system protected. Pure water only, no harsh chemicals, no damage.</p>
-    <div class="hero-buttons">
+    <p style="color:rgba(255,255,255,0.55); font-size:0.95rem; line-height:1.7; max-width:520px; margin-bottom:2rem;">Solar panels are a long-term investment. Florida's pollen, humidity, and storms can shorten that lifespan fast. Dirt and grime cause hot spots, accelerate wear, and risk voiding your warranty. We keep your system protected. Pure water only, no harsh chemicals, no damage.</p>
+    <div class="hero-btns">
       <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-primary">Book Now</a>
-      <a href="#contact" class="btn-outline">Get a Free Quote</a>
+      <a href="#contact" class="btn-secondary">Get a Free Quote</a>
     </div>
-  </div>
-  <div id="hero-cards" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:2; animation: fadeUp 0.9s 0.35s ease both;">
-    <div style="display:flex; flex-direction:column; gap:1.2rem; width:260px;">
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem; flex-shrink:0;">☀️</div>
-        <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; color:#F5A623; line-height:1;">5+ years</div>
-          <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">in the solar industry</div>
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem; flex-shrink:0;">💧</div>
-        <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; color:white; line-height:1;">Warranty Safe</div>
-          <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">pure water, no harsh chemicals</div>
-        </div>
-      </div>
-      <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.35); border-radius:14px; padding:1.4rem 1.6rem; backdrop-filter:blur(10px); display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem; flex-shrink:0;">📍</div>
-        <div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; color:#F5A623; line-height:1;">Starting at $199</div>
-          <div style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:2px;">transparent, flat-rate pricing</div>
-        </div>
-      </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">&#9728;&#65039; 5+</div><div class="hero-stat-label">years in the solar industry</div></div>
+      <div><div class="hero-stat-num">&#128167; Warranty Safe</div><div class="hero-stat-label">pure water, no harsh chemicals</div></div>
+      <div><div class="hero-stat-num">Starting at $199</div><div class="hero-stat-label">transparent, flat-rate pricing</div></div>
     </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">2x</div><div class="stat-label">Longer Panel Life</div></div>
-    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Panels Cleaned</div></div>
-    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Rate</div></div>
   </div>
 </section>
+
+<!-- TRUST STRIP -->
+<div style="background:var(--navy); padding:0.6rem 5%; display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; border-bottom:1px solid rgba(245,166,35,0.15);">
+  <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:1px; display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--gold)">2x</span> Longer Panel Life</div>
+  <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:1px; display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--gold)">500+</span> Panels Cleaned</div>
+  <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:1px; display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--gold)">100%</span> Satisfaction Rate</div>
+</div>
+
 <!-- STRIP -->
 <div class="strip">
-  <div class="strip-item"><span class="strip-icon">🛡</span> Insured & Licensed</div>
-  <div class="strip-item"><span class="strip-icon">💧</span> Pure Water System</div>
-  <div class="strip-item"><span class="strip-icon">🛡</span> Warranty Safe</div>
-  <div class="strip-item"><span class="strip-icon">✅</span> No Harsh Chemicals</div>
-  <div class="strip-item"><span class="strip-icon">📋</span> Free Inspection</div>
+  <div class="strip-item"><span class="strip-icon">&#128737;</span> Insured &amp; Licensed</div>
+  <div class="strip-item"><span class="strip-icon">&#128167;</span> Pure Water System</div>
+  <div class="strip-item"><span class="strip-icon">&#128737;</span> Warranty Safe</div>
+  <div class="strip-item"><span class="strip-icon">&#10003;</span> No Harsh Chemicals</div>
+  <div class="strip-item"><span class="strip-icon">&#128203;</span> Free Inspection</div>
 </div>
+
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header">
@@ -762,40 +758,41 @@
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">🏠</div>
+      <div class="service-icon">&#127968;</div>
       <h3>Residential Cleaning</h3>
       <p>Our pure water system (0 dissolved solids) lifts dirt, pollen, and buildup with no chemicals and no mineral residue. Dries spotless every time.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">💪</div>
+      <div class="service-icon">&#128170;</div>
       <h3>Solar Panel Restoration</h3>
       <p>Heavy-duty treatment for panels with stubborn mold, bird droppings, and hardened grime. Removes buildup that causes hot spots and permanent cell damage if left untreated.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">✨</div>
+      <div class="service-icon">&#10024;</div>
       <h3>Window Restoration</h3>
       <p>Full restoration for windows with hard water stains, mineral deposits, oxidation, or heavy buildup that standard cleaning can't remove. Leaves glass crystal clear.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">🔍</div>
+      <div class="service-icon">&#128269;</div>
       <h3>Panel Inspection</h3>
       <p>We inspect for cracks, hot spots, bird damage, and debris build-up.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">🪟</div>
+      <div class="service-icon">&#129695;</div>
       <h3>Exterior Window Cleaning</h3>
       <p>Crystal clear exterior windows using our pure water system. No streaks, no chemicals, no ladders scratching your frames. Starting at $149 for up to 15 windows.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">📅</div>
+      <div class="service-icon">&#128197;</div>
       <h3>Maintenance Plans</h3>
       <p>Annual or bi-annual recurring plans to protect your panels, preserve your warranty documentation, and extend the life of your system. We handle the scheduling.</p>
     </div>
   </div>
 </section>
+
 <!-- ABOUT US -->
 <section style="background:var(--off-white); padding:90px 5%;" id="about">
-  <div id="about-grid" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
+  <div id="about-grid">
     <div>
       <div id="about-stats" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem;">
         <div style="background:var(--navy); border-radius:12px; padding:1.8rem; text-align:center; border:1px solid rgba(245,166,35,0.2);">
@@ -821,87 +818,71 @@
         <img src="logo-square.png" alt="Panel Polish LLC" style="height:110px;width:auto;" onerror="this.style.display='none'"/>
       </div>
       <div class="section-label">About Us</div>
-      <h2 class="section-title">We Protect Your<br><span>Solar Investment.</span></h2>
-      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1.2rem;">Panel Polish was founded by solar industry professionals who understand what it takes to keep a system running at its best and what happens when it goes unmaintained.</p>
-      <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-top:1rem;">We know what causes permanent cell damage, how to clean without voiding warranties, and what early signs of wear look like. When we show up, you're getting professionals who treat your system like the investment it is.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:2rem;">
-        <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Solar Industry Veterans</div>
-        <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Locally Owned & Operated</div>
-        <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Insured & Licensed</div>
-        <div style="background:white; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-size:0.85rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;">✅ Pure Water System</div>
+      <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">We Protect Your <span>Solar Investment.</span></h2>
+      <p style="color:var(--muted); font-size:1rem; line-height:1.75; margin-bottom:1.5rem;">Panel Polish was founded by solar industry professionals who understand what it takes to keep a system running at its best - and what happens when it goes unmaintained.</p>
+      <p style="color:var(--muted); font-size:1rem; line-height:1.75; margin-bottom:2rem;">We know what causes permanent cell damage, how to clean without voiding warranties, and what early signs of wear look like. When we show up, you're getting professionals who treat your system like the investment it is.</p>
+      <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:2rem;">
+        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Solar Industry Veterans</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Locally Owned &amp; Operated</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Insured &amp; Licensed</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Pure Water System</div>
       </div>
-      <a href="#contact" class="btn-primary" style="display:inline-block; margin-top:2rem;">Get a Free Quote</a>
+      <a href="#contact" class="btn-primary" style="display:inline-block;">Get a Free Quote</a>
     </div>
   </div>
 </section>
+
 <!-- TESTIMONIALS -->
-<section class="testimonials" id="reviews">
-  <div class="testi-header">
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header">
     <div class="section-label">What Customers Say</div>
-    <h2 class="section-title">Real <span style="color:var(--gold)">Results</span></h2>
-    <div style="display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
-      <div style="display:flex; align-items:center; gap:0.5rem;">
-        <svg width="22" height="22" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.3rem; color:white;">5.0</span>
-        <span style="color:var(--gold); font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
-        <span style="color:rgba(255,255,255,0.45); font-size:0.9rem;">on Google</span>
-      </div>
-      <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); border-radius:50px; padding:0.4rem 1.1rem; color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.85rem; font-weight:600; transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.5)';this.style.color='#F5A623'" onmouseout="this.style.borderColor='rgba(255,255,255,0.18)';this.style.color='rgba(255,255,255,0.75)'">Leave us a review ↗</a>
+    <h2 class="section-title">Real <span>Results</span></h2>
+    <div style="display:flex; align-items:center; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
+      <span style="color:var(--gold); font-size:1rem; letter-spacing:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span style="color:var(--muted); font-size:0.9rem;">5.0 on Google</span>
     </div>
   </div>
-  <div class="testi-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); max-width:1100px; margin:0 auto;">
-    <div class="testi-card">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.8rem;">
-        <div class="stars" style="margin-bottom:0;">★★★★★</div>
-        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-      </div>
-      <p>"The two young owners were excellent and professional and knowledgeable. The job was done excellent and great price! Highly recommended."</p>
-      <div class="testi-author">
-        <div class="avatar">AD</div>
-        <div class="author-info"><strong>A. Diaz</strong><span>Google Review</span></div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"The two young owners were excellent and professional and knowledgeable. The job was done excellent and great price! Highly recommended."</p>
+      <div class="review-author">
+        <div class="review-avatar">AD</div>
+        <div><div class="review-name">A. Diaz</div><div class="review-source">Google Review</div></div>
       </div>
     </div>
-    <div class="testi-card">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.8rem;">
-        <div class="stars" style="margin-bottom:0;">★★★★★</div>
-        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-      </div>
-      <p>"The fellas at Panel Polish did awesome work getting my solar panels looking new again. Ease of booking, communication, and service were all on point. Thanks!"</p>
-      <div class="testi-author">
-        <div class="avatar">BA</div>
-        <div class="author-info"><strong>Blake Allen</strong><span>Google Review</span></div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"The fellas at Panel Polish did awesome work getting my solar panels looking new again. Ease of booking, communication, and service were all on point. Thanks!"</p>
+      <div class="review-author">
+        <div class="review-avatar">BA</div>
+        <div><div class="review-name">Blake Allen</div><div class="review-source">Google Review</div></div>
       </div>
     </div>
-    <div class="testi-card">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.8rem;">
-        <div class="stars" style="margin-bottom:0;">★★★★★</div>
-        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-      </div>
-      <p>"Very professional and thorough!"</p>
-      <div class="testi-author">
-        <div class="avatar">RB</div>
-        <div class="author-info"><strong>Ronald Babcock Jr.</strong><span>Google Review</span></div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Very professional and thorough!"</p>
+      <div class="review-author">
+        <div class="review-avatar">RB</div>
+        <div><div class="review-name">Ronald Babcock Jr.</div><div class="review-source">Google Review</div></div>
       </div>
     </div>
-    <div class="testi-card">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.8rem;">
-        <div class="stars" style="margin-bottom:0;">★★★★★</div>
-        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-      </div>
-      <p>"I recently had my solar panels cleaned by Panel Polish LLC and I couldn't be more impressed. My panels were much dirtier than I realized, and the difference after the cleaning was noticeable right away. The team arrived on time, worked safely and professionally on my roof and they took the time to clearly explain the process. They did an excellent job from start to finish — highly recommend their services!"</p>
-      <div class="testi-author">
-        <div class="avatar">PH</div>
-        <div class="author-info"><strong>Pamela Humphreys</strong><span>Google Review</span></div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"I recently had my solar panels cleaned by Panel Polish LLC and I couldn't be more impressed. My panels were much dirtier than I realized, and the difference after the cleaning was noticeable right away. The team arrived on time, worked safely and professionally on my roof and they took the time to clearly explain the process. They did an excellent job from start to finish - highly recommend their services!"</p>
+      <div class="review-author">
+        <div class="review-avatar">PH</div>
+        <div><div class="review-name">Pamela Humphreys</div><div class="review-source">Google Review</div></div>
       </div>
     </div>
   </div>
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank" style="display:inline-flex; align-items:center; gap:0.6rem; background:white; color:#1a1a2e; padding:0.8rem 2rem; border-radius:8px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 16px rgba(0,0,0,0.2);">
-      <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-      View All Reviews on Google
+  <div style="text-align:center;">
+    <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; color:var(--navy); font-weight:600; font-size:0.9rem; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      &#11088; Leave us a review on Google
     </a>
   </div>
 </section>
+
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="pricing-header">
@@ -917,31 +898,31 @@
     </div>
   </div>
   <div id="pricing-onetime" class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1100px;">
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">Up to 19 Panels</div><div class="price">$199</div><div class="price-note">Up to 19 panels</div><ul class="plan-features"><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before & after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">20–29 Panels</div><div class="price">$249</div><div class="price-note">20–29 panels</div><ul class="plan-features"><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before & after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">30–39 Panels</div><div class="price">$299</div><div class="price-note">30–39 panels</div><ul class="plan-features"><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before & after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">40–49 Panels</div><div class="price">$349</div><div class="price-note">40–49 panels</div><ul class="plan-features"><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before & after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">50–59 Panels</div><div class="price">$449</div><div class="price-note">50–59 panels</div><ul class="plan-features"><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before & after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">60–69 Panels</div><div class="price">$499</div><div class="price-note">60–69 panels</div><ul class="plan-features"><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before & after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">70+ Panels</div><div class="price" style="font-size:2.2rem">Custom</div><div class="price-note">70+ panels</div><ul class="plan-features"><li>Custom quote provided</li><li>Solar panel safe brush & pure water wash</li><li>Visual inspection</li><li>Before & after photos</li><li>Service report</li></ul><a href="#contact" class="btn-plan">Contact Us</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">Up to 19 Panels</div><div class="price">$199</div><div class="price-note">Up to 19 panels</div><ul class="plan-features"><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">20&ndash;29 Panels</div><div class="price">$249</div><div class="price-note">20&ndash;29 panels</div><ul class="plan-features"><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">30&ndash;39 Panels</div><div class="price">$299</div><div class="price-note">30&ndash;39 panels</div><ul class="plan-features"><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">40&ndash;49 Panels</div><div class="price">$349</div><div class="price-note">40&ndash;49 panels</div><ul class="plan-features"><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">50&ndash;59 Panels</div><div class="price">$449</div><div class="price-note">50&ndash;59 panels</div><ul class="plan-features"><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">60&ndash;69 Panels</div><div class="price">$499</div><div class="price-note">60&ndash;69 panels</div><ul class="plan-features"><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Spot treatment</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">70+ Panels</div><div class="price" style="font-size:2.2rem">Custom</div><div class="price-note">70+ panels</div><ul class="plan-features"><li>Custom quote provided</li><li>Solar panel safe brush &amp; pure water wash</li><li>Visual inspection</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="#contact" class="btn-plan">Contact Us</a></div>
   </div>
   <div id="pricing-recurring" style="display:none; max-width:1100px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
-      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">☀ Regular cleaning protects your panels, preserves your warranty, and extends system life. Save up to 12% with a recurring plan.</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">&#9728; Regular cleaning protects your panels, preserves your warranty, and extends system life. Save up to 12% with a recurring plan.</span>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:2.5rem;">
       <div class="pricing-card">
         <div class="plan-label">Annual</div>
         <div class="plan-name">1x Per Year</div>
         <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.3); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;"><span style="color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 8%</span></div>
-        <ul class="plan-features"><li>Up to 19 panels: <strong>$183/visit</strong></li><li>20–29 panels: <strong>$229/visit</strong></li><li>30–39 panels: <strong>$275/visit</strong></li><li>40–49 panels: <strong>$321/visit</strong></li><li>50–59 panels: <strong>$413/visit</strong></li><li>60–69 panels: <strong>$459/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li><li>Before & after photos</li></ul>
+        <ul class="plan-features"><li>Up to 19 panels: <strong>$183/visit</strong></li><li>20&ndash;29 panels: <strong>$229/visit</strong></li><li>30&ndash;39 panels: <strong>$275/visit</strong></li><li>40&ndash;49 panels: <strong>$321/visit</strong></li><li>50&ndash;59 panels: <strong>$413/visit</strong></li><li>60&ndash;69 panels: <strong>$459/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li><li>Before &amp; after photos</li></ul>
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
       <div class="pricing-card featured">
-        <div class="plan-label">Most Popular ⭐</div>
+        <div class="plan-label">Most Popular &#11088;</div>
         <div class="plan-name">Bi-Annual</div>
-        <div style="background:rgba(245,166,35,0.2); border:1px solid rgba(245,166,35,0.5); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;"><span style="color:var(--gold-light); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 12% — 2x Per Year</span></div>
-        <ul class="plan-features"><li>Up to 19 panels: <strong>$175/visit</strong></li><li>20–29 panels: <strong>$219/visit</strong></li><li>30–39 panels: <strong>$263/visit</strong></li><li>40–49 panels: <strong>$307/visit</strong></li><li>50–59 panels: <strong>$395/visit</strong></li><li>60–69 panels: <strong>$439/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li><li>Before & after photos</li></ul>
+        <div style="background:rgba(245,166,35,0.2); border:1px solid rgba(245,166,35,0.5); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;"><span style="color:var(--gold-light); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 12% &mdash; 2x Per Year</span></div>
+        <ul class="plan-features"><li>Up to 19 panels: <strong>$175/visit</strong></li><li>20&ndash;29 panels: <strong>$219/visit</strong></li><li>30&ndash;39 panels: <strong>$263/visit</strong></li><li>40&ndash;49 panels: <strong>$307/visit</strong></li><li>50&ndash;59 panels: <strong>$395/visit</strong></li><li>60&ndash;69 panels: <strong>$439/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li><li>Before &amp; after photos</li></ul>
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
     </div>
@@ -949,15 +930,15 @@
   </div>
   <div id="pricing-restoration" style="display:none; max-width:1100px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
-      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">💪 Full restoration for panels with heavy mold, bird droppings, mineral deposits, and hardened grime</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">&#128170; Full restoration for panels with heavy mold, bird droppings, mineral deposits, and hardened grime</span>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem;">
       <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">Up to 19 Panels</div><div class="price">$298</div><div class="price-note">Up to 19 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">20–29 Panels</div><div class="price">$348</div><div class="price-note">20–29 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">30–39 Panels</div><div class="price">$398</div><div class="price-note">30–39 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">40–49 Panels</div><div class="price">$448</div><div class="price-note">40–49 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">50–59 Panels</div><div class="price">$548</div><div class="price-note">50–59 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">60–69 Panels</div><div class="price">$598</div><div class="price-note">60–69 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">20&ndash;29 Panels</div><div class="price">$348</div><div class="price-note">20&ndash;29 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">30&ndash;39 Panels</div><div class="price">$398</div><div class="price-note">30&ndash;39 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">40&ndash;49 Panels</div><div class="price">$448</div><div class="price-note">40&ndash;49 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">50&ndash;59 Panels</div><div class="price">$548</div><div class="price-note">50&ndash;59 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">60&ndash;69 Panels</div><div class="price">$598</div><div class="price-note">60&ndash;69 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
       <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">70+ Panels</div><div class="price" style="font-size:2.2rem">Custom</div><div class="price-note">70+ panels</div><ul class="plan-features"><li>Custom quote provided</li><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="#contact" class="btn-plan">Contact Us</a></div>
     </div>
   </div>
@@ -975,6 +956,7 @@ function showPricing(type) {
   });
 }
 </script>
+
 <!-- WINDOW CLEANING PRICING -->
 <section style="background:var(--white); padding:90px 5%;" id="window-pricing">
   <div style="text-align:center; margin-bottom:3rem;">
@@ -991,24 +973,24 @@ function showPricing(type) {
   </div>
   <div id="window-onetime" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; max-width:900px; margin:0 auto;">
     <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">Up to 15 Windows</div><div class="price">$199</div><div class="price-note">Up to 15 windows</div><ul class="plan-features"><li>Pure water exterior wash</li><li>Streak-free finish</li><li>No harsh chemicals</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">16–25 Windows</div><div class="price">$249</div><div class="price-note">16–25 windows</div><ul class="plan-features"><li>Pure water exterior wash</li><li>Streak-free finish</li><li>No harsh chemicals</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">26–35 Windows</div><div class="price">$299</div><div class="price-note">26–35 windows</div><ul class="plan-features"><li>Pure water exterior wash</li><li>Streak-free finish</li><li>No harsh chemicals</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">16&ndash;25 Windows</div><div class="price">$249</div><div class="price-note">16&ndash;25 windows</div><ul class="plan-features"><li>Pure water exterior wash</li><li>Streak-free finish</li><li>No harsh chemicals</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    <div class="pricing-card featured"><div class="plan-label">One-Time</div><div class="plan-name">26&ndash;35 Windows</div><div class="price">$299</div><div class="price-note">26&ndash;35 windows</div><ul class="plan-features"><li>Pure water exterior wash</li><li>Streak-free finish</li><li>No harsh chemicals</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
   </div>
   <div id="window-recurring" style="display:none; max-width:900px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
-      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">☀ Save up to 12% with a recurring window cleaning plan</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">&#9728; Save up to 12% with a recurring window cleaning plan</span>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin-bottom:1.5rem;">
       <div class="pricing-card">
         <div class="plan-label">Annual</div><div class="plan-name">1x Per Year</div>
         <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.3); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;"><span style="color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 8%</span></div>
-        <ul class="plan-features"><li>Up to 15 windows: <strong>$183/visit</strong></li><li>16–25 windows: <strong>$229/visit</strong></li><li>26–35 windows: <strong>$275/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li></ul>
+        <ul class="plan-features"><li>Up to 15 windows: <strong>$183/visit</strong></li><li>16&ndash;25 windows: <strong>$229/visit</strong></li><li>26&ndash;35 windows: <strong>$275/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li></ul>
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
       <div class="pricing-card featured">
-        <div class="plan-label">Most Popular ⭐</div><div class="plan-name">Bi-Annual</div>
-        <div style="background:rgba(245,166,35,0.2); border:1px solid rgba(245,166,35,0.5); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;"><span style="color:var(--gold-light); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 12% · 2x Per Year</span></div>
-        <ul class="plan-features"><li>Up to 15 windows: <strong>$175/visit</strong></li><li>16–25 windows: <strong>$219/visit</strong></li><li>26–35 windows: <strong>$263/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li></ul>
+        <div class="plan-label">Most Popular &#11088;</div><div class="plan-name">Bi-Annual</div>
+        <div style="background:rgba(245,166,35,0.2); border:1px solid rgba(245,166,35,0.5); border-radius:6px; padding:0.4rem 0.8rem; display:inline-block; margin-bottom:1rem;"><span style="color:var(--gold-light); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;">SAVE 12% &middot; 2x Per Year</span></div>
+        <ul class="plan-features"><li>Up to 15 windows: <strong>$175/visit</strong></li><li>16&ndash;25 windows: <strong>$219/visit</strong></li><li>26&ndash;35 windows: <strong>$263/visit</strong></li><li>Priority scheduling</li><li>Service report each visit</li></ul>
         <a href="#contact" class="btn-plan">Get Started</a>
       </div>
     </div>
@@ -1016,12 +998,12 @@ function showPricing(type) {
   </div>
   <div id="window-restoration" style="display:none; max-width:900px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
-      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">✨ Full restoration for hard water stains, mineral deposits, oxidation, and heavy buildup</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">&#10024; Full restoration for hard water stains, mineral deposits, oxidation, and heavy buildup</span>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem;">
       <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">Up to 15 Windows</div><div class="price">$298</div><div class="price-note">Up to 15 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">16–25 Windows</div><div class="price">$348</div><div class="price-note">16–25 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
-      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">26–35 Windows</div><div class="price">$398</div><div class="price-note">26–35 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">16&ndash;25 Windows</div><div class="price">$348</div><div class="price-note">16&ndash;25 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">26&ndash;35 Windows</div><div class="price">$398</div><div class="price-note">26&ndash;35 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
     </div>
   </div>
   <p style="text-align:center; color:var(--muted); font-size:0.9rem; max-width:700px; margin:1.5rem auto 0;"><strong style="color:var(--text);">Two-story homes:</strong> A $50 surcharge applies. 35+ windows? <a href="#contact" style="color:var(--blue);">Contact us</a> for a custom quote.</p>
@@ -1038,6 +1020,7 @@ function showWindow(type) {
   });
 }
 </script>
+
 <!-- MONTHLY PLANS -->
 <section style="background:var(--navy); padding:90px 5%;" id="monthly-plans">
   <div style="max-width:700px; margin:0 auto; text-align:center;">
@@ -1050,231 +1033,237 @@ function showWindow(type) {
         <div id="custom-dropdown" style="position:relative; user-select:none;">
           <div id="dropdown-selected" onclick="toggleDropdown()" style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:0.9rem 1rem; color:rgba(255,255,255,0.4); font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:700; letter-spacing:1px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
             <span id="dropdown-label">Select panel count</span>
-            <span id="dropdown-arrow" style="font-size:0.8rem; transition:transform 0.2s;">▼</span>
+            <span id="dropdown-arrow" style="transition:transform 0.2s;">&#9660;</span>
           </div>
-          <div id="dropdown-list" style="display:none; position:absolute; top:calc(100% + 4px); left:0; right:0; background:#0f2260; border:1px solid rgba(255,179,0,0.3); border-radius:8px; overflow:hidden; z-index:100; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
-            <div class="dd-option" onclick="selectOption(this, '')" data-value="" style="padding:0.8rem 1rem; color:rgba(255,255,255,0.3); font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.06);">Select panel count</div>
-            <div class="dd-option" onclick="selectOption(this, '0')" data-value="0" style="padding:0.8rem 1rem; color:white; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;">Up to 19 panels</div>
-            <div class="dd-option" onclick="selectOption(this, '1')" data-value="1" style="padding:0.8rem 1rem; color:white; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;">20–29 panels</div>
-            <div class="dd-option" onclick="selectOption(this, '2')" data-value="2" style="padding:0.8rem 1rem; color:white; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;">30–39 panels</div>
-            <div class="dd-option" onclick="selectOption(this, '3')" data-value="3" style="padding:0.8rem 1rem; color:white; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;">40–49 panels</div>
-            <div class="dd-option" onclick="selectOption(this, '4')" data-value="4" style="padding:0.8rem 1rem; color:white; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;">50–59 panels</div>
-            <div class="dd-option" onclick="selectOption(this, '5')" data-value="5" style="padding:0.8rem 1rem; color:white; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:1px; cursor:pointer; transition:background 0.15s;">60–69 panels</div>
+          <div id="dropdown-options" style="display:none; position:absolute; top:calc(100% + 4px); left:0; right:0; background:#0d2347; border:1px solid rgba(255,255,255,0.2); border-radius:8px; overflow:hidden; z-index:10; box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+            <div class="dd-option" onclick="selectPanel('up19','Up to 19 panels')" style="padding:0.8rem 1rem; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:1px; transition:background 0.15s;">Up to 19 panels</div>
+            <div class="dd-option" onclick="selectPanel('20-29','20&ndash;29 panels')" style="padding:0.8rem 1rem; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:1px; transition:background 0.15s;">20&ndash;29 panels</div>
+            <div class="dd-option" onclick="selectPanel('30-39','30&ndash;39 panels')" style="padding:0.8rem 1rem; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:1px; transition:background 0.15s;">30&ndash;39 panels</div>
+            <div class="dd-option" onclick="selectPanel('40-49','40&ndash;49 panels')" style="padding:0.8rem 1rem; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:1px; transition:background 0.15s;">40&ndash;49 panels</div>
+            <div class="dd-option" onclick="selectPanel('50-59','50&ndash;59 panels')" style="padding:0.8rem 1rem; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:1px; transition:background 0.15s;">50&ndash;59 panels</div>
+            <div class="dd-option" onclick="selectPanel('60-69','60&ndash;69 panels')" style="padding:0.8rem 1rem; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:1px; transition:background 0.15s;">60&ndash;69 panels</div>
           </div>
         </div>
       </div>
-      <div id="monthly-result" style="display:none;">
-        <div style="display:flex; gap:0.5rem; margin-bottom:1.5rem; background:rgba(255,255,255,0.06); border-radius:8px; padding:4px;">
-          <button onclick="setFreq('1x')" id="freq-1x" style="flex:1; padding:0.55rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.95rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:var(--gold); color:var(--navy); transition:all 0.2s;">1x / Year</button>
-          <button onclick="setFreq('2x')" id="freq-2x" style="flex:1; padding:0.55rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.95rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:rgba(255,255,255,0.45); transition:all 0.2s;">2x / Year</button>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+        <div style="background:rgba(255,255,255,0.05); border-radius:10px; padding:1.2rem; text-align:center;">
+          <div style="font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:0.4rem;">1x / Year</div>
+          <div id="monthly-annual" style="font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:900; color:var(--gold); line-height:1;">--</div>
+          <div style="font-size:0.78rem; color:rgba(255,255,255,0.35); margin-top:0.2rem;">per month</div>
         </div>
-        <div style="background:rgba(255,179,0,0.08); border:2px solid rgba(255,179,0,0.35); border-radius:14px; padding:2rem; text-align:center;">
-          <div id="result-label" style="font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:0.5rem;"></div>
-          <div id="result-price" style="font-family:'Barlow Condensed',sans-serif; font-size:5rem; font-weight:900; color:var(--gold); line-height:1;"></div>
-          <div style="color:rgba(255,255,255,0.4); font-size:0.85rem; margin-bottom:0.3rem;">per month</div>
-          <div id="result-savings" style="display:inline-block; background:rgba(255,179,0,0.15); border:1px solid rgba(255,179,0,0.3); border-radius:50px; padding:0.3rem 1rem; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.85rem; color:var(--gold); margin-bottom:1.5rem;"></div>
-          <div id="result-annual" style="color:rgba(255,255,255,0.35); font-size:0.82rem; margin-bottom:1.5rem;"></div>
-          <a id="stripe-get-started" href="#" target="_blank" style="display:block; background:linear-gradient(135deg,var(--gold),var(--gold2,#FF8C00)); color:var(--navy); padding:1rem; border-radius:50px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none;">Subscribe Now</a>
+        <div style="background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.25); border-radius:10px; padding:1.2rem; text-align:center;">
+          <div style="font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,166,35,0.7); margin-bottom:0.4rem;">2x / Year</div>
+          <div id="monthly-biannual" style="font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:900; color:var(--gold); line-height:1;">--</div>
+          <div style="font-size:0.78rem; color:rgba(255,255,255,0.35); margin-top:0.2rem;">per month</div>
         </div>
       </div>
-      <p id="monthly-placeholder" style="color:rgba(255,255,255,0.2); font-size:0.9rem; margin-top:1rem; text-align:center;">Select your panel count to see your monthly rate</p>
+      <div id="monthly-cta" style="display:none;">
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" style="display:block; background:var(--gold); color:var(--navy); padding:0.9rem; border-radius:8px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; text-align:center; transition:background 0.2s;" onmouseover="this.style.background='var(--gold-light)'" onmouseout="this.style.background='var(--gold)'">Subscribe Now</a>
+      </div>
+      <p id="monthly-note" style="color:rgba(255,255,255,0.3); font-size:0.82rem; margin-top:1rem; text-align:center;">Select your panel count to see your monthly rate</p>
     </div>
   </div>
 </section>
 <script>
-var stripeLinks = [["https://buy.stripe.com/5kQ6oHe8G6VPbZd9z718c00", "https://buy.stripe.com/14A28rggO4NHd3h5iR18c01"], ["https://buy.stripe.com/8x29ATe8G1Bv2oD8v318c03", "https://buy.stripe.com/eVq28r9Sq2Fzd3h7qZ18c04"], ["https://buy.stripe.com/3cI00jfcKfslfbp4eN18c06", "https://buy.stripe.com/00w6oHd4C5RL2oDcLj18c07"], ["https://buy.stripe.com/00w3cv0hQ6VPaV926F18c09", "https://buy.stripe.com/8x2fZhc0y2Fz5APeTr18c0a"], ["https://buy.stripe.com/bJe28raWu1Bv3sH7qZ18c0c", "https://buy.stripe.com/cNi5kD0hQbc5gftdPn18c0d"], ["https://buy.stripe.com/5kQ8wPggO7ZTd3h7qZ18c0f", "https://buy.stripe.com/aFa28r0hQ93Xe7l3aJ18c0g"]];
-var freqIndex = {'1x':0,'2x':1};
-var monthlyPrices = {'1x': [13.99, 16.99, 19.99, 23.99, 29.99, 33.99], '2x': [26.99, 33.99, 39.99, 46.99, 59.99, 66.99]};
-var freqLabels = {'1x':'1x Per Year — 20% off','2x':'2x Per Year — 20% off'};
-var currentFreq = '1x';
-function setFreq(f) {
-  currentFreq = f;
-  ['1x','2x'].forEach(function(t) {
-    var btn = document.getElementById('freq-'+t);
-    btn.style.background = t===f ? 'var(--gold)' : 'transparent';
-    btn.style.color = t===f ? 'var(--navy)' : 'rgba(255,255,255,0.45)';
-  });
-  updateMonthly();
-}
+var monthlyRates = {
+  'up19':  {annual: 15.25, biannual: 29.17},
+  '20-29': {annual: 19.08, biannual: 36.50},
+  '30-39': {annual: 22.92, biannual: 43.83},
+  '40-49': {annual: 26.75, biannual: 51.17},
+  '50-59': {annual: 34.42, biannual: 65.83},
+  '60-69': {annual: 38.25, biannual: 73.17}
+};
 function toggleDropdown() {
-  var list = document.getElementById('dropdown-list');
+  var opts = document.getElementById('dropdown-options');
   var arrow = document.getElementById('dropdown-arrow');
-  var isOpen = list.style.display !== 'none';
-  list.style.display = isOpen ? 'none' : 'block';
-  arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+  var open = opts.style.display === 'block';
+  opts.style.display = open ? 'none' : 'block';
+  arrow.style.transform = open ? '' : 'rotate(180deg)';
 }
-function selectOption(el, val) {
-  document.getElementById('dropdown-label').textContent = el.textContent;
+function selectPanel(val, label) {
+  document.getElementById('dropdown-label').innerHTML = label;
   document.getElementById('dropdown-label').style.color = 'white';
-  document.getElementById('dropdown-list').style.display = 'none';
+  document.getElementById('dropdown-options').style.display = 'none';
   document.getElementById('dropdown-arrow').style.transform = '';
-  document.querySelectorAll('.dd-option').forEach(function(o){ o.style.background=''; });
-  if(val !== '') el.style.background = 'rgba(255,179,0,0.15)';
-  currentPanelIdx = val;
-  updateMonthly();
+  var r = monthlyRates[val];
+  document.getElementById('monthly-annual').textContent = '$' + r.annual.toFixed(2);
+  document.getElementById('monthly-biannual').textContent = '$' + r.biannual.toFixed(2);
+  document.getElementById('monthly-cta').style.display = 'block';
+  document.getElementById('monthly-note').style.display = 'none';
 }
 document.addEventListener('click', function(e) {
   if (!document.getElementById('custom-dropdown').contains(e.target)) {
-    document.getElementById('dropdown-list').style.display = 'none';
+    document.getElementById('dropdown-options').style.display = 'none';
     document.getElementById('dropdown-arrow').style.transform = '';
   }
 });
-var currentPanelIdx = '';
-function updateMonthly() {
-  var idx = currentPanelIdx;
-  var result = document.getElementById('monthly-result');
-  var placeholder = document.getElementById('monthly-placeholder');
-  if (idx === '') { result.style.display='none'; placeholder.style.display='block'; return; }
-  idx = parseInt(idx);
-  var price = monthlyPrices[currentFreq][idx];
-  var annual = (price * 12).toFixed(2);
-  document.getElementById('result-label').textContent = freqLabels[currentFreq];
-  document.getElementById('result-price').textContent = '$' + price.toFixed(2).split('.')[0];
-  document.getElementById('result-savings').textContent = '20% off one-time pricing';
-  document.getElementById('result-annual').textContent = '$' + annual + ' billed monthly over 12 months';
-  result.style.display = 'block';
-  placeholder.style.display = 'none';
-  var link = document.getElementById('stripe-get-started');
-  if (link) link.href = stripeLinks[idx][freqIndex[currentFreq]];
-}
+document.querySelectorAll('.dd-option').forEach(function(el) {
+  el.addEventListener('mouseover', function() { this.style.background = 'rgba(245,166,35,0.1)'; });
+  el.addEventListener('mouseout',  function() { this.style.background = ''; });
+});
 </script>
+
 <!-- FAQ -->
-<section style="background:var(--white); padding: 90px 5%;" id="faq">
-  <div style="max-width:780px; margin:0 auto;">
-    <div style="text-align:center; margin-bottom:3rem;">
-      <div class="section-label">Got Questions?</div>
-      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:1rem;">
-      <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
-        <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">How often should I clean my solar panels in Florida?<span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span></summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">More often than most people expect. Florida's humidity causes pollen and grime to bond to panel glass and harden over time. Left untreated, this causes hot spots, accelerated wear, and potential warranty issues. We recommend every <strong>6–12 months</strong> at minimum.</p>
-      </details>
-      <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
-        <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">Will cleaning actually improve my energy output?<span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span></summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Yes. Beyond performance, dirty panels can develop hot spots that cause permanent cell damage over time. Regular cleaning protects your panels from the kind of buildup that shortens their lifespan and risks voiding your warranty.</p>
-      </details>
-      <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
-        <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">Do you use any chemicals on my panels?<span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span></summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Never. We use only <strong>ultra-pure water</strong> (0 dissolved solids) and soft brushes made for solar panel glass. No soap, no detergents, nothing that could leave residue or void your manufacturer warranty.</p>
-      </details>
-      <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
-        <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">What areas do you serve?<span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span></summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">We're based in Orlando and cover <strong>greater Central Florida</strong> — Kissimmee, Sanford, Winter Park, Oviedo, Lake Mary, Clermont, Altamonte Springs, and surrounding areas. Not sure if you're in range? Just ask us.</p>
-      </details>
-      <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
-        <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">How long does a cleaning take?<span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span></summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">Most homes take <strong>45 minutes to about 2 hours</strong> depending on panel count and roof access. We're in and out, you don't need to be home or rearrange your schedule for us.</p>
-      </details>
-      <details style="border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; cursor:pointer;">
-        <summary style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;">Do you clean panels in the rain?<span style="color:var(--gold); font-size:1.4rem; font-weight:300;">+</span></summary>
-        <p style="color:var(--muted); font-size:0.95rem; line-height:1.7; margin-top:1rem;">We want every job to be done right, so we reserve the right to reschedule in the event of rain or any unfavorable weather conditions. If weather affects your appointment we'll reach out as soon as possible to get you rebooked at the next available time.</p>
-      </details>
-    </div>
+<section class="faq-section" id="faq">
+  <div class="faq-header">
+    <div class="section-label">Got Questions?</div>
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+  </div>
+  <div class="faq-list">
+    <details>
+      <summary>How often should I clean my solar panels in Florida?</summary>
+      <div class="faq-body">More often than most people expect. Florida's humidity causes pollen and grime to bond to panel glass and harden over time. Left untreated, this causes hot spots, accelerated wear, and potential warranty issues. We recommend every <strong>6&ndash;12 months</strong> at minimum.</div>
+    </details>
+    <details>
+      <summary>Will cleaning actually improve my energy output?</summary>
+      <div class="faq-body">Yes. Beyond performance, dirty panels can develop hot spots that cause permanent cell damage over time. Regular cleaning protects your panels from the kind of buildup that shortens their lifespan and risks voiding your warranty.</div>
+    </details>
+    <details>
+      <summary>Do you use any chemicals on my panels?</summary>
+      <div class="faq-body">Never. We use only <strong>ultra-pure water</strong> (0 dissolved solids) and soft brushes made for solar panel glass. No soap, no detergents, nothing that could leave residue or void your manufacturer warranty.</div>
+    </details>
+    <details>
+      <summary>What areas do you serve?</summary>
+      <div class="faq-body">We're based in Orlando and cover <strong>greater Central Florida</strong> - Kissimmee, Sanford, Winter Park, Oviedo, Lake Mary, Clermont, Altamonte Springs, and surrounding areas. Not sure if you're in range? Just ask us.</div>
+    </details>
+    <details>
+      <summary>How long does a cleaning take?</summary>
+      <div class="faq-body">Most homes take <strong>45 minutes to about 2 hours</strong> depending on panel count and roof access. We're in and out, you don't need to be home or rearrange your schedule for us.</div>
+    </details>
+    <details>
+      <summary>Do you clean panels in the rain?</summary>
+      <div class="faq-body">We want every job to be done right, so we reserve the right to reschedule in the event of rain or any unfavorable weather conditions. If weather affects your appointment we'll reach out as soon as possible to get you rebooked at the next available time.</div>
+    </details>
   </div>
 </section>
+
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div>
-      <div style="margin-bottom:1.4rem;">
-        <img src="horizontal.logo.png" alt="Panel Polish LLC" style="height:70px;width:auto;border-radius:10px;" onerror="this.style.display='none'"/>
-      </div>
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title" style="color:white">Get Your<br><span style="color:var(--gold)">Free Quote</span></h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;margin-top:1rem;max-width:380px;">No pressure, no sales pitch. Just a straight answer about what your panels need. We usually get back to you the same day.</p>
-      <div class="contact-info">
-        <div class="contact-item"><div class="contact-item-icon">📞</div><span>(407) 459-4257</span></div>
-        <div class="contact-item"><div class="contact-item-icon">✉️</div><span>info@panelpolishfl.com</span></div>
-        <div class="contact-item"><div class="contact-item-icon">📍</div><span>Serving Orlando, FL & Surrounding Areas</span></div>
-        <div id="contact-socials" style="display:flex; gap:1rem; margin-top:0.5rem; flex-wrap:wrap;">
-          <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank" style="display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); padding:0.5rem 1rem; border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.5)'; this.style.color='#F5A623'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.color='rgba(255,255,255,0.7)'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
-          </a>
-          <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank" style="display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); padding:0.5rem 1rem; border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(245,166,35,0.5)'; this.style.color='#F5A623'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.color='rgba(255,255,255,0.7)'">
-            ⭐ Leave a Review
-          </a>
+<section class="contact-section" id="contact">
+  <div class="contact-header">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Get Your <span>Free Quote</span></h2>
+    <p class="section-sub">No pressure, no sales pitch. Just a straight answer about what your panels need. We usually get back to you the same day.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">&#128222;</div>
+        <div>
+          <div class="contact-info-label">Phone</div>
+          <div class="contact-info-value"><a href="tel:4074594257">(407) 459-4257</a></div>
         </div>
       </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">&#9993;&#65039;</div>
+        <div>
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="mailto:info@panelpolishfl.com">info@panelpolishfl.com</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">&#128205;</div>
+        <div>
+          <div class="contact-info-label">Service Area</div>
+          <div class="contact-info-value">Serving Orlando, FL &amp; Surrounding Areas</div>
+        </div>
+      </div>
+      <div class="contact-social-links">
+        <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank" class="contact-social-link">Facebook</a>
+        <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank" class="contact-social-link">&#11088; Leave a Review</a>
+      </div>
     </div>
-    <form class="form-card" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
-      <input type="hidden" name="access_key" value="1a3d3f19-20f4-4326-bd8a-6734bc105f35"/>
-      <input type="hidden" name="subject" value="New Quote Request - Panel Polish LLC"/>
-      <input type="hidden" name="redirect" value="false"/>
-      <div class="form-row">
-        <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required/></div>
-        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
-      </div>
-      <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="john@email.com" required/></div>
-      <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 000-0000"/></div>
-      <div class="form-group">
-        <label>Service Needed</label>
-        <select name="service">
-          <option>Solar Panel Cleaning</option>
-          <option>Exterior Window Cleaning</option>
-          <option>Panel Inspection</option>
-          <option>Maintenance Plan</option>
-          <option>70+ Panels (Custom Quote)</option>
-        </select>
-      </div>
-      <div class="form-group"><label>Message</label><textarea name="message" placeholder="How many panels or windows? Any questions?"></textarea></div>
-      <button class="btn-submit" type="submit">Send My Free Quote Request ☀</button>
-      <p style="text-align:center; margin-top:1.5rem; color:rgba(255,255,255,0.5); font-size:0.9rem;">— or —</p>
-      <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" style="display:block; text-align:center; background:transparent; border:2px solid var(--gold); color:var(--gold); padding:1rem; border-radius:6px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; margin-top:0.5rem; transition:all 0.2s;">Book Online Now ☀</a>
-      <p id="form-success" style="display:none; text-align:center; color:#22c55e; font-weight:600; margin-top:1rem;">✅ Message sent! We'll get back to you within 24 hours.</p>
-    </form>
-    <script>
-      document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST', body: new FormData(this)
-        }).then(res => res.json()).then(data => {
-          if(data.success) {
-            document.getElementById('form-success').style.display = 'block';
-            document.getElementById('contact-form').reset();
-          }
-        });
-      });
-    </script>
+    <div class="form-card">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1a3d3f19-20f4-4326-bd8a-6734bc105f35"/>
+        <input type="hidden" name="subject" value="New Quote Request - Panel Polish LLC"/>
+        <input type="hidden" name="redirect" value="false"/>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder=""/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email</label><input type="email" name="email" required/></div>
+          <div class="form-group"><label>Phone</label><input type="tel" name="phone"/></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>Service Needed</label>
+          <select name="service">
+            <option value="">Service Needed</option>
+            <option>Solar Panel Cleaning</option>
+            <option>Solar Panel Restoration</option>
+            <option>Exterior Window Cleaning</option>
+            <option>Window Restoration</option>
+            <option>Panel Inspection</option>
+            <option>Maintenance Plan</option>
+            <option>70+ Panels (Custom Quote)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us about your panels or windows..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send My Free Quote Request &#9728;</button>
+        <div class="form-divider">&mdash; or &mdash;</div>
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-book-alt">Book Online Now &#9728;</a>
+      </form>
+      <div class="form-success" id="form-success">&#10003; Message sent! We'll get back to you within 24 hours.</div>
+    </div>
   </div>
 </section>
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('.btn-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(this) });
+    var data = await res.json();
+    if (data.success) {
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Send My Free Quote Request ☀';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us directly.');
+    }
+  } catch(err) {
+    btn.textContent = 'Send My Free Quote Request ☀';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us directly.');
+  }
+});
+</script>
+
 <!-- GALLERY -->
-<section id="gallery" style="background:var(--off-white); padding:90px 5%;">
-  <div style="max-width:1200px; margin:0 auto;">
-    <div class="section-label" style="text-align:center;">Real Results</div>
-    <h2 class="section-title" style="text-align:center; margin-bottom:0.5rem;">Before &amp; After</h2>
-    <p style="text-align:center; color:var(--muted); font-size:1rem; margin-bottom:3rem; max-width:560px; margin-left:auto; margin-right:auto;">See the difference a professional clean makes. Every job, every time.</p>
-    <div id="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
-      <div class="gallery-card"><img src="before-after-collage.jpg" alt="Solar panel cleaning before and after Orlando FL" loading="lazy"/></div>
-      <div class="gallery-card"><img src="before-after-collage2.jpg" alt="Solar panel cleaning before and after Orlando FL" loading="lazy"/></div>
-      <div class="gallery-card"><img src="before-after-mold1.jpg" alt="Mold and algae removal from solar panels before and after" loading="lazy"/></div>
-      <div class="gallery-card"><img src="before-after-mold2.jpg" alt="Mold and algae removal from solar panels before and after" loading="lazy"/></div>
-      <div class="gallery-card"><img src="before-after-mold3.jpg" alt="Mold and algae removal from solar panels before and after" loading="lazy"/></div>
-    </div>
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <div class="section-label">Real Results</div>
+    <h2 class="section-title">Before &amp; <span>After</span></h2>
+    <p class="section-sub">See the difference a professional clean makes. Every job, every time.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="before-after-collage.jpg" alt="Solar panel cleaning before and after Orlando FL" loading="lazy"/></div>
+    <div class="gallery-item"><img src="before-after-collage2.jpg" alt="Solar panel cleaning before and after Orlando FL" loading="lazy"/></div>
+    <div class="gallery-item"><img src="before-after-mold1.jpg" alt="Mold and algae removal from solar panels before and after" loading="lazy"/></div>
+    <div class="gallery-item"><img src="before-after-mold2.jpg" alt="Mold and algae removal from solar panels before and after" loading="lazy"/></div>
+    <div class="gallery-item"><img src="before-after-mold3.jpg" alt="Mold and algae removal from solar panels before and after" loading="lazy"/></div>
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <img src="horizontal.logo.png" alt="Panel Polish LLC" style="height:36px; width:auto; filter:brightness(1.1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/>
-    <span style="display:none;">Panel<span style="color:var(--gold)">Polish</span> LLC</span>
+  <div class="footer-logo">Panel<span>Polish</span> LLC</div>
+  <p style="color:rgba(255,255,255,0.3); font-size:0.85rem; margin-bottom:1rem;">&#9728;&#65039; Solar Panel &amp; Window Cleaning &middot; Orlando, FL &amp; Central Florida</p>
+  <div class="footer-links">
+    <a href="#contact">Privacy</a>
+    <a href="#contact">Terms</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank">Facebook</a>
+    <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank">Google Reviews</a>
   </div>
-  <p>© 2026 Panel Polish LLC, Orlando, FL. All rights reserved.</p>
-  <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
-    <div class="footer-links">
-      <a href="#contact">Privacy</a>
-      <a href="#contact">Terms</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div style="display:flex; gap:0.8rem;">
-      <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank" style="width:36px; height:36px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(245,166,35,0.2)'; this.style.borderColor='rgba(245,166,35,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'; this.style.borderColor='rgba(255,255,255,0.15)'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank" style="width:36px; height:36px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(245,166,35,0.2)'; this.style.borderColor='rgba(245,166,35,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'; this.style.borderColor='rgba(255,255,255,0.15)'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8l1.5 3 3.5.5-2.5 2.5.5 3.5L12 16l-3 1.5.5-3.5L7 11.5l3.5-.5z"/></svg>
-      </a>
-    </div>
-  </div>
+  <p class="footer-copy">&copy; 2026 Panel Polish LLC, Orlando, FL. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
