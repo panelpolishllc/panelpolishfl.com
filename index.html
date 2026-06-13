@@ -385,12 +385,12 @@
   .service-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
   /* PRICING */
   .pricing {
-    background: var(--navy);
+    background: var(--off-white);
     padding: 90px 5%;
   }
   .pricing-header { text-align: center; margin-bottom: 3rem; }
-  .pricing-header .section-title { color: var(--white); }
-  .pricing-header .section-sub { color: rgba(255,255,255,0.55); }
+  .pricing-header .section-title { color: var(--navy); }
+  .pricing-header .section-sub { color: var(--muted); }
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -399,8 +399,8 @@
     margin: 0 auto;
   }
   .pricing-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--white);
+    border: 2px solid var(--border);
     border-radius: 14px;
     padding: 2rem 1.6rem;
     text-align: center;
@@ -408,47 +408,53 @@
     position: relative;
   }
   .pricing-card.featured {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(245,166,35,0.3);
+    background: var(--navy);
+    border-color: var(--gold);
   }
-  .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); border-color: rgba(245,166,35,0.5); }
+  .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,35,71,0.15); }
   .plan-label {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--sky);
     margin-bottom: 0.5rem;
   }
+  .pricing-card.featured .plan-label { color: var(--gold); }
   .plan-name {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.15rem;
-    color: var(--white);
+    color: var(--navy);
     margin-bottom: 1rem;
     text-transform: uppercase;
   }
+  .pricing-card.featured .plan-name { color: var(--white); }
   .price {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 3rem;
     font-weight: 900;
-    color: var(--gold);
+    color: var(--navy);
     line-height: 1;
     margin-bottom: 0.3rem;
   }
-  .price-note { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-bottom: 1.2rem; }
+  .pricing-card.featured .price { color: var(--gold); }
+  .price-note { color: var(--muted); font-size: 0.82rem; margin-bottom: 1.2rem; }
+  .pricing-card.featured .price-note { color: rgba(255,255,255,0.5); }
   .plan-features {
     list-style: none;
     text-align: left;
     margin-bottom: 1.5rem;
   }
   .plan-features li {
-    color: rgba(255,255,255,0.65);
+    color: var(--muted);
     font-size: 0.88rem;
-    padding: 0.3rem 0;
+    padding: 0.35rem 0;
     padding-left: 1.2rem;
+    border-bottom: 1px solid var(--border);
     position: relative;
   }
+  .pricing-card.featured .plan-features li { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.1); }
   .plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
   .btn-plan {
     display: block;
@@ -466,7 +472,9 @@
   }
   .btn-plan:hover { background: var(--gold-light); transform: translateY(-1px); }
   /* TESTIMONIALS */
-  .testimonials { background: var(--off-white); padding: 90px 5%; }
+  .testimonials { background: var(--navy); padding: 90px 5%; }
+  .testimonials .section-label { color: var(--gold); }
+  .testimonials .section-title { color: var(--white); }
   .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
   .reviews-grid {
     display: grid;
@@ -476,27 +484,27 @@
     margin: 0 auto 2.5rem;
   }
   .review-card {
-    background: var(--white);
+    background: rgba(255,255,255,0.05);
     border-radius: 14px;
     padding: 2rem;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.1);
     position: relative;
     transition: all 0.25s;
   }
-  .review-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(13,35,71,0.08); }
+  .review-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); background: rgba(255,255,255,0.08); }
   .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
-  .review-text { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
+  .review-text { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
   .review-author { display: flex; align-items: center; gap: 0.8rem; }
   .review-avatar {
     width: 40px; height: 40px; border-radius: 50%;
-    background: var(--navy);
+    background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.4);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700; color: var(--gold); font-size: 1rem;
     flex-shrink: 0;
   }
-  .review-name { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
-  .review-source { font-size: 0.78rem; color: var(--muted); }
+  .review-name { font-weight: 600; color: var(--white); font-size: 0.95rem; }
+  .review-source { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
   /* FAQ */
   .faq-section { background: var(--white); padding: 90px 5%; }
   .faq-header { text-align: center; margin-bottom: 3rem; }
@@ -699,7 +707,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#pricing">Solar Cleaning</a></li>
-    <li><a href="#window-pricing">Window Pricing</a></li>
+    <li><a href="#window-pricing">Window Cleaning</a></li>
     <li><a href="#monthly-plans">Monthly Plans</a></li>
     <li><a href="#gallery">Our Work</a></li>
     <li><a href="#contact">Get a Quote</a></li>
@@ -733,11 +741,6 @@
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div style="background:var(--navy); padding:0.6rem 5%; display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; border-bottom:1px solid rgba(245,166,35,0.15);">
-  <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:1px; display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--gold)">2x</span> Longer Panel Life</div>
-  <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:1px; display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--gold)">100%</span> Satisfaction Rate</div>
-</div>
 
 <!-- STRIP -->
 <div class="strip">
@@ -790,7 +793,7 @@
 </section>
 
 <!-- ABOUT US -->
-<section style="background:var(--off-white); padding:90px 5%;" id="about">
+<section style="background:#0a1c3b; padding:90px 5%;" id="about">
   <div id="about-grid">
     <div>
       <div id="about-stats" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem;">
@@ -817,14 +820,14 @@
         <img src="logo-square.png" alt="Panel Polish LLC" style="height:110px;width:auto;" onerror="this.style.display='none'"/>
       </div>
       <div class="section-label">About Us</div>
-      <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">We Protect Your <span>Solar Investment.</span></h2>
-      <p style="color:var(--muted); font-size:1rem; line-height:1.75; margin-bottom:1.5rem;">Panel Polish was founded by solar industry professionals who understand what it takes to keep a system running at its best - and what happens when it goes unmaintained.</p>
-      <p style="color:var(--muted); font-size:1rem; line-height:1.75; margin-bottom:2rem;">We know what causes permanent cell damage, how to clean without voiding warranties, and what early signs of wear look like. When we show up, you're getting professionals who treat your system like the investment it is.</p>
+      <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem); color:var(--white);">We Protect Your <span>Solar Investment.</span></h2>
+      <p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.75; margin-bottom:1.5rem;">Panel Polish was founded by solar industry professionals who understand what it takes to keep a system running at its best - and what happens when it goes unmaintained.</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.75; margin-bottom:2rem;">We know what causes permanent cell damage, how to clean without voiding warranties, and what early signs of wear look like. When we show up, you're getting professionals who treat your system like the investment it is.</p>
       <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:2rem;">
-        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Solar Industry Veterans</div>
-        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Locally Owned &amp; Operated</div>
-        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Insured &amp; Licensed</div>
-        <div style="display:flex; align-items:center; gap:0.6rem; color:var(--text); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Pure Water System</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.8); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Solar Industry Veterans</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.8); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Locally Owned &amp; Operated</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.8); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Insured &amp; Licensed</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.8); font-size:0.95rem;"><span style="color:var(--gold); font-size:1.1rem;">&#10003;</span> Pure Water System</div>
       </div>
       <a href="#contact" class="btn-primary" style="display:inline-block;">Get a Free Quote</a>
     </div>
@@ -838,7 +841,7 @@
     <h2 class="section-title">Real <span>Results</span></h2>
     <div style="display:flex; align-items:center; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
       <span style="color:var(--gold); font-size:1rem; letter-spacing:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span style="color:var(--muted); font-size:0.9rem;">5.0 on Google</span>
+      <span style="color:rgba(255,255,255,0.55); font-size:0.9rem;">5.0 on Google</span>
     </div>
   </div>
   <div class="reviews-grid">
@@ -886,7 +889,7 @@
 <section class="pricing" id="pricing">
   <div class="pricing-header">
     <div class="section-label">Transparent Pricing</div>
-    <h2 class="section-title">Simple <span>Plans</span></h2>
+    <h2 class="section-title">Solar Cleaning <span>Pricing</span></h2>
     <p class="section-sub">No hidden fees. No surprises. Just clean panels and more energy savings.</p>
   </div>
   <div style="display:flex; justify-content:center; margin-bottom:3rem;">
