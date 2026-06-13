@@ -768,8 +768,13 @@
     </div>
     <div class="service-card">
       <div class="service-icon">💪</div>
-      <h3>Deep Clean & Restoration</h3>
+      <h3>Solar Panel Restoration</h3>
       <p>Heavy-duty treatment for panels with stubborn mold, bird droppings, and hardened grime. Removes buildup that causes hot spots and permanent cell damage if left untreated.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Window Restoration</h3>
+      <p>Full restoration for windows with hard water stains, mineral deposits, oxidation, or heavy buildup that standard cleaning can't remove. Leaves glass crystal clear.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🔍</div>
@@ -908,6 +913,7 @@
     <div style="background:var(--border); border-radius:8px; padding:4px; display:inline-flex; gap:4px;">
       <button id="btn-onetime" onclick="showPricing('onetime')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:var(--navy); color:white; transition:all 0.2s;">One-Time</button>
       <button id="btn-recurring" onclick="showPricing('recurring')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Recurring Plans</button>
+      <button id="btn-restoration" onclick="showPricing('restoration')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Restoration</button>
     </div>
   </div>
   <div id="pricing-onetime" class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1100px;">
@@ -941,16 +947,18 @@
     </div>
     <p style="text-align:center; color:var(--muted); font-size:0.9rem; margin-top:1.5rem;">70+ panels? <a href="#contact" style="color:var(--blue);">Contact us</a> for a custom recurring quote. All plans are flexible, no long-term contracts required.</p>
   </div>
-  <div style="max-width:1100px; margin: 2rem auto 0; background:linear-gradient(135deg, var(--navy), var(--blue)); border-radius:12px; padding:2rem 2.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; border:1px solid rgba(245,166,35,0.3);">
-    <div>
-      <div style="font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem;">Add-On Service</div>
-      <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase; color:white; margin-bottom:0.4rem;">💪 Deep Clean & Restoration</h3>
-      <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; max-width:580px; line-height:1.6;">For panels with heavy mold, stubborn bird droppings, and built-up grime. Add this to any cleaning service for a complete restoration using safe, chemical-free methods.</p>
+  <div id="pricing-restoration" style="display:none; max-width:1100px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">💪 Full restoration for panels with heavy mold, bird droppings, mineral deposits, and hardened grime</span>
     </div>
-    <div style="text-align:center;">
-      <div style="font-family:'Barlow Condensed',sans-serif; font-size:3rem; font-weight:900; color:var(--gold); line-height:1;">+$50–$75</div>
-      <div style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin-bottom:1rem;">Add to any plan</div>
-      <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" style="background:var(--gold); color:var(--navy); padding:0.7rem 1.8rem; border-radius:6px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; display:inline-block;">Book Now</a>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem;">
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">Up to 19 Panels</div><div class="price">$298</div><div class="price-note">Up to 19 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">20–29 Panels</div><div class="price">$348</div><div class="price-note">20–29 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">30–39 Panels</div><div class="price">$398</div><div class="price-note">30–39 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">40–49 Panels</div><div class="price">$448</div><div class="price-note">40–49 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">50–59 Panels</div><div class="price">$548</div><div class="price-note">50–59 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">60–69 Panels</div><div class="price">$598</div><div class="price-note">60–69 panels</div><ul class="plan-features"><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Pure water final rinse</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">70+ Panels</div><div class="price" style="font-size:2.2rem">Custom</div><div class="price-note">70+ panels</div><ul class="plan-features"><li>Custom quote provided</li><li>Deep clean + restoration treatment</li><li>Mold &amp; mineral deposit removal</li><li>Before &amp; after photos</li><li>Service report</li></ul><a href="#contact" class="btn-plan">Contact Us</a></div>
     </div>
   </div>
   <p style="text-align:center; color:var(--muted); font-size:0.9rem; max-width:700px; margin:1.5rem auto 0;"><strong style="color:var(--text);">Two-story homes:</strong> A $50 surcharge applies due to additional equipment and safety requirements.</p>
@@ -959,10 +967,12 @@
 function showPricing(type) {
   document.getElementById('pricing-onetime').style.display = type === 'onetime' ? 'grid' : 'none';
   document.getElementById('pricing-recurring').style.display = type === 'recurring' ? 'block' : 'none';
-  document.getElementById('btn-onetime').style.background = type === 'onetime' ? 'var(--navy)' : 'transparent';
-  document.getElementById('btn-onetime').style.color = type === 'onetime' ? 'white' : 'var(--muted)';
-  document.getElementById('btn-recurring').style.background = type === 'recurring' ? 'var(--navy)' : 'transparent';
-  document.getElementById('btn-recurring').style.color = type === 'recurring' ? 'white' : 'var(--muted)';
+  document.getElementById('pricing-restoration').style.display = type === 'restoration' ? 'block' : 'none';
+  ['onetime','recurring','restoration'].forEach(function(t) {
+    var btn = document.getElementById('btn-' + t);
+    btn.style.background = type === t ? 'var(--navy)' : 'transparent';
+    btn.style.color = type === t ? 'white' : 'var(--muted)';
+  });
 }
 </script>
 <!-- WINDOW CLEANING PRICING -->
@@ -976,6 +986,7 @@ function showPricing(type) {
     <div style="background:var(--border); border-radius:8px; padding:4px; display:inline-flex; gap:4px;">
       <button id="wbtn-onetime" onclick="showWindow('onetime')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:var(--navy); color:white; transition:all 0.2s;">One-Time</button>
       <button id="wbtn-recurring" onclick="showWindow('recurring')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Recurring Plans</button>
+      <button id="wbtn-restoration" onclick="showWindow('restoration')" style="padding:0.6rem 1.8rem; border-radius:6px; border:none; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--muted); transition:all 0.2s;">Restoration</button>
     </div>
   </div>
   <div id="window-onetime" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; max-width:900px; margin:0 auto;">
@@ -1003,16 +1014,28 @@ function showPricing(type) {
     </div>
     <p style="text-align:center; color:var(--muted); font-size:0.9rem;">All plans are flexible, no long-term contracts required.</p>
   </div>
+  <div id="window-restoration" style="display:none; max-width:900px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:2rem; background:linear-gradient(135deg,var(--navy),var(--blue)); border-radius:12px; padding:1.2rem 2rem; color:white;">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:1px; text-transform:uppercase;">✨ Full restoration for hard water stains, mineral deposits, oxidation, and heavy buildup</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem;">
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">Up to 15 Windows</div><div class="price">$298</div><div class="price-note">Up to 15 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">16–25 Windows</div><div class="price">$348</div><div class="price-note">16–25 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+      <div class="pricing-card featured"><div class="plan-label">Restoration</div><div class="plan-name">26–35 Windows</div><div class="price">$398</div><div class="price-note">26–35 windows</div><ul class="plan-features"><li>Hard water stain removal</li><li>Mineral deposit treatment</li><li>Pure water final rinse</li><li>Screen cleaning included</li><li>Service report</li></ul><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-plan">Book Now</a></div>
+    </div>
+  </div>
   <p style="text-align:center; color:var(--muted); font-size:0.9rem; max-width:700px; margin:1.5rem auto 0;"><strong style="color:var(--text);">Two-story homes:</strong> A $50 surcharge applies. 35+ windows? <a href="#contact" style="color:var(--blue);">Contact us</a> for a custom quote.</p>
 </section>
 <script>
 function showWindow(type) {
   document.getElementById('window-onetime').style.display = type === 'onetime' ? 'grid' : 'none';
   document.getElementById('window-recurring').style.display = type === 'recurring' ? 'block' : 'none';
-  document.getElementById('wbtn-onetime').style.background = type === 'onetime' ? 'var(--navy)' : 'transparent';
-  document.getElementById('wbtn-onetime').style.color = type === 'onetime' ? 'white' : 'var(--muted)';
-  document.getElementById('wbtn-recurring').style.background = type === 'recurring' ? 'var(--navy)' : 'transparent';
-  document.getElementById('wbtn-recurring').style.color = type === 'recurring' ? 'white' : 'var(--muted)';
+  document.getElementById('window-restoration').style.display = type === 'restoration' ? 'block' : 'none';
+  ['onetime','recurring','restoration'].forEach(function(t) {
+    var btn = document.getElementById('wbtn-' + t);
+    btn.style.background = type === t ? 'var(--navy)' : 'transparent';
+    btn.style.color = type === t ? 'white' : 'var(--muted)';
+  });
 }
 </script>
 <!-- MONTHLY PLANS -->
