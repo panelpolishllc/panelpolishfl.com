@@ -667,9 +667,8 @@
   @media (max-width: 640px) {
     nav { padding: 0 4%; height: 70px; }
     .nav-logo { font-size: 1.3rem; }
-    .nav-links { gap: 0.5rem; }
-    .nav-links li { display: none; }
-    .nav-links li:last-child { display: block; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
     .hero { padding: 130px 5% 50px; }
     .services-grid { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr 1fr; }
@@ -677,7 +676,67 @@
     .price { font-size: 2.4rem; }
     .form-card { padding: 1.2rem; }
     details summary { font-size: 0.95rem !important; }
+    .mobile-menu { top: 106px; } /* topbar 36px + nav 70px */
   }
+
+  /* MOBILE NAV HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 116px; /* topbar 36px + nav 80px */
+    left: 0; right: 0;
+    background: rgba(13,35,71,0.98);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    padding: 1.5rem 5%;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
+  .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 0.9rem 0;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .mobile-menu ul li a:hover { color: var(--gold); }
+  .mobile-menu ul li:last-child { border-bottom: none; }
+  .mobile-menu .mob-cta {
+    display: block;
+    margin-top: 1.25rem;
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    text-align: center;
+    padding: 0.85rem !important;
+    border-radius: 8px;
+  }
+
 </style>
 </head>
 <body>
@@ -713,7 +772,24 @@
     <li><a href="about.html#contact">Get a Quote</a></li>
     <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="nav-cta">Book Now</a></li>
   </ul>
+  <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Solar Cleaning</a></li>
+      <li><a href="pricing.html#window-pricing">Window Cleaning</a></li>
+      <li><a href="pricing.html#monthly-plans">Monthly Plans</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="about.html#contact">Get a Quote</a></li>
+    <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="mob-cta">Book Now</a></li>
+  </ul>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -879,5 +955,24 @@
 </footer>
 
 
+<script>
+(function() {
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
