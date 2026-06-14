@@ -111,6 +111,64 @@
   .topbar-socials { display: flex; align-items: center; gap: 1rem; }
   .topbar-socials a { color: rgba(255,255,255,0.55); text-decoration: none; display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; transition: color 0.2s; }
   .topbar-socials a:hover { color: var(--gold); }
+
+  /* MOBILE NAV HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 116px;
+    left: 0; right: 0;
+    background: rgba(13,35,71,0.98);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    padding: 1.5rem 5%;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
+  .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 0.9rem 0;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .mobile-menu ul li a:hover { color: var(--gold); }
+  .mobile-menu ul li:last-child { border-bottom: none; }
+  .mobile-menu .mob-cta {
+    display: block;
+    margin-top: 1.25rem;
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    text-align: center;
+    padding: 0.85rem !important;
+    border-radius: 8px;
+  }
+
   @media (max-width: 600px) { .topbar { padding: 0 4%; font-size: 0.72rem; } .topbar .tb-label { display: none; } }
   /* NAV */
   nav {
@@ -120,7 +178,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 0 5% 0 2%;
     height: 80px;
     background: rgba(13, 35, 71, 0.97);
     backdrop-filter: blur(10px);
@@ -658,83 +716,26 @@
   #monthly-plans { background: var(--navy); padding: 90px 5%; }
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .nav-links { gap: 1rem; }
-    .nav-links li:nth-child(1), .nav-links li:nth-child(2), .nav-links li:nth-child(5), .nav-links li:nth-child(6) { display: none; }
+    .nav-links li:not(:last-child) { display: none; }
+    .nav-hamburger { display: flex; }
     #about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .form-row { grid-template-columns: 1fr; }
+    .mobile-menu { top: 116px; }
   }
   @media (max-width: 640px) {
-    nav { padding: 0 4%; height: 70px; }
+    nav { padding: 0 4% 0 2%; height: 70px; }
     .nav-logo { font-size: 1.3rem; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     .hero { padding: 130px 5% 50px; }
     .services-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
     .pricing-card { padding: 1.8rem 1.4rem; }
     .price { font-size: 2.4rem; }
     .form-card { padding: 1.2rem; }
     details summary { font-size: 0.95rem !important; }
-    .mobile-menu { top: 106px; } /* topbar 36px + nav 70px */
-  }
-
-  /* MOBILE NAV HAMBURGER */
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 6px;
-    background: none;
-    border: none;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transition: all 0.25s;
-  }
-  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 116px; /* topbar 36px + nav 80px */
-    left: 0; right: 0;
-    background: rgba(13,35,71,0.98);
-    backdrop-filter: blur(10px);
-    z-index: 99;
-    padding: 1.5rem 5%;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .mobile-menu.open { display: block; }
-  .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
-  .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .mobile-menu ul li a {
-    display: block;
-    padding: 0.9rem 0;
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  .mobile-menu ul li a:hover { color: var(--gold); }
-  .mobile-menu ul li:last-child { border-bottom: none; }
-  .mobile-menu .mob-cta {
-    display: block;
-    margin-top: 1.25rem;
-    background: var(--gold);
-    color: var(--navy) !important;
-    font-weight: 700 !important;
-    text-align: center;
-    padding: 0.85rem !important;
-    border-radius: 8px;
+    .mobile-menu { top: 106px; }
   }
 
 </style>
@@ -807,7 +808,7 @@
     <p style="color:rgba(255,255,255,0.55); font-size:0.95rem; line-height:1.7; max-width:520px; margin-bottom:2rem;">Solar panels are a long-term investment. Florida's pollen, humidity, and storms can shorten that lifespan fast. Dirt and grime cause hot spots, accelerate wear, and risk voiding your warranty. We keep your system protected. Pure water only, no harsh chemicals, no damage.</p>
     <div class="hero-btns">
       <a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="btn-primary">Book Now</a>
-      <a href="#contact" class="btn-secondary">Get a Free Quote</a>
+      <a href="about.html#contact" class="btn-secondary">Get a Free Quote</a>
     </div>
     <div class="hero-stats">
       <div><div class="hero-stat-num">&#9728;&#65039; 5+</div><div class="hero-stat-label">years in the solar industry</div></div>
@@ -838,7 +839,7 @@
     <div class="service-card">
       <div class="service-icon">☀️</div>
       <h3>Solar Panel Cleaning</h3>
-      <p>Pure-water wash that removes dust, pollen, and light debris — restoring output without chemicals.</p>
+      <p>Pure-water wash that removes dust, pollen, and light debris  -  restoring output without chemicals.</p>
       <a href="services.html" style="color:var(--gold); font-weight:600; font-size:0.9rem; text-decoration:none; margin-top:1rem; display:inline-block;">Learn more →</a>
     </div>
     <div class="service-card">
@@ -945,9 +946,9 @@
   <div class="footer-logo">Panel<span>Polish</span> LLC</div>
   <p style="color:rgba(255,255,255,0.3); font-size:0.85rem; margin-bottom:1rem;">&#9728;&#65039; Solar Panel &amp; Window Cleaning &middot; Orlando, FL &amp; Central Florida</p>
   <div class="footer-links">
-    <a href="#contact">Privacy</a>
-    <a href="#contact">Terms</a>
-    <a href="#contact">Contact</a>
+    <a href="about.html#contact">Privacy</a>
+    <a href="about.html#contact">Terms</a>
+    <a href="about.html#contact">Contact</a>
     <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank">Facebook</a>
     <a href="https://g.page/r/CbQuO1cp9aIVEAI/review" target="_blank">Google Reviews</a>
   </div>
