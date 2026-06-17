@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Solar Panel & Window Cleaning Windermere FL | Panel Polish LLC | (407) 459-4257</title>
-<meta name="description" content="Professional solar panel and window cleaning in Windermere, FL (Orange County). Pure water system, no chemicals, flat-rate pricing from $199. Serving all of Central Florida. Book online or call (407) 459-4257."/>
-<meta name="keywords" content="solar panel cleaning Windermere, solar panel cleaning Windermere FL, window cleaning Windermere, solar cleaning Orange County, Panel Polish LLC"/>
+<title>Solar Panel Cleaning Windermere FL | Panel Polish LLC | (407) 459-4257</title>
+<meta name="description" content="Professional solar panel cleaning in Windermere, FL (Orange County). Pure water system, no chemicals, flat-rate pricing from $199. Serving all of Central Florida. Book online or call (407) 459-4257."/>
+<meta name="keywords" content="solar panel cleaning Windermere, solar panel cleaning Windermere FL, solar cleaning Orange County, Panel Polish LLC"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://www.panelpolishfl.com/windermere"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Solar Panel & Window Cleaning Windermere FL | Panel Polish LLC"/>
-<meta property="og:description" content="Professional solar panel and window cleaning in Windermere, FL. Pure water system, flat-rate pricing. Book online or call (407) 459-4257."/>
+<meta property="og:title" content="Solar Panel Cleaning Windermere FL | Panel Polish LLC"/>
+<meta property="og:description" content="Professional solar panel cleaning in Windermere, FL. Pure water system, flat-rate pricing. Book online or call (407) 459-4257."/>
 <meta property="og:url" content="https://www.panelpolishfl.com/windermere"/>
 <meta name="geo.region" content="US-FL"/>
 <meta name="geo.placename" content="Windermere, Florida"/>
@@ -19,7 +19,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Panel Polish LLC",
-  "description": "Professional solar panel and window cleaning serving Windermere, FL and greater Central Florida.",
+  "description": "Professional solar panel cleaning serving Windermere, FL and greater Central Florida.",
   "url": "https://www.panelpolishfl.com",
   "telephone": "+14074594257",
   "email": "info@panelpolishfl.com",
@@ -53,11 +53,69 @@
   .topbar-socials a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
   .topbar-socials a:hover { color: var(--gold); }
 
+  /* MOBILE NAV HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 106px;
+    left: 0; right: 0;
+    background: rgba(13,35,71,0.98);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    padding: 1.5rem 5%;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
+  .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 0.9rem 0;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .mobile-menu ul li a:hover { color: var(--gold); }
+  .mobile-menu ul li:last-child { border-bottom: none; }
+  .mobile-menu .mob-cta {
+    display: block;
+    margin-top: 1.25rem;
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    text-align: center;
+    padding: 0.85rem !important;
+    border-radius: 8px;
+  }
+
+
   /* NAV */
   nav {
     position: fixed; top: 36px; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%; height: 70px;
+    padding: 0 5% 0 2%; height: 70px;
     background: rgba(13,35,71,0.97); backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(245,166,35,0.2);
   }
@@ -183,6 +241,18 @@
   footer { background: #061525; padding: 2.5rem 5%; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
   footer a { color: var(--gold); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+  @media (max-width: 640px) {
+    nav { padding: 0 4% 0 2%; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero { padding: 120px 5% 60px; }
+  }
 </style>
 </head>
 <body>
@@ -191,29 +261,47 @@
 <div class="topbar">
   <span>Mon – Fri &nbsp; 8:00 AM – 6:00 PM</span>
   <div class="topbar-socials">
-    <a href="https://www.instagram.com/panelpolishllc" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.instagram.com/panelpolishfl/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.facebook.com/profile.php?id=61589395439971" target="_blank" rel="noopener">Facebook</a>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">Panel<span>Polish</span> LLC</a>
+  <div class="nav-logo"><img src="horizontal.logo.png" alt="Panel Polish LLC - Solar Panel Cleaning Windermere FL" style="height:54px; width:auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><span style="display:none;">Panel<span style="color:var(--gold)">Polish</span> LLC</span></div>
   <ul class="nav-links">
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#pricing">Solar Cleaning</a></li>
-    <li><a href="/#window-pricing">Window Pricing</a></li>
-    <li><a href="/#contact">Get a Quote</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Solar Cleaning</a></li>
+    <li><a href="pricing.html#monthly-plans">Monthly Plans</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="about.html#contact">Get a Quote</a></li>
     <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="nav-cta">Book Now</a></li>
   </ul>
+  <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Solar Cleaning</a></li>
+    <li><a href="pricing.html#monthly-plans">Monthly Plans</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="about.html#contact">Get a Quote</a></li>
+    <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39496362" target="_blank" class="mob-cta">Book Now</a></li>
+  </ul>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge">&#9728;&#65039; Serving Windermere, FL</div>
     <h1>
-      Solar Panel &amp; Window Cleaning
+      Solar Panel Cleaning
       <span class="accent">Windermere, FL</span>
     </h1>
     <p class="hero-sub">
@@ -242,7 +330,7 @@
   <div style="max-width:1100px; margin:0 auto;">
     <div class="section-label">What We Offer</div>
     <h2 class="section-title">Services in <span>Windermere</span></h2>
-    <p class="section-sub">Professional cleaning and restoration for solar panels and windows throughout Windermere and surrounding Orange County communities.</p>
+    <p class="section-sub">Professional cleaning and restoration for solar panels throughout Windermere and surrounding Orange County communities.</p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">&#9728;&#65039;</div>
@@ -255,16 +343,12 @@
         <p>Heavy-duty treatment for panels with stubborn mold, bird droppings, and hardened grime. Removes buildup that causes hot spots and permanent cell damage if left untreated.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#129695;</div>
-        <h3>Window Cleaning</h3>
-        <p>Crystal clear exterior windows using our pure water system. No streaks, no chemicals, no ladders scratching your frames. Starting at $199.</p>
+        <div class="service-icon">&#127970;</div>
+        <h3>Commercial Solar Cleaning</h3>
+        <p>Custom cleaning programs for commercial solar arrays - businesses, HOAs, and large-scale installations. Every site is different, so every quote is too.</p>
+        <a href="about.html#contact" style="color:var(--gold); font-weight:600; font-size:0.9rem; text-decoration:none; margin-top:0.5rem; display:inline-block;">Request a custom quote &rarr;</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">&#10024;</div>
-        <h3>Window Restoration</h3>
-        <p>Full restoration for windows with hard water stains, mineral deposits, oxidation, or heavy buildup that standard cleaning can't remove.</p>
-      </div>
-      <div class="service-card">
+<div class="service-card">
         <div class="service-icon">&#128337;</div>
         <h3>Maintenance Plans</h3>
         <p>Annual or bi-annual recurring plans to protect your panels, preserve your warranty, and extend system life. We handle the scheduling.</p>
@@ -306,11 +390,11 @@
         <div class="tier-name">40+ Panels</div>
         <div class="price" style="font-size:2rem;">From $349</div>
         <div class="price-note">See full pricing</div>
-        <a href="/#pricing" class="book-btn">View All Tiers</a>
+        <a href="pricing.html" class="book-btn">View All Tiers</a>
       </div>
     </div>
     <p style="color:rgba(255,255,255,0.45); font-size:0.88rem; margin-top:2rem;">
-      Window cleaning from $199 &bull; Restoration services available &bull; <a href="/#pricing" style="color:var(--gold);">See all pricing</a>
+      Restoration services available &bull; <a href="pricing.html" style="color:var(--gold);">See all pricing</a>
     </p>
   </div>
 </section>
@@ -367,20 +451,38 @@
 <footer>
   <p style="margin-bottom:0.5rem;">
     <strong style="color:rgba(255,255,255,0.75);">Panel Polish LLC</strong> &bull;
-    Solar Panel &amp; Window Cleaning &bull; Serving Windermere and all of Central Florida
+    Solar Panel Cleaning &bull; Serving Windermere and all of Central Florida
   </p>
   <p style="margin-bottom:0.5rem;">
     <a href="tel:4074594257">(407) 459-4257</a> &bull;
     <a href="mailto:info@panelpolishfl.com">info@panelpolishfl.com</a>
   </p>
   <p style="margin-bottom:1rem;">
-    <a href="/">Home</a> &bull;
-    <a href="/#services">Services</a> &bull;
-    <a href="/#pricing">Pricing</a> &bull;
-    <a href="/#contact">Contact</a>
+    <a href="index.html">Home</a> &bull;
+    <a href="services.html">Services</a> &bull;
+    <a href="pricing.html">Pricing</a> &bull;
+    <a href="about.html#contact">Contact</a>
   </p>
   <p>&copy; 2026 Panel Polish LLC. All rights reserved.</p>
 </footer>
 
+<script>
+(function() {
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
